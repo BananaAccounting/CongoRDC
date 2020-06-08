@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{/Users/ivan/Documents/GitHub/CongoRDC/reports/statements/cashflow/test/ch.banana.africa.cashflowrdc.test.js}
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/reports/statements/cashflow/./test/ch.banana.africa.cashflowrdc.test.js}
 %
 \begin{testcase}{TestCashflowRDC}
 \begin{test}{testVerifyMethods}
@@ -41,12 +41,12 @@ TABLEAU DES FLUX DE TRESORERIE \\
 REF  & LIBELLES  &  & EXERCICE 2019  & EXERCICE 2018 \\
 ZA  & Trésorerie nette au 1er janvier (Trésorerie actif N-1 - trésorerie passif N-1)  & A  & 2'240'000.00  & 2'240'000.00 \\
  & Flux de trésorerie provenant des activités opérationnelles  &  &  & \\
-FA  & Capacité d'Autofinancement Globale (CAFG)  &  & 744'019.00  & 743'997.00 \\
+FA  & Capacité d'Autofinancement Globale (CAFG)  &  & 726'519.00  & 726'496.00 \\
 FB  & (-) Variation actif circulant HAO  &  & 0.00  & 0.00 \\
 FC  & (-) Variation des stocks  &  & 1'891'000.00  & 1'891'004.00 \\
 FD  & (-) Variation des créances  &  & 500'000.00  & 500'005.00 \\
-FE  & (+) Variation du passif circulant  &  & 1'267'191.00  & 1'267'198.00 \\
- & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & 3'658'191.00  & 3'658'207.00 \\
+FE  & (+) Variation du passif circulant  &  & 1'284'691.00  & 1'284'699.00 \\
+ & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & 3'675'691.00  & 3'675'708.00 \\
 ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & -379'790.00  & -379'814.00 \\
  & Flux de trésorerie provenant des activités d'investissements   &  &  & \\
 FF  & (-) Décaissements liés aux acquisitions d'immobilisations incorporelles  &  & 0.00  & 0.00 \\
