@@ -122,14 +122,18 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("NET","bold center",1).setStyleAttributes("border-left:thin solid black;border-right:thin solid black;padding-bottom:2px;padding-top:5px");
 
    /* Row 1: AD */
+   var AD1_exerciceN = getAmount(current,'Gr=AE-1|AF-1|AG-1|AH-1','balance',currentStartDate,currentEndDate);
+   var AD2_exerciceN = getAmount(current,'Gr=AE-2|AF-2|AG-2|AH-2','balance',currentStartDate,currentEndDate);
+   var AD_exerciceN = getAmount(current,'Gr=AE|AF|AG|AH','balance',currentStartDate,currentEndDate);
+   var AD_exerciceN1 = getAmount(current,'Gr=AE|AF|AG|AH','opening',currentStartDate,currentEndDate);
    tableRow = table.addRow();
    tableRow.addCell("AD","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("IMMOBILISATIONS INCORPORELLES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("3","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AD1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AD2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AD_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AD_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
    /* Row 2: AE */
    var AE1_exerciceN = getAmount(current,'Gr=AE-1','balance',currentStartDate,currentEndDate);
@@ -141,7 +145,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Frais de développement et de prospection","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AE1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AE2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AE2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AE_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AE_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -155,7 +159,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Brevets, licences, logiciels, et  droits similaires","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AF1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AF2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(Banana.SDecimal.invert(AF2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AF_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AF_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -169,7 +173,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Fonds commercial et droit au bail","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AG1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AG2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AG2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AG_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AG_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -183,19 +187,23 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Autres immobilisations incorporelles","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AH1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AH2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AH2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AH_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AH_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
    /* Row 6: AI */
+   var AI1_exerciceN = getAmount(current,'Gr=AJ-1|AK-1|AL-1|AM-1|AN-1|AP-1','balance',currentStartDate,currentEndDate);
+   var AI2_exerciceN = getAmount(current,'Gr=AJ-2|AK-2|AL-2|AM-2|AN-2|AP-2','balance',currentStartDate,currentEndDate);
+   var AI_exerciceN = getAmount(current,'Gr=AJ|AK|AL|AM|AN|AP','balance',currentStartDate,currentEndDate);
+   var AI_exerciceN1 = getAmount(current,'Gr=AJ|AK|AL|AM|AN|AP','opening',currentStartDate,currentEndDate);
    tableRow = table.addRow();
    tableRow.addCell("AI","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("IMMOBILISATIONS CORPORELLES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("3","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AI1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AI2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AI_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AI_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    
    /* Row 7: AJ */
    var AJ1_exerciceN = getAmount(current,'Gr=AJ-1','balance',currentStartDate,currentEndDate);
@@ -207,7 +215,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Terrains (1) dont Placement en  Net......./.......","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AJ1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AJ2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AJ2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AJ_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AJ_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -221,7 +229,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Bâtiments (1) dont Placement en  Net......./.......","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AK1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AK2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AK2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AK_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AK_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -235,7 +243,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Aménagements, agencements et installations","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AL1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AL2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AL2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AL_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AL_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -249,7 +257,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Matériel, mobilier et actifs biologiques","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AM1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AM2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AM2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AM_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AM_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -263,7 +271,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Matériel de transport","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AN1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AN2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AN2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AN_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AN_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -277,19 +285,23 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Avances et acomptes versés sur immobilisations","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("3","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AP1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AP2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AP2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AP_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AP_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
    /* Row 13: AQ */
+   var AQ1_exerciceN = getAmount(current,'Gr=AR-1|AS-1','balance',currentStartDate,currentEndDate);
+   var AQ2_exerciceN = getAmount(current,'Gr=AR-2|AS-2','balance',currentStartDate,currentEndDate);
+   var AQ_exerciceN = getAmount(current,'Gr=AR|AS','balance',currentStartDate,currentEndDate);
+   var AQ_exerciceN1 = getAmount(current,'Gr=AR|AS','opening',currentStartDate,currentEndDate);
    tableRow = table.addRow();
    tableRow.addCell("AQ","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("IMMOBILISATIONS FINANCIERES","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("4","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AQ1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AQ2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AQ_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(AQ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    
    /* Row 14: AR */
    var AR1_exerciceN = getAmount(current,'Gr=AR-1','balance',currentStartDate,currentEndDate);
@@ -301,7 +313,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Titres de participation","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AR1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AR2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AR2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AR_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AR_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -315,7 +327,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("Autres immobilisations financières","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AS1_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AS2_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AS2_exerciceN)),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AS_exerciceN),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AS_exerciceN1),"right",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -331,7 +343,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("TOTAL ACTIF IMMOBILISE","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AZ1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(AZ2_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(AZ2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AZ_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(AZ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
@@ -507,7 +519,7 @@ function createBalanceSheetReport(current,report) {
    tableRow.addCell("TOTAL GENERAL","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell("","greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(BZ1_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
-   tableRow.addCell(formatValues(BZ2_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
+   tableRow.addCell(formatValues(Banana.SDecimal.invert(BZ2_exerciceN)),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(BZ_exerciceN),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
    tableRow.addCell(formatValues(BZ_exerciceN1),"right greyCell bold",1).setStyleAttributes("border:thin solid black;padding-bottom:2px;padding-top:5px");
 
