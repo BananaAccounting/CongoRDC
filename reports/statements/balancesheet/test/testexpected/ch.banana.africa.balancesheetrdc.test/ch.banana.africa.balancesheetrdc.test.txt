@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{/Users/ivan/Documents/GitHub/Africa/RDC/statements/balancesheet/test/ch.banana.africa.balancesheetrdc.test.js}
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/reports/statements/balancesheet/./test/ch.banana.africa.balancesheetrdc.test.js}
 %
 \begin{testcase}{TestBalanceSheetRDC}
 \begin{test}{testVerifyMethods}
@@ -40,22 +40,22 @@ BILAN ACTIF AU 31 DECEMBRE 2019 \\
 \begin{longtable}[l]{ l  l  l  l  l  l  l }
 REF  & ACTIF  & Note  & \multicolumn{3}{l}{EXERCICE AU 31/12/2019 } & EXERCICE AU 31/12/2018 \\
  &  &  & BRUT 2019  & AMORT et DEPREC.  & NET  & NET \\
-AD  & IMMOBILISATIONS INCORPORELLES  & 3  &  &  &  & \\
-AE  & Frais de développement et de prospection  &  & 2.00  & 3.00  & 5.00  & 2.00 \\
-AF  & Brevets, licences, logiciels, et  droits similaires  &  & 5.00  & 6.00  & 11.00  & 4.00 \\
-AG  & Fonds commercial et droit au bail  &  & 8.00  & 9.00  & 17.00  & 6.00 \\
-AH  & Autres immobilisations incorporelles  &  & 11.00  & 12.00  & 23.00  & 8.00 \\
-AI  & IMMOBILISATIONS CORPORELLES  & 3  &  &  &  & \\
-AJ  & Terrains (1) dont Placement en  Net......./.......  &  & 14.00  & 6.00  & 20.00  & 10.00 \\
-AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 8.00  & 9.00  & 17.00  & 12.00 \\
-AL  & Aménagements, agencements et installations  &  & 11.00  & 12.00  & 23.00  & 14.00 \\
-AM  & Matériel, mobilier et actifs biologiques  &  & 14.00  & 15.00  & 29.00  & 16.00 \\
-AN  & Matériel de transport  &  & 17.00  & 18.00  & 35.00  & 18.00 \\
+AD  & IMMOBILISATIONS INCORPORELLES  & 3  & 26.00  & -30.00  & 56.00  & 20.00 \\
+AE  & Frais de développement et de prospection  &  & 2.00  & -3.00  & 5.00  & 2.00 \\
+AF  & Brevets, licences, logiciels, et  droits similaires  &  & 5.00  & -6.00  & 11.00  & 4.00 \\
+AG  & Fonds commercial et droit au bail  &  & 8.00  & -9.00  & 17.00  & 6.00 \\
+AH  & Autres immobilisations incorporelles  &  & 11.00  & -12.00  & 23.00  & 8.00 \\
+AI  & IMMOBILISATIONS CORPORELLES  & 3  & 64.00  & -60.00  & 126.00  & 71.00 \\
+AJ  & Terrains (1) dont Placement en  Net......./.......  &  & 14.00  & -6.00  & 20.00  & 10.00 \\
+AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 8.00  & -9.00  & 17.00  & 12.00 \\
+AL  & Aménagements, agencements et installations  &  & 11.00  & -12.00  & 23.00  & 14.00 \\
+AM  & Matériel, mobilier et actifs biologiques  &  & 14.00  & -15.00  & 29.00  & 16.00 \\
+AN  & Matériel de transport  &  & 17.00  & -18.00  & 35.00  & 18.00 \\
 AP  & Avances et acomptes versés sur immobilisations  & 3  & 0.00  & 0.00  & 2.00  & 1.00 \\
-AQ  & IMMOBILISATIONS FINANCIERES  & 4  &  &  &  & \\
+AQ  & IMMOBILISATIONS FINANCIERES  & 4  & 11.00  & -8.00  & 15.00  & 5.00 \\
 AR  & Titres de participation  &  & 4.00  & 0.00  & 7.00  & 2.00 \\
-AS  & Autres immobilisations financières  &  & 7.00  & 8.00  & 8.00  & 3.00 \\
-AZ  & TOTAL ACTIF IMMOBILISE  &  & 101.00  & 98.00  & 204.00  & 99.00 \\
+AS  & Autres immobilisations financières  &  & 7.00  & -8.00  & 8.00  & 3.00 \\
+AZ  & TOTAL ACTIF IMMOBILISE  &  & 101.00  & -98.00  & 204.00  & 99.00 \\
 BA  & ACTIF CIRCULANT HAO  & 5  & 10.00  & 11.00  & 21.00  & 8.00 \\
 BB  & STOCKS ET ENCOURS  & 6  & 13.00  & 14.00  & 27.00  & 10.00 \\
 BG  & CREANCES ET EMPLOIS ASSIMILES   &  &  &  &  & \\
@@ -68,7 +68,7 @@ BR  & Valeurs à encaisser  & 10  & 10.00  & 2.00  & 12.00  & 2.00 \\
 BS  & Banques, chèques postaux, caisse et assimilés  & 11  & 189.00  & 5.00  & 194.00  & 95.00 \\
 BT  & TOTAL TRESORERIE-ACTIF  &  & 215.00  & 24.00  & 239.00  & 115.00 \\
 BU  & Ecart de conversion-Actif  & 12  & 7.00  &  & 7.00  & 3.00 \\
-BZ  & TOTAL GENERAL  &  & 376.00  & 180.00  & 561.00  & 277.00 \\
+BZ  & TOTAL GENERAL  &  & 376.00  & -180.00  & 561.00  & 277.00 \\
 \end{longtable}
 \begin{longtable}[l]{ l  l }
 KINANO SARL  & Exercice clos le 31.12.2019 \\

@@ -29,7 +29,7 @@
 \textvalue{This test will tests the BananaApp cashflow\_rdc.js}\\
 \begin{reportvalue}{Report Cash Flow RDC}
 \begin{longtable}[l]{ l  l }
-NACKY NGOMA SARL  & Exercice clos le 31.12.2020 \\
+LA COM  RDC SA  & Exercice clos le 31.12.2020 \\
 Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
 \end{longtable}
   \\
@@ -41,34 +41,34 @@ TABLEAU DES FLUX DE TRESORERIE \\
 REF  & LIBELLES  &  & EXERCICE 2020  & EXERCICE 2019 \\
 ZA  & Trésorerie nette au 1er janvier (Trésorerie actif N-1 - trésorerie passif N-1)  & A  & 267'862'400.00  & 100'626'800.00 \\
  & Flux de trésorerie provenant des activités opérationnelles  &  &  & \\
-FA  & Capacité d'Autofinancement Globale (CAFG)  &  & 2'065'000.00  & 114'050'000.00 \\
+FA  & Capacité d'Autofinancement Globale (CAFG)  &  & 119'226'400.00  & 112'050'000.00 \\
 FB  & (-) Variation actif circulant HAO  &  & 0.00  & 0.00 \\
-FC  & (-) Variation des stocks  &  & 1'085'000.00  & 10'670'000.00 \\
-FD  & (-) Variation des créances  &  & 1'422'800.00  & 381'667'200.00 \\
-FE  & (+) Variation du passif circulant  &  & 826'400.00  & 305'532'000.00 \\
- & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & 3'334'200.00  & 697'869'200.00 \\
-ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & 383'600.00  & 27'244'800.00 \\
+FC  & (-) Variation des stocks  &  & 11'755'000.00  & 10'670'000.00 \\
+FD  & (-) Variation des créances  &  & 383'126'320.00  & 330'659'200.00 \\
+FE  & (+) Variation du passif circulant  &  & 319'691'000.00  & 256'524'000.00 \\
+ & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & 714'572'320.00  & 597'853'200.00 \\
+ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & 44'036'080.00  & 27'244'800.00 \\
  & Flux de trésorerie provenant des activités d'investissements   &  &  & \\
-FF  & (-) Décaissements liés aux acquisitions d'immobilisations incorporelles  &  & 0.00  & 0.00 \\
-FG  & (-) Décaissements liés aux acquisitions d'immobilisations corporelles  &  & 4'640'000.00  & 4'992'800.00 \\
-FH  & (-) Décaissements liés aux acquisitions d'immobilisations financières  &  & 0.00  & 10'000'000.00 \\
-FI  & (+) Encaissements liés aux cessions d'immobilisations incorporelles et corporelles  &  & 0.00  & 2'800'000.00 \\
-FJ  & (+) Encaissements liés aux cessions d'immobilisations financières  &  & 0.00  & 7'000'000.00 \\
-ZC  & Flux de trésorerie provenant des activités d'investissement (somme FF à FJ)  & C  & -4'640'000.00  & -5'192'800.00 \\
+FF  & (-) Décaissements liés aux acquisitions d'immobilisations incorporelles  &  & 295'800.00  & 0.00 \\
+FG  & (-) Décaissements liés aux acquisitions d'immobilisations corporelles  &  & 7'969'800.00  & 4'992'800.00 \\
+FH  & (-) Décaissements liés aux acquisitions d'immobilisations financières  &  & 50'000'000.00  & 10'000'000.00 \\
+FI  & (+) Encaissements liés aux cessions d'immobilisations incorporelles et corporelles  &  & 2'800'000.00  & 2'800'000.00 \\
+FJ  & (+) Encaissements liés aux cessions d'immobilisations financières  &  & 27'000'000.00  & 7'000'000.00 \\
+ZC  & Flux de trésorerie provenant des activités d'investissement (somme FF à FJ)  & C  & -28'465'600.00  & -5'192'800.00 \\
  & Flux de trésorerie provenant du financement par les capitaux propres  &  &  & \\
-FK  & (+) Augmentations de capital par apports nouveaux  &  & 0.00  & 75'000'000.00 \\
+FK  & (+) Augmentations de capital par apports nouveaux  &  & 75'000'000.00  & 75'000'000.00 \\
 FL  & (+) Subventions d'investissement reçues  &  & 0.00  & 15'000'000.00 \\
-FM  & (-) Prélèvements sur le capital  &  & 0.00  & 25'000'000.00 \\
-FN  & (-) Dividendes verses  &  & 0.00  & 316'400.00 \\
-ZD  & Flux de trésorerie provenant des capitaux propres (somme FK à FN)  & D  & 0.00  & 64'683'600.00 \\
+FM  & (-) Prélèvements sur le capital  &  & 25'000'000.00  & 25'000'000.00 \\
+FN  & (-) Dividendes verses  &  & 100'000'000.00  & 316'400.00 \\
+ZD  & Flux de trésorerie provenant des capitaux propres (somme FK à FN)  & D  & -50'000'000.00  & 64'683'600.00 \\
  & Trésorerie provenant du financement par les capitaux étrangers  &  &  & \\
-FO  & (+) Emprunts  &  & 0.00  & 85'500'000.00 \\
+FO  & (+) Emprunts  &  & 66'500'000.00  & 85'500'000.00 \\
 FP  & (+) Autres dettes financières  &  & 0.00  & 0.00 \\
-FQ  & (-) Remboursements des emprunts et autres dettes financières  &  & 0.00  & 5'000'000.00 \\
-ZE  & Flux de trésorerie provenant des capitaux étrangers (somme FO à FQ)  & E  & 0.00  & 80'500'000.00 \\
-ZF  & Flux de trésorerie provenant des activités de financement (D+E)  & F  & 0.00  & 145'183'600.00 \\
-ZG  & VARIATION DE LA TRESORERIE NETTE DE LA PERIODE (B+C+F)  & G  & -4'256'400.00  & 167'235'600.00 \\
-ZH  & Trésorerie nette au 31 Décembre (G+A) Contrôle : Trésorerie actif 2020 - trésorerie passif 2020 =  & H  & 263'606'000.00  & 267'862'400.00 \\
+FQ  & (-) Remboursements des emprunts et autres dettes financières  &  & 5'000'000.00  & 5'000'000.00 \\
+ZE  & Flux de trésorerie provenant des capitaux étrangers (somme FO à FQ)  & E  & 61'500'000.00  & 80'500'000.00 \\
+ZF  & Flux de trésorerie provenant des activités de financement (D+E)  & F  & 11'500'000.00  & 145'183'600.00 \\
+ZG  & VARIATION DE LA TRESORERIE NETTE DE LA PERIODE (B+C+F)  & G  & 27'070'480.00  & 167'235'600.00 \\
+ZH  & Trésorerie nette au 31 Décembre (G+A) Contrôle : Trésorerie actif 2020 - trésorerie passif 2020 =  & H  & 294'932'880.00  & 267'862'400.00 \\
 \end{longtable}
 \end{reportvalue}
 \keyvalue{Result}{Passed}

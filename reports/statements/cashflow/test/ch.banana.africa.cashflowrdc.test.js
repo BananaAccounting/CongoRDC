@@ -61,30 +61,30 @@ TestCashflowRDC.prototype.testVerifyMethods = function() {
    
    // These methods verify that the two parameters are equals
    Test.assertIsEqual(Number(calculate_ZA(banDoc, startDate, endDate)), Number("267862400.00"));
-   Test.assertIsEqual(Number(calculate_FA(banDoc, startDate, endDate)), Number("2065000.00"));
+   Test.assertIsEqual(Number(calculate_FA(banDoc, startDate, endDate)), Number("119226400.00"));
    Test.assertIsEqual(Number(calculate_FB(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FC(banDoc, startDate, endDate)), Number("1085000.00"));
-   Test.assertIsEqual(Number(calculate_FD(banDoc, startDate, endDate)), Number("1422800.00"));
-   Test.assertIsEqual(Number(calculate_FE(banDoc, startDate, endDate)), Number("826400.00"));
-   Test.assertIsEqual(Number(calculate_FF(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FG(banDoc, startDate, endDate)), Number("4640000.00"));
-   Test.assertIsEqual(Number(calculate_FH(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FI(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FJ(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FK(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FC(banDoc, startDate, endDate)), Number("11755000.00"));
+   Test.assertIsEqual(Number(calculate_FD(banDoc, startDate, endDate)), Number("383126320.00"));
+   Test.assertIsEqual(Number(calculate_FE(banDoc, startDate, endDate)), Number("319691000.00"));
+   Test.assertIsEqual(Number(calculate_FF(banDoc, startDate, endDate)), Number("295800.00"));
+   Test.assertIsEqual(Number(calculate_FG(banDoc, startDate, endDate)), Number("7969800.00"));
+   Test.assertIsEqual(Number(calculate_FH(banDoc, startDate, endDate)), Number("50000000.00"));
+   Test.assertIsEqual(Number(calculate_FI(banDoc, startDate, endDate)), Number("2800000.00"));
+   Test.assertIsEqual(Number(calculate_FJ(banDoc, startDate, endDate)), Number("27000000.00"));
+   Test.assertIsEqual(Number(calculate_FK(banDoc, startDate, endDate)), Number("75000000.00"));
    Test.assertIsEqual(Number(calculate_FL(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FM(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FN(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FO(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FM(banDoc, startDate, endDate)), Number("25000000.00"));
+   Test.assertIsEqual(Number(calculate_FN(banDoc, startDate, endDate)), Number("100000000.00"));
+   Test.assertIsEqual(Number(calculate_FO(banDoc, startDate, endDate)), Number("66500000.00"));
    Test.assertIsEqual(Number(calculate_FP(banDoc, startDate, endDate)), Number("0.00"));
-   Test.assertIsEqual(Number(calculate_FQ(banDoc, startDate, endDate)), Number("0.00"));
+   Test.assertIsEqual(Number(calculate_FQ(banDoc, startDate, endDate)), Number("5000000.00"));
    
    var tot_BF = calculate_tot_BF(
       calculate_FB(banDoc, startDate, endDate),
       calculate_FC(banDoc, startDate, endDate),
       calculate_FD(banDoc, startDate, endDate),
       calculate_FE(banDoc, startDate, endDate));
-   Test.assertIsEqual(Number(tot_BF), Number("3334200.00"));
+   Test.assertIsEqual(Number(tot_BF), Number("714572320.00"));
    
    var tot_ZB = calculate_tot_ZB(
       calculate_FA(banDoc, startDate, endDate),
@@ -92,7 +92,7 @@ TestCashflowRDC.prototype.testVerifyMethods = function() {
       calculate_FC(banDoc, startDate, endDate),
       calculate_FD(banDoc, startDate, endDate),
       calculate_FE(banDoc, startDate, endDate));
-   Test.assertIsEqual(Number(tot_ZB), Number("383600.00"));
+   Test.assertIsEqual(Number(tot_ZB), Number("44036080.00"));
 
    var tot_ZC = calculate_tot_ZC(
       calculate_FF(banDoc, startDate, endDate),
@@ -100,29 +100,29 @@ TestCashflowRDC.prototype.testVerifyMethods = function() {
       calculate_FH(banDoc, startDate, endDate),
       calculate_FI(banDoc, startDate, endDate),
       calculate_FJ(banDoc, startDate, endDate));
-   Test.assertIsEqual(Number(tot_ZC), Number("-4640000.00"));
+   Test.assertIsEqual(Number(tot_ZC), Number("-28465600.00"));
 
    var tot_ZD = calculate_tot_ZD(
       calculate_FK(banDoc, startDate, endDate),
       calculate_FL(banDoc, startDate, endDate),
       calculate_FM(banDoc, startDate, endDate),
       calculate_FN(banDoc, startDate, endDate));
-   Test.assertIsEqual(Number(tot_ZD), Number("0.00"));
+   Test.assertIsEqual(Number(tot_ZD), Number("-50000000.00"));
 
    var tot_ZE = calculate_tot_ZE(
       calculate_FO(banDoc, startDate, endDate),
       calculate_FP(banDoc, startDate, endDate),
       calculate_FQ(banDoc, startDate, endDate));
-   Test.assertIsEqual(Number(tot_ZE), Number("0.00"));
+   Test.assertIsEqual(Number(tot_ZE), Number("61500000.00"));
 
    var tot_ZF = calculate_tot_ZF(tot_ZD,tot_ZE);
-   Test.assertIsEqual(Number(tot_ZF), Number("0.00"));
+   Test.assertIsEqual(Number(tot_ZF), Number("11500000.00"));
 
    var tot_ZG = calculate_tot_ZG(tot_ZB,tot_ZC,tot_ZF);
-   Test.assertIsEqual(Number(tot_ZG), Number("-4256400.00"));
+   Test.assertIsEqual(Number(tot_ZG), Number("27070480.00"));
 
    var tot_ZH = calculate_tot_ZH(tot_ZG,calculate_ZA(banDoc, startDate, endDate));
-   Test.assertIsEqual(Number(tot_ZH), Number("263606000.00"));
+   Test.assertIsEqual(Number(tot_ZH), Number("294932880.00"));
 
 }
 

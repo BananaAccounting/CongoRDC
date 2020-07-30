@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.reportsohadardc
 // @api = 1.0
-// @pubdate = 2019-12-06
+// @pubdate = 2020-07-01
 // @publisher = Banana.ch SA
 // @description = Balance Sheet, Profit/Loss Statement, Cash Flow
 // @description.fr = Bilan, Compte de résultat, Tableau des flux de tresorerie
@@ -34,6 +34,11 @@
 //cashflow/ch.banana.africa.cashflowrdc.js
 
 function exec() {
+
+  var dateForm = getPeriodSettings("Select Date");
+   if (!dateForm) {
+      return;
+   }
 
 	/* CURRENT year file: the current opened document in Banana */
 	var current = Banana.document;
@@ -58,15 +63,15 @@ function exec() {
 	var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie (OHADA - RDC) [BETA]");
 	
 	/* 1. Balance Sheet report */
-	createBalanceSheetReport(current,report);
+	createBalanceSheetReport(current, dateForm.selectionStartDate, dateForm.selectionEndDate, report);
 	report.addPageBreak();
 	
 	/* 2. Profit/Loss Statement report */
-	createProfitLossStatementReport(current,report);
+	createProfitLossStatementReport(current, previous, dateForm.selectionStartDate, dateForm.selectionEndDate, report);
 	report.addPageBreak();
 
 	/* 3. Cash Flow report */
-	createCashFlowReport(current,previous,report);
+	createCashFlowReport(current, previous, dateForm.selectionStartDate, dateForm.selectionEndDate, report);
 
 	var stylesheet = createStyleSheet(userParam);
 	Banana.Report.preview(report, stylesheet);
@@ -193,5 +198,61 @@ function settingsDialog() {
   }
   var paramToString = JSON.stringify(userParam);
   var value = Banana.document.setScriptSettings(paramToString);
+}
+
+/***************************************************************************************************************** 
+*
+* The main purpose of this function is to allow the user to enter the accounting period desired and saving it 
+* for the next time the script is run.
+* Every time the user runs of the script he has the possibility to change the date of the accounting period 
+*
+******************************************************************************************************************/
+function getPeriodSettings(param) {
+
+	//The formeters of the period that we need
+	var scriptform = {
+		"selectionStartDate": "",
+		"selectionEndDate": "",
+		"selectionChecked": "false"
+	};
+
+	//Read script settings
+	var data = Banana.document.getScriptSettings();
+
+	//Check if there are previously saved settings and read them
+	if (data.length > 0) {
+		try {
+			var readSettings = JSON.parse(data);
+
+			//We check if "readSettings" is not null, then we fill the formeters with the values just read
+			if (readSettings) {
+				scriptform = readSettings;
+			}
+		} catch (e) {}
+	}
+
+	//We take the accounting "starting date" and "ending date" from the document. These will be used as default dates
+	var docStartDate = Banana.document.startPeriod();
+	var docEndDate = Banana.document.endPeriod();
+
+	//A dialog window is opened asking the user to insert the desired period. By default is the accounting period
+	var selectedDates = Banana.Ui.getPeriod(param.reportName, docStartDate, docEndDate,
+			scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
+
+	//We take the values entered by the user and save them as "new default" values.
+	//This because the next time the script will be executed, the dialog window will contains the new values.
+	if (selectedDates) {
+		scriptform["selectionStartDate"] = selectedDates.startDate;
+		scriptform["selectionEndDate"] = selectedDates.endDate;
+		scriptform["selectionChecked"] = selectedDates.hasSelection;
+
+		//Save script settings
+		var formToString = JSON.stringify(scriptform);
+		var value = Banana.document.setScriptSettings(formToString);
+	} else {
+		//User clicked cancel
+		return;
+	}
+	return scriptform;
 }
 

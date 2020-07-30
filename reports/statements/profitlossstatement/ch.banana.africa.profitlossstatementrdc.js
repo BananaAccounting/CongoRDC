@@ -36,13 +36,22 @@
 
 function exec() {
 
+   var dateForm = getPeriodSettings("Select Date");
+   if (!dateForm) {
+      return;
+   }
+
    // CURRENT year file: the current opened document in Banana */
    var current = Banana.document;
    if (!current) {
       return "@Cancel";
    }
 
-   var report = createProfitLossStatementReport(current);
+   // PREVIOUS year file: Return the previous year document.
+   // If the previous year is not defined or it is not foud it returns null */
+   var previous = Banana.document.previousYear();
+
+   var report = createProfitLossStatementReport(current, previous, dateForm.selectionStartDate, dateForm.selectionEndDate);
    var stylesheet = createStyleSheet();
    Banana.Report.preview(report, stylesheet);
 }
@@ -53,11 +62,17 @@ function exec() {
 * Function that create the report
 *
 **************************************************************************************/
-function createProfitLossStatementReport(current,report) {
+function createProfitLossStatementReport(current, previous, startDate, endDate, report) {
 
    // Accounting period for the current year file
-   var currentStartDate = current.info("AccountingDataBase","OpeningDate");
-   var currentEndDate = current.info("AccountingDataBase","ClosureDate");
+   var currentStartDate = startDate;
+   var currentEndDate = endDate;
+   if(!startDate) {
+      currentStartDate = current.info("AccountingDataBase","OpeningDate");
+   }
+   if(!endDate) {
+      currentEndDate = current.info("AccountingDataBase","ClosureDate");
+   }
    var currentYear = Banana.Converter.toDate(currentStartDate).getFullYear();
    var previousYear = currentYear-1;
    var company = current.info("AccountingDataBase","Company");
@@ -67,6 +82,13 @@ function createProfitLossStatementReport(current,report) {
    var months = monthDiff(Banana.Converter.toDate(currentEndDate), Banana.Converter.toDate(currentStartDate));
    var fiscalNumber = current.info("AccountingDataBase","FiscalNumber");
    var vatNumber = current.info("AccountingDataBase","VatNumber");
+
+   if (previous) {
+      // Accounting period for the previous year file
+      var previousStartDate = previous.info("AccountingDataBase","OpeningDate");
+      var previousEndDate = previous.info("AccountingDataBase","ClosureDate");
+      var previousYear = Banana.Converter.toDate(previousStartDate).getFullYear();
+   }
 
    if (!report) {
       var report = Banana.Report.newReport("Compte de résultat");
@@ -110,13 +132,19 @@ function createProfitLossStatementReport(current,report) {
    cell.addParagraph(" ", "");
    cell.addParagraph("NET", "");
    var cell = tableRow.addCell("","bold center",1);
-   cell.addParagraph("EXERCICE AU 31/12/" + previousYear,"center");
+   if (previous) {
+      cell.addParagraph("EXERCICE AU 31/12/" + previousYear,"center");
+   } else {
+      cell.addParagraph("EXERCICE N-1","bold");
+   }
    cell.addParagraph(" ", "");
    cell.addParagraph("NET", "");
 
    /* Row 1: TA */
    var TA_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TA','balance',currentStartDate,currentEndDate));
-   var TA_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TA','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TA_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TA','balance',previousStartDate,previousEndDate));
+   } 
    tableRow = table.addRow();
    tableRow.addCell("TA","",1);
    tableRow.addCell("Ventes de marchandises","",1);
@@ -127,7 +155,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 2: RA */
    var RA_exerciceN = getAmount(current,'Gr=RA','balance',currentStartDate,currentEndDate);
-   var RA_exerciceN1 = getAmount(current,'Gr=RA','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RA_exerciceN1 = getAmount(previous,'Gr=RA','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RA","",1);
    tableRow.addCell("Achats de marchandises","",1);
@@ -138,7 +168,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 3: RB */
    var RB_exerciceN = getAmount(current,'Gr=RB','balance',currentStartDate,currentEndDate);
-   var RB_exerciceN1 = getAmount(current,'Gr=RB','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RB_exerciceN1 = getAmount(previous,'Gr=RB','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RB","",1);
    tableRow.addCell("Variation de stocks de marchandises","",1);
@@ -149,7 +181,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 4: XA */
    var XA_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=132','balance',currentStartDate,currentEndDate));
-   var XA_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=132','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XA_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=132','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XA","greyCell bold",1);
    tableRow.addCell("MARGE COMMERCIALE (Somme TA à RB)","greyCell bold",1);
@@ -160,7 +194,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 5: TB */
    var TB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TB','balance',currentStartDate,currentEndDate));
-   var TB_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TB','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TB_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TB','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TB","",1);
    tableRow.addCell("Ventes de produits fabriqués","",1);
@@ -171,7 +207,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 6: TC */
    var TC_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TC','balance',currentStartDate,currentEndDate));
-   var TC_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TC','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TC_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TC','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TC","",1);
    tableRow.addCell("Travaux, services vendus","",1);
@@ -182,7 +220,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 7: TD */
    var TD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TD','balance',currentStartDate,currentEndDate));
-   var TD_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TD','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TD_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TD','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TD","",1);
    tableRow.addCell("Produits accessoires","",1);
@@ -195,7 +235,9 @@ function createProfitLossStatementReport(current,report) {
       TA + TB + TC + TD
    */
    var XB_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TA|TB|TC|TD','balance',currentStartDate,currentEndDate));
-   var XB_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TA|TB|TC|TD','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XB_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TA|TB|TC|TD','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XB","greyCell bold",1);
    tableRow.addCell("CHIFFRE D'AFFAIRES (A + B + C + D)","greyCell bold",1);
@@ -206,7 +248,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 9: TE */
    var TE_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TE','balance',currentStartDate,currentEndDate));
-   var TE_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TE','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TE_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TE','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TE","",1);
    tableRow.addCell("Production stockée (ou déstockage)","",1);
@@ -217,7 +261,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 9: TF */
    var TF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TF','balance',currentStartDate,currentEndDate));
-   var TF_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TF','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TF_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TF','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TF","",1);
    tableRow.addCell("Production immobilisée","",1);
@@ -228,7 +274,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 10: TG */
    var TG_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TG','balance',currentStartDate,currentEndDate));
-   var TG_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TG','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TG_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TG','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TG","",1);
    tableRow.addCell("Subventions d’exploitation","",1);
@@ -239,7 +287,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 10: TH */
    var TH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TH','balance',currentStartDate,currentEndDate));
-   var TH_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TH','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TH_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TH','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TH","",1);
    tableRow.addCell("Autres produits","",1);
@@ -250,7 +300,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 10: TI */
    var TI_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TI','balance',currentStartDate,currentEndDate));
-   var TI_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TI','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TI_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TI','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TI","",1);
    tableRow.addCell("Transferts de charges d'exploitation","",1);
@@ -261,7 +313,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 11: RC */
    var RC_exerciceN = getAmount(current,'Gr=RC','balance',currentStartDate,currentEndDate);
-   var RC_exerciceN1 = getAmount(current,'Gr=RC','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RC_exerciceN1 = getAmount(previous,'Gr=RC','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RC","",1);
    tableRow.addCell("Achats de matières premières et fournitures liées","",1);
@@ -272,7 +326,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 12: RD */
    var RD_exerciceN = getAmount(current,'Gr=RD','balance',currentStartDate,currentEndDate);
-   var RD_exerciceN1 = getAmount(current,'Gr=RD','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RD_exerciceN1 = getAmount(previous,'Gr=RD','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RD","",1);
    tableRow.addCell("Variation de stocks de matières premières et fournitures liées","",1);
@@ -283,7 +339,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 13: RE */
    var RE_exerciceN = getAmount(current,'Gr=RE','balance',currentStartDate,currentEndDate);
-   var RE_exerciceN1 = getAmount(current,'Gr=RE','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RE_exerciceN1 = getAmount(previous,'Gr=RE','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RE","",1);
    tableRow.addCell("Autres achats","",1);
@@ -294,7 +352,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 14: RF */
    var RF_exerciceN = getAmount(current,'Gr=RF','balance',currentStartDate,currentEndDate);
-   var RF_exerciceN1 = getAmount(current,'Gr=RF','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RF_exerciceN1 = getAmount(previous,'Gr=RF','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RF","",1);
    tableRow.addCell("Variation de stocks d’autres approvisionnements","",1);
@@ -305,7 +365,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 15: RG */
    var RG_exerciceN = getAmount(current,'Gr=RG','balance',currentStartDate,currentEndDate);
-   var RG_exerciceN1 = getAmount(current,'Gr=RG','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RG_exerciceN1 = getAmount(previous,'Gr=RG','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RG","",1);
    tableRow.addCell("Transports","",1);
@@ -316,7 +378,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 16: RH */
    var RH_exerciceN = getAmount(current,'Gr=RH','balance',currentStartDate,currentEndDate);
-   var RH_exerciceN1 = getAmount(current,'Gr=RH','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RH_exerciceN1 = getAmount(previous,'Gr=RH','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RH","",1);
    tableRow.addCell("Services extérieurs","",1);
@@ -327,7 +391,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 17: RI */
    var RI_exerciceN = getAmount(current,'Gr=RI','balance',currentStartDate,currentEndDate);
-   var RI_exerciceN1 = getAmount(current,'Gr=RI','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RI_exerciceN1 = getAmount(previous,'Gr=RI','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RI","",1);
    tableRow.addCell("Impôts et taxes","",1);
@@ -338,7 +404,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 18: RJ */
    var RJ_exerciceN = getAmount(current,'Gr=RJ','balance',currentStartDate,currentEndDate);
-   var RJ_exerciceN1 = getAmount(current,'Gr=RJ','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RJ_exerciceN1 = getAmount(previous,'Gr=RJ','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RJ","",1);
    tableRow.addCell("Autres charges","",1);
@@ -349,7 +417,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 19: XC */
    var XC_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=133','balance',currentStartDate,currentEndDate));
-   var XC_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=133','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XC_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=133','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XC","greyCell bold",1);
    tableRow.addCell("VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)","greyCell bold",1);
@@ -360,7 +430,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 20: RK */
    var RK_exerciceN = getAmount(current,'Gr=RK','balance',currentStartDate,currentEndDate);
-   var RK_exerciceN1 = getAmount(current,'Gr=RK','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RK_exerciceN1 = getAmount(previous,'Gr=RK','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RK","",1);
    tableRow.addCell("Charges de personnel","",1);
@@ -371,7 +443,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 21: XD */
    var XD_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=134','balance',currentStartDate,currentEndDate));
-   var XD_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=134','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XD_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=134','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XD","greyCell bold",1);
    tableRow.addCell("EXCEDENT BRUT D'EXPLOITATION (XC+RK)","greyCell bold",1);
@@ -382,7 +456,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 22: TJ */
    var TJ_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TJ','balance',currentStartDate,currentEndDate));
-   var TJ_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TJ','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TJ_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TJ','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TJ","",1);
    tableRow.addCell("Reprises d’amortissements, provisions et dépréciations","",1);
@@ -393,7 +469,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 23: RL */
    var RL_exerciceN = getAmount(current,'Gr=RL','balance',currentStartDate,currentEndDate);
-   var RL_exerciceN1 = getAmount(current,'Gr=RL','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RL_exerciceN1 = getAmount(previous,'Gr=RL','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RL","",1);
    tableRow.addCell("Dotations aux amortissements, aux provisions et dépréciations","",1);
@@ -404,7 +482,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 24: XE */
    var XE_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=135','balance',currentStartDate,currentEndDate));
-   var XE_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=135','opening',currentStartDate,currentEndDate));
+   if (previous) {
+   var XE_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=135','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XE","greyCell bold",1);
    tableRow.addCell("RESULTAT D'EXPLOITATION (XD+TJ+RL)","greyCell bold",1);
@@ -415,7 +495,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 25: TK */
    var TK_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TK','balance',currentStartDate,currentEndDate));
-   var TK_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TK','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TK_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TK','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TK","",1);
    tableRow.addCell("Revenus financiers et assimilés","",1);
@@ -426,7 +508,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 26: TL */
    var TL_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TL','balance',currentStartDate,currentEndDate));
-   var TL_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TL','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TL_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TL','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TL","",1);
    tableRow.addCell("Reprises de provisions  et dépréciations financières","",1);
@@ -437,7 +521,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 27: TM */
    var TM_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TM','balance',currentStartDate,currentEndDate));
-   var TM_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TM','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TM_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TM','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TM","",1);
    tableRow.addCell("Transferts de charges financières","",1);
@@ -448,7 +534,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 28: RM */
    var RM_exerciceN = getAmount(current,'Gr=RM','balance',currentStartDate,currentEndDate);
-   var RM_exerciceN1 = getAmount(current,'Gr=RM','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RM_exerciceN1 = getAmount(previous,'Gr=RM','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RM","",1);
    tableRow.addCell("Frais financiers et charges assimilées","",1);
@@ -459,7 +547,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 29: RN */
    var RN_exerciceN = getAmount(current,'Gr=RN','balance',currentStartDate,currentEndDate);
-   var RN_exerciceN1 = getAmount(current,'Gr=RN','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RN_exerciceN1 = getAmount(previous,'Gr=RN','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RN","",1);
    tableRow.addCell("Dotations aux provisions et aux dépréciations financières","",1);
@@ -470,7 +560,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 30: XF */
    var XF_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=136','balance',currentStartDate,currentEndDate));
-   var XF_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=136','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XF_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=136','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XF","greyCell bold",1);
    tableRow.addCell("RESULTAT FINANCIER (somme TK à RN)","greyCell bold",1);
@@ -481,7 +573,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 31: XG */
    var XG_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=137','balance',currentStartDate,currentEndDate));
-   var XG_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=137','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XG_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=137','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XG","greyCell bold",1);
    tableRow.addCell("RESULTAT DES ACTIVITES ORDINAIRES (XE+XF)","greyCell bold",1);
@@ -492,7 +586,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 32: TN */
    var TN_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TN','balance',currentStartDate,currentEndDate));
-   var TN_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TN','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TN_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TN','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TN","",1);
    tableRow.addCell("Produits des cessions d'immobilisations","",1);
@@ -503,7 +599,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 33: TO */
    var TO_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=TO','balance',currentStartDate,currentEndDate));
-   var TO_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=TO','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var TO_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=TO','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("TO","",1);
    tableRow.addCell("Autres Produits HAO","",1);
@@ -514,7 +612,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 34: RO */
    var RO_exerciceN = getAmount(current,'Gr=RO','balance',currentStartDate,currentEndDate);
-   var RO_exerciceN1 = getAmount(current,'Gr=RO','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RO_exerciceN1 = getAmount(previous,'Gr=RO','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RO","",1);
    tableRow.addCell("Valeurs comptables des cessions d'immobilisations","",1);
@@ -525,7 +625,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 35: RP */
    var RP_exerciceN = getAmount(current,'Gr=RP','balance',currentStartDate,currentEndDate);
-   var RP_exerciceN1 = getAmount(current,'Gr=RP','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RP_exerciceN1 = getAmount(previous,'Gr=RP','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RP","",1);
    tableRow.addCell("Autres Charges HAO","",1);
@@ -536,7 +638,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 36: XH */
    var XH_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=138','balance',currentStartDate,currentEndDate));
-   var XH_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=138','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XH_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=138','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XH","greyCell bold",1);
    tableRow.addCell("RESULTAT HORS ACTIVITES ORDINAIRES (somme TN à RP)","greyCell bold",1);
@@ -547,7 +651,9 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 37: RQ */
    var RQ_exerciceN = getAmount(current,'Gr=RQ','balance',currentStartDate,currentEndDate);
-   var RQ_exerciceN1 = getAmount(current,'Gr=RQ','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RQ_exerciceN1 = getAmount(previous,'Gr=RQ','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RQ","",1);
    tableRow.addCell("Participation des travailleurs","",1);
@@ -558,18 +664,22 @@ function createProfitLossStatementReport(current,report) {
 
    /* Row 38: RS */
    var RS_exerciceN = getAmount(current,'Gr=RS','balance',currentStartDate,currentEndDate);
-   var RS_exerciceN1 = getAmount(current,'Gr=RS','opening',currentStartDate,currentEndDate);
+   if (previous) {
+      var RS_exerciceN1 = getAmount(previous,'Gr=RS','balance',previousStartDate,previousEndDate);
+   }
    tableRow = table.addRow();
    tableRow.addCell("RS","",1);
    tableRow.addCell("Impôts sur le résultat","",1);
    tableRow.addCell("-","",1);
    tableRow.addCell("","",1);
    tableRow.addCell(formatValues(RS_exerciceN),"right",1);
-   tableRow.addCell(formatValues(RS_exerciceN1),"right",1);
+   tableRow.addCell(formatValues(RS_exerciceN1),"right",1);   
 
    /* Row 39: XI */
    var XI_exerciceN = Banana.SDecimal.invert(getAmount(current,'Gr=131','balance',currentStartDate,currentEndDate));
-   var XI_exerciceN1 = Banana.SDecimal.invert(getAmount(current,'Gr=131','opening',currentStartDate,currentEndDate));
+   if (previous) {
+      var XI_exerciceN1 = Banana.SDecimal.invert(getAmount(previous,'Gr=131','balance',previousStartDate,previousEndDate));
+   }
    tableRow = table.addRow();
    tableRow.addCell("XI","greyCell bold",1);
    tableRow.addCell("RESULTAT NET (XG+XH+RQ+RS)","greyCell bold",1);
@@ -620,6 +730,62 @@ function formatValues(value) {
       value = "0";
    }
    return Banana.Converter.toLocaleNumberFormat(value);
+}
+
+/***************************************************************************************************************** 
+*
+* The main purpose of this function is to allow the user to enter the accounting period desired and saving it 
+* for the next time the script is run.
+* Every time the user runs of the script he has the possibility to change the date of the accounting period 
+*
+******************************************************************************************************************/
+function getPeriodSettings(param) {
+
+	//The formeters of the period that we need
+	var scriptform = {
+		"selectionStartDate": "",
+		"selectionEndDate": "",
+		"selectionChecked": "false"
+	};
+
+	//Read script settings
+	var data = Banana.document.getScriptSettings();
+
+	//Check if there are previously saved settings and read them
+	if (data.length > 0) {
+		try {
+			var readSettings = JSON.parse(data);
+
+			//We check if "readSettings" is not null, then we fill the formeters with the values just read
+			if (readSettings) {
+				scriptform = readSettings;
+			}
+		} catch (e) {}
+	}
+
+	//We take the accounting "starting date" and "ending date" from the document. These will be used as default dates
+	var docStartDate = Banana.document.startPeriod();
+	var docEndDate = Banana.document.endPeriod();
+
+	//A dialog window is opened asking the user to insert the desired period. By default is the accounting period
+	var selectedDates = Banana.Ui.getPeriod(param.reportName, docStartDate, docEndDate,
+			scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
+
+	//We take the values entered by the user and save them as "new default" values.
+	//This because the next time the script will be executed, the dialog window will contains the new values.
+	if (selectedDates) {
+		scriptform["selectionStartDate"] = selectedDates.startDate;
+		scriptform["selectionEndDate"] = selectedDates.endDate;
+		scriptform["selectionChecked"] = selectedDates.hasSelection;
+
+		//Save script settings
+		var formToString = JSON.stringify(scriptform);
+		var value = Banana.document.setScriptSettings(formToString);
+	} else {
+		//User clicked cancel
+		return;
+	}
+	return scriptform;
 }
 
 /**************************************************************************************

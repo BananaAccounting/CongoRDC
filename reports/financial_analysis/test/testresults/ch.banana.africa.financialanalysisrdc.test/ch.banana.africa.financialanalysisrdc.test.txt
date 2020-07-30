@@ -1,0 +1,71 @@
+%%info_test_name{ch.banana.africa.financialanalysisrdc.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/reports/financial_analysis/./test/ch.banana.africa.financialanalysisrdc.test.js}
+%
+\begin{testcase}{TestFinancialAnalysis}
+\begin{test}{testVerifyMethods}
+\textvalue{The object Test defines methods to verify conditions.}\\
+\keyvalue{Result}{Passed}
+\end{test}
+\begin{test}{testBananaApps}
+\textvalue{This test will tests the BananaApp financialanalysisrdc.js}\\
+\begin{reportvalue}{Report Financial Analysis RDC}
+\begin{longtable}[l]{ l  l }
+LA COM  RDC SA  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+ANALYSE FINANCIÈRE \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{SIGLE } & \multicolumn{6}{l}{LIBELLÉ } & \multicolumn{9}{l}{FORMULE } & \multicolumn{3}{l}{RÉSULTAT }\\
+\multicolumn{17}{l}{Analyse financière par la méthode des flux de fonds } & \multicolumn{3}{l}{En valeur de flux }\\
+\multicolumn{2}{l}{FRN } & \multicolumn{6}{l}{Fonds de Roulement Net } & \multicolumn{9}{l}{(Ressources Stables) - (Actifs Immobilisés Nets) } & \multicolumn{3}{l}{420'559'800.00 }\\
+\multicolumn{2}{l}{FRP } & \multicolumn{6}{l}{Fonds de Roulement Propre } & \multicolumn{9}{l}{(Capitaux Propres) - (Actifs Immobilisés Nets) } & \multicolumn{3}{l}{72'964'800.00 }\\
+\multicolumn{2}{l}{FRE } & \multicolumn{6}{l}{Fonds de Roulement Étranger } & \multicolumn{9}{l}{Dettes financières } & \multicolumn{3}{l}{347'595'000.00 }\\
+\multicolumn{2}{l}{BFRG } & \multicolumn{6}{l}{Besoin en Fonds de Roulement Global } & \multicolumn{9}{l}{(Actif circulant) - (Passif circulant) } & \multicolumn{3}{l}{113'126'920.00 }\\
+\multicolumn{2}{l}{BFRE } & \multicolumn{6}{l}{Besoin en Fonds de Roulement d'Exploitation } & \multicolumn{9}{l}{(Actif circulant d'exploitation) - (Passif circulant d'exploitation) } & \multicolumn{3}{l}{185'410'920.00 }\\
+\multicolumn{2}{l}{BFHAO } & \multicolumn{6}{l}{Besoin en Fonds de Roulement Hors Activité Ordinaire } & \multicolumn{9}{l}{(Actif circulant HAO) - (Passif circulant HAO) } & \multicolumn{3}{l}{-72'284'000.00 }\\
+\multicolumn{2}{l}{TN } & \multicolumn{6}{l}{Trésorerie Nette } & \multicolumn{9}{l}{(Trésorerie-Actif) - (Trésorerie-Passif) } & \multicolumn{3}{l}{294'932'880.00 }\\
+\multicolumn{20}{l}{Analyse de la structure financière par la méthode des ratios }\\
+\multicolumn{2}{l}{RCAFR } & \multicolumn{6}{l}{Ratio de couverture des actifs fixes par les ressources stables } & \multicolumn{9}{l}{(Ressources stables)/(Actifs Immobilisés) } & \multicolumn{3}{l}{2.45 }\\
+\multicolumn{2}{l}{RCAFC } & \multicolumn{6}{l}{Ratio de couverture des actifs fixes par les capitaux propres } & \multicolumn{9}{l}{(Capitaux Propres)/(Actifs Immobilisés) } & \multicolumn{3}{l}{1.25 }\\
+\multicolumn{2}{l}{RBFRG } & \multicolumn{6}{l}{Ratio de couverture de besoin en fonds de roulement global } & \multicolumn{9}{l}{FRN/BFRG } & \multicolumn{3}{l}{3.65 }\\
+\multicolumn{2}{l}{RS } & \multicolumn{6}{l}{Ratio de solvabilité } & \multicolumn{9}{l}{(Passif Total)/(Dettes Totales) } & \multicolumn{3}{l}{1.36 }\\
+\multicolumn{2}{l}{RIF } & \multicolumn{6}{l}{Ratio d'indépendance financière ou autonomie financière } & \multicolumn{9}{l}{(Capitaux Propres)/(Passif Total) } & \multicolumn{3}{l}{0.27 }\\
+\multicolumn{2}{l}{RDF } & \multicolumn{6}{l}{Ratio de dépendance financière } & \multicolumn{9}{l}{(Capitaux Propres)/(Actifs Immobilisés) } & \multicolumn{3}{l}{0.74 }\\
+\multicolumn{2}{l}{RLG } & \multicolumn{6}{l}{Ratio de liquidité générale } & \multicolumn{9}{l}{(Actif Circulant + Trésorerie Actif)/(Passif Circulant + Trésorerie Passif) } & \multicolumn{3}{l}{-1.63 }\\
+\multicolumn{2}{l}{RLR } & \multicolumn{6}{l}{Ratio de liquidité restreinte ou réduite } & \multicolumn{9}{l}{(Créances + Trésorerie Actif)/(Passif Circulant + Trésorerie Passif) } & \multicolumn{3}{l}{0.65 }\\
+\multicolumn{2}{l}{RLI } & \multicolumn{6}{l}{Ratio de liquidité immédiate } & \multicolumn{9}{l}{(Trésorerie Actif)/(Passif Circulant + Trésorerie Passif) } & \multicolumn{3}{l}{0.46 }\\
+\multicolumn{17}{l}{Ratio de la Rentabilité } & \multicolumn{3}{l}{Valeur en \% }\\
+\multicolumn{2}{l}{RA } & \multicolumn{6}{l}{Rentabilité de l'activité } & \multicolumn{9}{l}{(Résultat d'Exploitation * 100)/(Chiffre d'affaire HT) } & \multicolumn{3}{l}{36.97 }\\
+\multicolumn{2}{l}{TM } & \multicolumn{6}{l}{Taux de marque ou Taux de Marge Commerciale } & \multicolumn{9}{l}{(Marge Commerciale * 100)/(Vente des Marchandies HT) } & \multicolumn{3}{l}{37.82 }\\
+\multicolumn{2}{l}{ROI } & \multicolumn{6}{l}{Rentabilité économique ou Return on Investment (ROI) } & \multicolumn{9}{l}{(Résultat d'Exploitation * 100)/(Totat Actif) } & \multicolumn{3}{l}{9.17 }\\
+\multicolumn{2}{l}{RCP } & \multicolumn{6}{l}{Rentabilité des capitaux propres } & \multicolumn{9}{l}{(Résultat net de l'exercice * 100)/(Capitaux propres) } & \multicolumn{3}{l}{34.73 }\\
+\multicolumn{2}{l}{RCS } & \multicolumn{6}{l}{Rentabilité du capital social ou capital initial } & \multicolumn{9}{l}{(Résultat net de l'exercice * 100)/(Capital Social) } & \multicolumn{3}{l}{93.38 }\\
+\end{longtable}
+\end{reportvalue}
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}

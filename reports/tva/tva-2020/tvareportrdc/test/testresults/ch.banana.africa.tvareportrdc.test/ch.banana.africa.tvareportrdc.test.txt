@@ -1,0 +1,669 @@
+%%info_test_name{ch.banana.africa.tvareportrdc.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/reports/tva/tva-2020/tvareportrdc/./test/ch.banana.africa.tvareportrdc.test.js}
+%
+\begin{testcase}{TestVatReportRDC}
+\begin{test}{testBananaApp}
+\begin{reportvalue}{Whole year report}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{4}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{2}{l}{\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+DÉCLARATION DE LA TAXE SUR LA VALEUR AJOUTÉE \\
+Mois de (2): DÉCEMBRE \\
+(à souscrire obligatoirement au plus tard le 15 du mois suivant) \\
+\\
+\end{longtable}
+}\\
+\multicolumn{4}{l}{SERVICE (1): }\\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{11}{l}{I. IDENTIFICATION DU REDEVABLE (3) } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Nom ou Raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & \multicolumn{9}{l}{234D 45 }\\
+\multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
+\multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{304'410'000.00 } & \multicolumn{4}{l}{48'705'600.00 }\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{240'000.00 }\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{187'000.00 } & \multicolumn{4}{l}{29'920.00 }\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{8'750'000.00 } & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{20'000'000.00 } & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{334'847'000.00 } & \multicolumn{4}{l}{48'975'520.00 }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
+10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{4'540'800.00 } & \multicolumn{4}{l}{1'878'720.00 } & \multicolumn{4}{l}{6'419'520.00 }\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{3'027'200.00 } & \multicolumn{4}{l}{28'150'400.00 } & \multicolumn{4}{l}{31'177'600.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{22'400.00 } & \multicolumn{4}{l}{22'400.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{613'920.00 } & \multicolumn{4}{l}{613'920.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{7'568'000.00 } & \multicolumn{4}{l}{30'665'440.00 } & \multicolumn{4}{l}{38'233'440.00 }\\
+16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
+17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{38'452'640.00 }\\
+\multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{409'600.00 } & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{6'400.00 }\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{10'926'080.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{AVIS DE CERTIFICATION } & \multicolumn{2}{l}{} & \multicolumn{4}{l}{CHÈQUE CERTIFIÉ } & \multicolumn{2}{l}{} & \multicolumn{3}{l}{VIREMENT } & \multicolumn{2}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{}\\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
+Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{VIII. RÉSERVÉ À L'ADMINISTRATION (11) }\\
+\multicolumn{7}{l}{Nº de la Quittance } & \multicolumn{6}{l}{Date de la Quittance } & \multicolumn{7}{l}{Cachet de l'Administration }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{} & \multicolumn{7}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{IMPORTANT }\\
+\multicolumn{20}{l}{Cette impression ne peut pas être envoyée aux services des impôts. }\\
+\multicolumn{20}{l}{Copier les données sur le formulaire officiel. }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{First semester report}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{4}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{2}{l}{\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+DÉCLARATION DE LA TAXE SUR LA VALEUR AJOUTÉE \\
+Mois de (2): JUIN \\
+(à souscrire obligatoirement au plus tard le 15 du mois suivant) \\
+\\
+\end{longtable}
+}\\
+\multicolumn{4}{l}{SERVICE (1): }\\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{11}{l}{I. IDENTIFICATION DU REDEVABLE (3) } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Nom ou Raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & \multicolumn{9}{l}{234D 45 }\\
+\multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
+\multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{303'610'000.00 } & \multicolumn{4}{l}{48'577'600.00 }\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{240'000.00 }\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{187'000.00 } & \multicolumn{4}{l}{29'920.00 }\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{8'750'000.00 } & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{20'000'000.00 } & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{334'047'000.00 } & \multicolumn{4}{l}{48'847'520.00 }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
+10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{4'540'800.00 } & \multicolumn{4}{l}{1'878'720.00 } & \multicolumn{4}{l}{6'419'520.00 }\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{3'027'200.00 } & \multicolumn{4}{l}{28'070'400.00 } & \multicolumn{4}{l}{31'097'600.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{22'400.00 } & \multicolumn{4}{l}{22'400.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{556'320.00 } & \multicolumn{4}{l}{556'320.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{7'568'000.00 } & \multicolumn{4}{l}{30'527'840.00 } & \multicolumn{4}{l}{38'095'840.00 }\\
+16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
+17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{38'315'040.00 }\\
+\multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{409'600.00 } & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{6'400.00 }\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{10'935'680.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{AVIS DE CERTIFICATION } & \multicolumn{2}{l}{} & \multicolumn{4}{l}{CHÈQUE CERTIFIÉ } & \multicolumn{2}{l}{} & \multicolumn{3}{l}{VIREMENT } & \multicolumn{2}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{}\\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
+Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{VIII. RÉSERVÉ À L'ADMINISTRATION (11) }\\
+\multicolumn{7}{l}{Nº de la Quittance } & \multicolumn{6}{l}{Date de la Quittance } & \multicolumn{7}{l}{Cachet de l'Administration }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{} & \multicolumn{7}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{IMPORTANT }\\
+\multicolumn{20}{l}{Cette impression ne peut pas être envoyée aux services des impôts. }\\
+\multicolumn{20}{l}{Copier les données sur le formulaire officiel. }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Second semester report}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{4}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{2}{l}{\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+DÉCLARATION DE LA TAXE SUR LA VALEUR AJOUTÉE \\
+Mois de (2): DÉCEMBRE \\
+(à souscrire obligatoirement au plus tard le 15 du mois suivant) \\
+\\
+\end{longtable}
+}\\
+\multicolumn{4}{l}{SERVICE (1): }\\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{11}{l}{I. IDENTIFICATION DU REDEVABLE (3) } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Nom ou Raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & \multicolumn{9}{l}{234D 45 }\\
+\multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
+\multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
+10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{137'600.00 } & \multicolumn{4}{l}{137'600.00 }\\
+16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
+17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{356'800.00 }\\
+\multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{228'800.00 }\\
+24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{AVIS DE CERTIFICATION } & \multicolumn{2}{l}{} & \multicolumn{4}{l}{CHÈQUE CERTIFIÉ } & \multicolumn{2}{l}{} & \multicolumn{3}{l}{VIREMENT } & \multicolumn{2}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{}\\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
+Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{VIII. RÉSERVÉ À L'ADMINISTRATION (11) }\\
+\multicolumn{7}{l}{Nº de la Quittance } & \multicolumn{6}{l}{Date de la Quittance } & \multicolumn{7}{l}{Cachet de l'Administration }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{} & \multicolumn{7}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{IMPORTANT }\\
+\multicolumn{20}{l}{Cette impression ne peut pas être envoyée aux services des impôts. }\\
+\multicolumn{20}{l}{Copier les données sur le formulaire officiel. }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{First quarter report}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{4}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{2}{l}{\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+DÉCLARATION DE LA TAXE SUR LA VALEUR AJOUTÉE \\
+Mois de (2): MARS \\
+(à souscrire obligatoirement au plus tard le 15 du mois suivant) \\
+\\
+\end{longtable}
+}\\
+\multicolumn{4}{l}{SERVICE (1): }\\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{11}{l}{I. IDENTIFICATION DU REDEVABLE (3) } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Nom ou Raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & \multicolumn{9}{l}{234D 45 }\\
+\multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
+\multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{303'610'000.00 } & \multicolumn{4}{l}{48'577'600.00 }\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{1'500'000.00 } & \multicolumn{4}{l}{240'000.00 }\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{187'000.00 } & \multicolumn{4}{l}{29'920.00 }\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{8'750'000.00 } & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{20'000'000.00 } & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{334'047'000.00 } & \multicolumn{4}{l}{48'847'520.00 }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
+10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{4'540'800.00 } & \multicolumn{4}{l}{1'878'720.00 } & \multicolumn{4}{l}{6'419'520.00 }\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{3'027'200.00 } & \multicolumn{4}{l}{27'926'400.00 } & \multicolumn{4}{l}{30'953'600.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{16'000.00 } & \multicolumn{4}{l}{16'000.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{501'920.00 } & \multicolumn{4}{l}{501'920.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{7'568'000.00 } & \multicolumn{4}{l}{30'323'040.00 } & \multicolumn{4}{l}{37'891'040.00 }\\
+16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
+17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{38'110'240.00 }\\
+\multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{409'600.00 } & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{6'400.00 }\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{11'140'480.00 } & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{AVIS DE CERTIFICATION } & \multicolumn{2}{l}{} & \multicolumn{4}{l}{CHÈQUE CERTIFIÉ } & \multicolumn{2}{l}{} & \multicolumn{3}{l}{VIREMENT } & \multicolumn{2}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{}\\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
+Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{VIII. RÉSERVÉ À L'ADMINISTRATION (11) }\\
+\multicolumn{7}{l}{Nº de la Quittance } & \multicolumn{6}{l}{Date de la Quittance } & \multicolumn{7}{l}{Cachet de l'Administration }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{} & \multicolumn{7}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{IMPORTANT }\\
+\multicolumn{20}{l}{Cette impression ne peut pas être envoyée aux services des impôts. }\\
+\multicolumn{20}{l}{Copier les données sur le formulaire officiel. }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Second quarter report}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{4}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{2}{l}{\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+DÉCLARATION DE LA TAXE SUR LA VALEUR AJOUTÉE \\
+Mois de (2): JUIN \\
+(à souscrire obligatoirement au plus tard le 15 du mois suivant) \\
+\\
+\end{longtable}
+}\\
+\multicolumn{4}{l}{SERVICE (1): }\\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{11}{l}{I. IDENTIFICATION DU REDEVABLE (3) } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Nom ou Raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & \multicolumn{9}{l}{234D 45 }\\
+\multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
+\multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
+10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{144'000.00 } & \multicolumn{4}{l}{144'000.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{6'400.00 } & \multicolumn{4}{l}{6'400.00 }\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{54'400.00 } & \multicolumn{4}{l}{54'400.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{204'800.00 } & \multicolumn{4}{l}{204'800.00 }\\
+16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
+17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{424'000.00 }\\
+\multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{424'000.00 }\\
+24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{AVIS DE CERTIFICATION } & \multicolumn{2}{l}{} & \multicolumn{4}{l}{CHÈQUE CERTIFIÉ } & \multicolumn{2}{l}{} & \multicolumn{3}{l}{VIREMENT } & \multicolumn{2}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{}\\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
+Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{VIII. RÉSERVÉ À L'ADMINISTRATION (11) }\\
+\multicolumn{7}{l}{Nº de la Quittance } & \multicolumn{6}{l}{Date de la Quittance } & \multicolumn{7}{l}{Cachet de l'Administration }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{} & \multicolumn{7}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{IMPORTANT }\\
+\multicolumn{20}{l}{Cette impression ne peut pas être envoyée aux services des impôts. }\\
+\multicolumn{20}{l}{Copier les données sur le formulaire officiel. }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Third quarter report}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{4}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{2}{l}{\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+DÉCLARATION DE LA TAXE SUR LA VALEUR AJOUTÉE \\
+Mois de (2): SEPTEMBRE \\
+(à souscrire obligatoirement au plus tard le 15 du mois suivant) \\
+\\
+\end{longtable}
+}\\
+\multicolumn{4}{l}{SERVICE (1): }\\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{11}{l}{I. IDENTIFICATION DU REDEVABLE (3) } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Nom ou Raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & \multicolumn{9}{l}{234D 45 }\\
+\multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
+\multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{800'000.00 } & \multicolumn{4}{l}{128'000.00 }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
+10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{80'000.00 } & \multicolumn{4}{l}{80'000.00 }\\
+16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
+17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{299'200.00 }\\
+\multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{171'200.00 }\\
+24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{AVIS DE CERTIFICATION } & \multicolumn{2}{l}{} & \multicolumn{4}{l}{CHÈQUE CERTIFIÉ } & \multicolumn{2}{l}{} & \multicolumn{3}{l}{VIREMENT } & \multicolumn{2}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{}\\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
+Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{VIII. RÉSERVÉ À L'ADMINISTRATION (11) }\\
+\multicolumn{7}{l}{Nº de la Quittance } & \multicolumn{6}{l}{Date de la Quittance } & \multicolumn{7}{l}{Cachet de l'Administration }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{} & \multicolumn{7}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{IMPORTANT }\\
+\multicolumn{20}{l}{Cette impression ne peut pas être envoyée aux services des impôts. }\\
+\multicolumn{20}{l}{Copier les données sur le formulaire officiel. }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Fourth quarter report}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{4}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{2}{l}{\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+DÉCLARATION DE LA TAXE SUR LA VALEUR AJOUTÉE \\
+Mois de (2): DÉCEMBRE \\
+(à souscrire obligatoirement au plus tard le 15 du mois suivant) \\
+\\
+\end{longtable}
+}\\
+\multicolumn{4}{l}{SERVICE (1): }\\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{11}{l}{I. IDENTIFICATION DU REDEVABLE (3) } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Nom ou Raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & \multicolumn{9}{l}{234D 45 }\\
+\multicolumn{8}{l}{Sigle: } & \multicolumn{3}{l}{Adresse Postale: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{Adresse Physique: } & \multicolumn{3}{l}{Nº téléphone: } & \multicolumn{9}{l}{+243 898752062 }\\
+\multicolumn{8}{l}{Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Fax: } & \multicolumn{9}{l}{}\\
+\multicolumn{8}{l}{RD Congo } & \multicolumn{3}{l}{E-mail: } & \multicolumn{9}{l}{ddrkinano1@gmail.com }\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{8}{l}{II. OPÉRATIONS RÉALISÉES (4) } & \multicolumn{4}{l}{Chiffre d'affaires réalisé du mois* } & \multicolumn{4}{l}{Chiffre d'affaires imposable du mois (a) } & \multicolumn{4}{l}{TVA Collectée(b)=a * 16\% }\\
+1  & \multicolumn{7}{l}{Livraisons de biens } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+2  & \multicolumn{7}{l}{Prestations de services } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+3  & \multicolumn{7}{l}{Livraisons de biens à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+4  & \multicolumn{7}{l}{Prestations de services à soi-même } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+5  & \multicolumn{7}{l}{Opérations afférentes aux marchés publics à financement extérieur } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+6  & \multicolumn{7}{l}{Exportations et opérations assimilées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+7  & \multicolumn{7}{l}{Opérations exonérées } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+8  & \multicolumn{7}{l}{Opérations non imposables } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+9  & \multicolumn{7}{l}{Total } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{12}{l}{III. PRESTATIONS REÇUES DES PRESTATAIRES NON ÉTABLIS EN RDC } & \multicolumn{4}{l}{Montant des factures (c) } & \multicolumn{4}{l}{TVA Collectée(d)=c * 16\% }\\
+10  & \multicolumn{11}{l}{Prestations reçues des prestataires non établis en RDC } & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{Prorata(5)      :    \% } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{IV. DÉDUCTIONS/Taxe déductible sur:(6) } & \multicolumn{5}{l}{Importations (e) } & \multicolumn{4}{l}{Local (f) } & \multicolumn{4}{l}{Total(g)=e + f }\\
+11  & \multicolumn{6}{l}{Immobilisations } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+12  & \multicolumn{6}{l}{Marchandises } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+13  & \multicolumn{6}{l}{Matières premières } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{}\\
+14  & \multicolumn{6}{l}{Autres biens et services } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
+15  & \multicolumn{6}{l}{Total TVA déductible (g11+g12+g13+g14) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{57'600.00 } & \multicolumn{4}{l}{57'600.00 }\\
+16  & \multicolumn{6}{l}{Report de crédit du mois précédent (déclaration précédente, ligne 24) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{219'200.00 }\\
+17  & \multicolumn{6}{l}{Montant de la TVA déductible (g15+g16) } & \multicolumn{5}{l}{} & \multicolumn{4}{l}{} & \multicolumn{4}{l}{276'800.00 }\\
+\multicolumn{7}{l}{V. RÉGULARISATIONS (7) } & \multicolumn{10}{l}{h } & \multicolumn{3}{l}{}\\
+18  & \multicolumn{6}{l}{Reversement de TVA } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+19  & \multicolumn{6}{l}{Complément de déduction } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+20  & \multicolumn{6}{l}{TVA retenue à la source par les entreprises minières } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+21  & \multicolumn{6}{l}{Récupération de la TVA déductible sur marchés publics à financement extérieur } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{20}{l}{  }\\
+\multicolumn{7}{l}{VI. CALCUL DE L'IMPÔT (8) } & \multicolumn{10}{l}{i }\\
+22  & \multicolumn{6}{l}{TVA nette à verser (b9+d10+h18-g17-h19-h20-b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+23  & \multicolumn{6}{l}{Crédit de TVA (g17+h19+h20+b5-b9-d10-h18) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{276'800.00 }\\
+24  & \multicolumn{6}{l}{Remboursement de crédit de TVA demandé (montant figurant sur la demande de remboursement) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+25  & \multicolumn{6}{l}{Crédit de TVA reportable (i23-i24) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+26  & \multicolumn{6}{l}{TVA sur marchés publics à financement extérieur (case b5) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+27  & \multicolumn{6}{l}{TVA POUR COMPTE DES TIERS } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+28  & \multicolumn{6}{l}{MONTANT À PAYER (i22+i26+i27) } & \multicolumn{5}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{7}{l}{MODE DE PAIEMENT (9) } & \multicolumn{13}{l}{  }\\
+\multicolumn{7}{l}{AVIS DE CERTIFICATION } & \multicolumn{2}{l}{} & \multicolumn{4}{l}{CHÈQUE CERTIFIÉ } & \multicolumn{2}{l}{} & \multicolumn{3}{l}{VIREMENT } & \multicolumn{2}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l }
+\multicolumn{4}{l}{}\\
+\multicolumn{2}{l}{} & Fait à       KINSHASA I  & ,le 24/07/2020 \\
+\multicolumn{4}{l}{Déclaré conforme à nos écritures, }\\
+Sceau de l'entreprise  & \multicolumn{2}{l}{Nom et qualité du signataire (10) } & Signature \\
+\multicolumn{4}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{VIII. RÉSERVÉ À L'ADMINISTRATION (11) }\\
+\multicolumn{7}{l}{Nº de la Quittance } & \multicolumn{6}{l}{Date de la Quittance } & \multicolumn{7}{l}{Cachet de l'Administration }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{} & \multicolumn{7}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{IMPORTANT }\\
+\multicolumn{20}{l}{Cette impression ne peut pas être envoyée aux services des impôts. }\\
+\multicolumn{20}{l}{Copier les données sur le formulaire officiel. }\\
+\end{longtable}
+\end{reportvalue}
+\begin{tablevalue}{Vat codes table}{ l  l  l  l  l  l  l  l  l  l }
+Group & VatCode & Description & Gr & Gr1 & IsDue & AmountType & VatRate & VatRateOnGross & VatAccount\\
+ &  & Explications (Chiffres) &  &  &  &  &  &  & \\
+ &  & V  = Chiffre d'affaires  (Ventes et services)  &  &  &  &  &  &  & \\
+ &  & I = Importations &  &  &  &  &  &  & \\
+ &  & DE = Déductions Importations &  &  &  &  &  &  & \\
+ &  & DL = Déductions local &  &  &  &  &  &  & \\
+ &  & R = Régularisations &  &  &  &  &  &  & \\
+ &  & Le chiffre est le numéro de ligne de la déclaration de TVA. &  &  &  &  &  &  & \\
+ &  & Colonne Gr1 le chiffre de la déclarations TVA &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & Informations codes TVA (ne pas modifier svp) &  &  &  &  &  &  & \\
+ &  & Republique Démocratique du Congo &  &  &  &  &  &  & \\
+ &  & Version depuis 2020 &  &  &  &  &  &  & \\
+ &  & id=vatcodes-cdf-2020.20200501 &  &  &  &  &  &  & \\
+ &  & Dernière mise à jour: 01.05.2020 &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & II - OPERATIONS REALISEES &  &  &  &  &  &  & \\
+ & V1 & Livraisons des biens & V & 1 & 1 & 1 & 16.00 &  & 443100\\
+ & V2 & Préstations de service & V & 2 & 1 & 1 & 16.00 &  & 443200\\
+ & V31 & Livrison de biens  A Soi-Même & V3 & 3 & 1 & 2 & 16.00 &  & 443400\\
+ & V32 &   Production Livrée A Soi-Même/Immo incorp & V3 & 3 & 1 & 2 & 16.00 &  & 443411\\
+ & V33 &   Production Livrée A Soi-Même/Immo corp & V3 & 3 & 1 & 2 & 16.00 &  & 443412\\
+V3 &  & Livraisons de biens à sois-même & V &  &  &  &  &  & \\
+ & V4 & Préstations de service à sois-même & V & 4 & 1 & 2 & 16.00 &  & 443400\\
+ & V5 & Opérations afférentes aux marchés publics à financement extériuer & V & 5 & 1 & 1 & 16.00 &  & 443300\\
+ & V6 & Exportations et opérations assimilées & V & 6 & 1 &  &  &  & \\
+ & V7 & Opérations exonérées & V & 7 & 1 &  &  &  & \\
+ & V8 & Opérations non imposables & V & 8 & 1 &  &  &  & \\
+V &  & TOTAL opérations realisées & T &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & III PRESTATIONS RECUES DES PRESTATAIRES NON ETABLIS EN RDC &  &  &  &  &  &  & \\
+ & I10 & Prestations recues des prestataires non établis en RDC & I & 10 & 1 & 1 & 16.00 &  & \\
+I &  & Total prestations reçus non RDC & T &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & IV - DEDUCTIONS/Taxe déductible &  &  &  &  &  &  & \\
+ & D111 & Immobilisations Incorporelles(déductible) & D11 & 11 &  & 1 & 16.00 &  & 445110\\
+ & D112 & Immobilisations Corporelles(déductible) & D11 & 11 &  & 1 & 16.00 &  & 445120\\
+ & D113 & TVA récupérable sur Immob corp prod pour soi-même & D11 & 11 &  & 2 & 16.00 &  & 445120\\
+ & D114 & TVA récupérable sur immo incorp prod pour soi même  & D11 & 11 &  & 2 & 16.00 &  & 445110\\
+D11 &  & Immobilisations (déductible) & D &  &  &  &  &  & \\
+ & D121 & Marchandises (déductible) & D12 & 12 &  & 1 & 16.00 &  & 445200\\
+ & D122 & Marchandises (déductible) Fact non parvenue & D12 & 12 &  & 1 & 16.00 &  & 445500\\
+D12 &  & Marchandises (déductible) & D &  &  &  &  &  & \\
+ & D131 & Matières premières (déductible) & D13 & 13 &  & 1 & 16.00 &  & 445200\\
+ & D132 & Matières premières (déductible) Fact non parvenue & D13 & 13 &  & 1 & 16.00 &  & 445500\\
+D13 &  & Matières premières (déductible) & D &  &  &  &  &  & \\
+ & D141 & TVA sur Transport (déductible) & D14 & 14 &  & 1 & 16.00 &  & 445300\\
+ & D142 & Autres biens et services (déductible) & D14 & 14 &  & 1 & 16.00 &  & 445400\\
+D14 &  & Autres biens et services (déductible) & D &  &  &  &  &  & \\
+D &  & Total déductions & T &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & V REGULARISATIONS &  &  &  &  &  &  & \\
+ & R181 & REVERSEMENT TVA SUR BATIMENTS & R18 & V-18 & 1 & 2 & 16.00 &  & 443610\\
+ & R182 & REVERSEMENT TVA SUR MATERIELS DE TRANSPORTS & R18 & V-18 & 1 & 2 & 16.00 &  & 443620\\
+ & R183 & REVERSEMENT TVA SUR MATERIELS ET MOBILIERS & R18 & V-18 & 1 & 2 & 16.00 &  & 443630\\
+ & R184 & REVERSEMENT TVA SUR MATIERES PREMIERES & R18 & V-18 & 1 & 2 & 16.00 &  & 443640\\
+R18 &  & Reversement de TVA & R &  &  &  &  &  & \\
+ & R19 & Compément de déductions & R & V-19 &  & 2 & 16.00 &  & 445700\\
+ & R20 & TVA retenue à la source par les entreprises minières & R & V-20 &  &  &  &  & \\
+ & R21 & Récuperation de la TVA déductible sur marchés publics à financement extérieur & R & V-21 &  &  &  &  & \\
+R &  & Total régularisations & T &  &  &  &  &  & \\
+T &  & TOTAL &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & TVA Extra info &  &  &  &  &  &  & \\
+ & :IMP & Importations &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+\end{tablevalue}
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}

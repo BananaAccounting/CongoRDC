@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{/Users/ivan/Documents/GitHub/Africa/RDC/statements/profitlossstatement/test/ch.banana.africa.profitlossstatementrdc.test.js}
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/reports/statements/profitlossstatement/./test/ch.banana.africa.profitlossstatementrdc.test.js}
 %
 \begin{testcase}{TestProfitLossStatementRDC}
 \begin{test}{testVerifyMethods}
@@ -29,58 +29,58 @@
 \textvalue{This test will tests the BananaApp profitlossstatement\_rdc.js}\\
 \begin{reportvalue}{Report Profit \& Loss Statement RDC}
 \begin{longtable}[l]{ l  l }
-COMPANY NAME  & Exercice clos le 31.12.2018 \\
- -  -   & Durée (en mois) 12 \\
+LA COM  RDC SA  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
 \end{longtable}
   \\
   \\
   \\
-COMPTE DE RESULTAT AU 31 DECEMBRE 2018 \\
+COMPTE DE RESULTAT AU 31 DECEMBRE 2020 \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l  l }
-REF  & LIBELLES  &  & Note  & EXERCICE AU 31/12/2018 \newline   \newline NET \newline  & EXERCICE AU 31/12/2017 \newline   \newline NET \newline \\
-TA  & Ventes de marchandises  & +  & 21  & 190'000'000.00  & 0.00 \\
-RA  & Achats de marchandises  & -  & 22  & 182'160'000.00  & 0.00 \\
-RB  & Variation de stocks de marchandises  & -  & 6  & -2'260'000.00  & 0.00 \\
-XA  & MARGE COMMERCIALE (Somme TA à RB)  &  &  & 10'100'000.00  & 0.00 \\
+REF  & LIBELLES  &  & Note  & EXERCICE AU 31/12/2020 \newline   \newline NET \newline  & EXERCICE AU 31/12/2019 \newline   \newline NET \newline \\
+TA  & Ventes de marchandises  & +  & 21  & 333'160'000.00  & 328'750'000.00 \\
+RA  & Achats de marchandises  & -  & 22  & 218'910'000.00  & 216'920'000.00 \\
+RB  & Variation de stocks de marchandises  & -  & 6  & -11'755'000.00  & -10'670'000.00 \\
+XA  & MARGE COMMERCIALE (Somme TA à RB)  &  &  & 126'005'000.00  & 122'500'000.00 \\
 TB  & Ventes de produits fabriqués  & +  & 21  & 0.00  & 0.00 \\
 TC  & Travaux, services vendus  & +  & 21  & 0.00  & 0.00 \\
-TD  & Produits accessoires  & +  & 21  & 1'200'000.00  & 0.00 \\
-XB  & CHIFFRE D'AFFAIRES (A + B + C + D)  &  &  & 191'200'000.00  & 0.00 \\
+TD  & Produits accessoires  & +  & 21  & 1'500'000.00  & 1'500'000.00 \\
+XB  & CHIFFRE D'AFFAIRES (A + B + C + D)  &  &  & 334'660'000.00  & 330'250'000.00 \\
 TE  & Production stockée (ou déstockage)  & +  & 6  & 0.00  & 0.00 \\
-TF  & Production immobilisée  &  & 21  & 0.00  & 0.00 \\
+TF  & Production immobilisée  &  & 21  & 187'000.00  & 2'000'000.00 \\
 TG  & Subventions d’exploitation  &  & 21  & 0.00  & 0.00 \\
 TH  & Autres produits  & +  & 21  & 0.00  & 0.00 \\
 TI  & Transferts de charges d'exploitation  & +  & 12  & 0.00  & 0.00 \\
-RC  & Achats de matières premières et fournitures liées  & -  & 22  & 0.00  & 0.00 \\
+RC  & Achats de matières premières et fournitures liées  & -  & 22  & 100'000.00  & 1'500'000.00 \\
 RD  & Variation de stocks de matières premières et fournitures liées  & -  & 6  & 0.00  & 0.00 \\
-RE  & Autres achats  & -  & 22  & 0.00  & 0.00 \\
+RE  & Autres achats  & -  & 22  & 40'000.00  & 0.00 \\
 RF  & Variation de stocks d’autres approvisionnements  & -  & 6  & 0.00  & 0.00 \\
 RG  & Transports  & -  & 23  & 0.00  & 0.00 \\
-RH  & Services extérieurs  & -  & 24  & 2'600'000.00  & 0.00 \\
-RI  & Impôts et taxes  & -  & 25  & 30'000.00  & 0.00 \\
+RH  & Services extérieurs  & -  & 24  & 3'780'600.00  & 3'500'000.00 \\
+RI  & Impôts et taxes  & -  & 25  & 0.00  & 0.00 \\
 RJ  & Autres charges  & -  & 26  & 0.00  & 0.00 \\
-XC  & VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)  &  &  & 8'670'000.00  & 0.00 \\
+XC  & VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)  &  &  & 123'771'400.00  & 121'000'000.00 \\
 RK  & Charges de personnel  & -  & 27  & 0.00  & 0.00 \\
-XD  & EXCEDENT BRUT D'EXPLOITATION (XC+RK)  &  & 28  & 8'670'000.00  & 0.00 \\
+XD  & EXCEDENT BRUT D'EXPLOITATION (XC+RK)  &  & 28  & 123'771'400.00  & 121'000'000.00 \\
 TJ  & Reprises d’amortissements, provisions et dépréciations  & +  & 28  & 0.00  & 0.00 \\
-RL  & Dotations aux amortissements, aux provisions et dépréciations  & -  & 3C\&28   & 1'766'666.67  & 0.00 \\
-XE  & RESULTAT D'EXPLOITATION (XD+TJ+RL)  &  &  & 6'903'333.33  & 0.00 \\
-TK  & Revenus financiers et assimilés  & +  & 29  & 140'000.00  & 0.00 \\
+RL  & Dotations aux amortissements, aux provisions et dépréciations  & -  & 3C\&28   & 53'333.00  & 53'333.00 \\
+XE  & RESULTAT D'EXPLOITATION (XD+TJ+RL)  &  &  & 123'718'067.00  & 120'946'667.00 \\
+TK  & Revenus financiers et assimilés  & +  & 29  & 0.00  & 0.00 \\
 TL  & Reprises de provisions  et dépréciations financières  & +  & 28  & 0.00  & 0.00 \\
 TM  & Transferts de charges financières  & +  & 12  & 0.00  & 0.00 \\
-RM  & Frais financiers et charges assimilées  & -  & 29  & 3'100'000.00  & 0.00 \\
+RM  & Frais financiers et charges assimilées  & -  & 29  & 4'595'000.00  & 9'000'000.00 \\
 RN  & Dotations aux provisions et aux dépréciations financières  & -  & 3C\&28  & 0.00  & 0.00 \\
-XF  & RESULTAT FINANCIER (somme TK à RN)  &  &  & -2'960'000.00  & 0.00 \\
-XG  & RESULTAT DES ACTIVITES ORDINAIRES (XE+XF)  &  &  & 3'943'333.33  & 0.00 \\
-TN  & Produits des cessions d'immobilisations  & +  & 3D  & 6'000'000.00  & 0.00 \\
-TO  & Autres Produits HAO  & +  & 30  & 300'000.00  & 0.00 \\
-RO  & Valeurs comptables des cessions d'immobilisations  & -  & 3D  & 3'333'333.33  & 0.00 \\
-RP  & Autres Charges HAO  & -  & 30  & 250'000.00  & 0.00 \\
-XH  & RESULTAT HORS ACTIVITES ORDINAIRES (somme TN à RP)  &  &  & 2'716'666.67  & 0.00 \\
-RQ  & Participation des travailleurs  & -  & 30  & 666'000.00  & 0.00 \\
-RS  & Impôts sur le résultat  & -  &  & 2'331'000.00  & 0.00 \\
-XI  & RESULTAT NET (XG+XH+RQ+RS)  &  &  & 3'663'000.00  & 0.00 \\
+XF  & RESULTAT FINANCIER (somme TK à RN)  &  &  & -4'595'000.00  & -9'000'000.00 \\
+XG  & RESULTAT DES ACTIVITES ORDINAIRES (XE+XF)  &  &  & 119'123'067.00  & 111'946'667.00 \\
+TN  & Produits des cessions d'immobilisations  & +  & 3D  & 29'800'000.00  & 9'800'000.00 \\
+TO  & Autres Produits HAO  & +  & 30  & 300'000.00  & 300'000.00 \\
+RO  & Valeurs comptables des cessions d'immobilisations  & -  & 3D  & 22'916'267.00  & 2'506'667.00 \\
+RP  & Autres Charges HAO  & -  & 30  & 250'000.00  & 250'000.00 \\
+XH  & RESULTAT HORS ACTIVITES ORDINAIRES (somme TN à RP)  &  &  & 6'933'733.00  & 7'343'333.00 \\
+RQ  & Participation des travailleurs  & -  & 30  & 0.00  & 0.00 \\
+RS  & Impôts sur le résultat  & -  &  & 0.00  & 0.00 \\
+XI  & RESULTAT NET (XG+XH+RQ+RS)  &  &  & 126'056'800.00  & 119'290'000.00 \\
 \end{longtable}
 \end{reportvalue}
 \keyvalue{Result}{Passed}

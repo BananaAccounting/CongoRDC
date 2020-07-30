@@ -1,0 +1,678 @@
+%%info_test_name{ch.banana.africa.deductiontvardc.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/reports/tva/tva-2020/etat_detaille_deduction_tva/./test/ch.banana.africa.deductiontvardc.test.js}
+%
+\begin{testcase}{TestVATDeductionReportRDC}
+\begin{test}{testBananaApp}
+\begin{reportvalue}{Whole year report}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{20}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{20}{l}{DIRECTION GÉNÉRALE DES IMPÔTS }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{} & \multicolumn{16}{l}{\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{}\\
+\multicolumn{16}{l}{ÉTAT DÉTAILLÉ DES DÉDUCTIONS DE TVA }\\
+\multicolumn{16}{l}{Mois de réalisation des opérations: DÉCEMBRE }\\
+\multicolumn{16}{l}{(à joindre obligatoirement à la déclaration mensuelle à la taxe sur la valeur ajoutée) }\\
+\end{longtable}
+}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{I. IDENTIFICATION DU REDEVABLE }\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{8}{l}{Nom ou raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & 2  & 3  & 4  & D  &    & 4  & 5  &  & \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{2}{l}{Sigle :  } & \multicolumn{3}{l}{Adresse postale :  }\\
+\multicolumn{2}{l}{Adresse physique : Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Nº Téléphone : +243 898752062 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{Fax :  }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{E-mail : ddrkinano1@gmail.com }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{II. DÉDUCTIONS OPÉRÉES }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{1. Achats locaux de biens et services }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{Nom ou raison sociale du } & \multicolumn{5}{l}{Numéro Impôt du fournisseur } & \multicolumn{5}{l}{Facture } & \multicolumn{5}{l}{Montant de la TVA payée }\\
+\multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/001 } & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{96'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{346 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{960'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{42 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{40'800.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-05 } & \multicolumn{5}{l}{-9'600.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{13'920.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{  } & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{29'920.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{05 } & \multicolumn{3}{l}{2020-03-01 } & \multicolumn{5}{l}{640'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{34 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-05-31 } & \multicolumn{5}{l}{6'400.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{144'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{41 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{345 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{2. Importations }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{Déclaration de la mise à la consommation }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{Nº de la déclaration } & \multicolumn{3}{l}{Date } & \multicolumn{15}{l}{Montant de la TVA payée }\\
+\multicolumn{2}{l}{456 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{15}{l}{4'128'000.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{15}{l}{412'800.00 }\\
+\multicolumn{2}{l}{2356 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{15}{l}{2'752'000.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{15}{l}{275'200.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{20}{l}{Sceau de l'Entreprise }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{First semester report}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{20}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{20}{l}{DIRECTION GÉNÉRALE DES IMPÔTS }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{} & \multicolumn{16}{l}{\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{}\\
+\multicolumn{16}{l}{ÉTAT DÉTAILLÉ DES DÉDUCTIONS DE TVA }\\
+\multicolumn{16}{l}{Mois de réalisation des opérations: JUIN }\\
+\multicolumn{16}{l}{(à joindre obligatoirement à la déclaration mensuelle à la taxe sur la valeur ajoutée) }\\
+\end{longtable}
+}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{I. IDENTIFICATION DU REDEVABLE }\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{8}{l}{Nom ou raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & 2  & 3  & 4  & D  &    & 4  & 5  &  & \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{2}{l}{Sigle :  } & \multicolumn{3}{l}{Adresse postale :  }\\
+\multicolumn{2}{l}{Adresse physique : Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Nº Téléphone : +243 898752062 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{Fax :  }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{E-mail : ddrkinano1@gmail.com }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{II. DÉDUCTIONS OPÉRÉES }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{1. Achats locaux de biens et services }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{Nom ou raison sociale du } & \multicolumn{5}{l}{Numéro Impôt du fournisseur } & \multicolumn{5}{l}{Facture } & \multicolumn{5}{l}{Montant de la TVA payée }\\
+\multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/001 } & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{96'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{346 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{960'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{42 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{40'800.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-05 } & \multicolumn{5}{l}{-9'600.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{13'920.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{  } & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{29'920.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{05 } & \multicolumn{3}{l}{2020-03-01 } & \multicolumn{5}{l}{640'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{34 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-05-31 } & \multicolumn{5}{l}{6'400.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{144'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{2. Importations }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{Déclaration de la mise à la consommation }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{Nº de la déclaration } & \multicolumn{3}{l}{Date } & \multicolumn{15}{l}{Montant de la TVA payée }\\
+\multicolumn{2}{l}{456 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{15}{l}{4'128'000.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{15}{l}{412'800.00 }\\
+\multicolumn{2}{l}{2356 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{15}{l}{2'752'000.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{15}{l}{275'200.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{20}{l}{Sceau de l'Entreprise }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Second semester report}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{20}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{20}{l}{DIRECTION GÉNÉRALE DES IMPÔTS }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{} & \multicolumn{16}{l}{\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{}\\
+\multicolumn{16}{l}{ÉTAT DÉTAILLÉ DES DÉDUCTIONS DE TVA }\\
+\multicolumn{16}{l}{Mois de réalisation des opérations: DÉCEMBRE }\\
+\multicolumn{16}{l}{(à joindre obligatoirement à la déclaration mensuelle à la taxe sur la valeur ajoutée) }\\
+\end{longtable}
+}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{I. IDENTIFICATION DU REDEVABLE }\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{8}{l}{Nom ou raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & 2  & 3  & 4  & D  &    & 4  & 5  &  & \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{2}{l}{Sigle :  } & \multicolumn{3}{l}{Adresse postale :  }\\
+\multicolumn{2}{l}{Adresse physique : Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Nº Téléphone : +243 898752062 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{Fax :  }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{E-mail : ddrkinano1@gmail.com }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{II. DÉDUCTIONS OPÉRÉES }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{1. Achats locaux de biens et services }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{Nom ou raison sociale du } & \multicolumn{5}{l}{Numéro Impôt du fournisseur } & \multicolumn{5}{l}{Facture } & \multicolumn{5}{l}{Montant de la TVA payée }\\
+\multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/009 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{345 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{2. Importations }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{Déclaration de la mise à la consommation }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{Nº de la déclaration } & \multicolumn{3}{l}{Date } & \multicolumn{15}{l}{Montant de la TVA payée }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{20}{l}{Sceau de l'Entreprise }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{First quarter report}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{20}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{20}{l}{DIRECTION GÉNÉRALE DES IMPÔTS }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{} & \multicolumn{16}{l}{\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{}\\
+\multicolumn{16}{l}{ÉTAT DÉTAILLÉ DES DÉDUCTIONS DE TVA }\\
+\multicolumn{16}{l}{Mois de réalisation des opérations: MARS }\\
+\multicolumn{16}{l}{(à joindre obligatoirement à la déclaration mensuelle à la taxe sur la valeur ajoutée) }\\
+\end{longtable}
+}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{I. IDENTIFICATION DU REDEVABLE }\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{8}{l}{Nom ou raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & 2  & 3  & 4  & D  &    & 4  & 5  &  & \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{2}{l}{Sigle :  } & \multicolumn{3}{l}{Adresse postale :  }\\
+\multicolumn{2}{l}{Adresse physique : Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Nº Téléphone : +243 898752062 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{Fax :  }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{E-mail : ddrkinano1@gmail.com }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{II. DÉDUCTIONS OPÉRÉES }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{1. Achats locaux de biens et services }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{Nom ou raison sociale du } & \multicolumn{5}{l}{Numéro Impôt du fournisseur } & \multicolumn{5}{l}{Facture } & \multicolumn{5}{l}{Montant de la TVA payée }\\
+\multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/001 } & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{96'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{346 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{960'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{42 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{40'800.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-05 } & \multicolumn{5}{l}{-9'600.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{13'920.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{  } & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{29'920.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{05 } & \multicolumn{3}{l}{2020-03-01 } & \multicolumn{5}{l}{640'000.00 }\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{2. Importations }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{Déclaration de la mise à la consommation }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{Nº de la déclaration } & \multicolumn{3}{l}{Date } & \multicolumn{15}{l}{Montant de la TVA payée }\\
+\multicolumn{2}{l}{456 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{15}{l}{4'128'000.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{15}{l}{412'800.00 }\\
+\multicolumn{2}{l}{2356 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{15}{l}{2'752'000.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{15}{l}{275'200.00 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{20}{l}{Sceau de l'Entreprise }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Second quarter report}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{20}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{20}{l}{DIRECTION GÉNÉRALE DES IMPÔTS }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{} & \multicolumn{16}{l}{\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{}\\
+\multicolumn{16}{l}{ÉTAT DÉTAILLÉ DES DÉDUCTIONS DE TVA }\\
+\multicolumn{16}{l}{Mois de réalisation des opérations: JUIN }\\
+\multicolumn{16}{l}{(à joindre obligatoirement à la déclaration mensuelle à la taxe sur la valeur ajoutée) }\\
+\end{longtable}
+}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{I. IDENTIFICATION DU REDEVABLE }\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{8}{l}{Nom ou raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & 2  & 3  & 4  & D  &    & 4  & 5  &  & \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{2}{l}{Sigle :  } & \multicolumn{3}{l}{Adresse postale :  }\\
+\multicolumn{2}{l}{Adresse physique : Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Nº Téléphone : +243 898752062 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{Fax :  }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{E-mail : ddrkinano1@gmail.com }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{II. DÉDUCTIONS OPÉRÉES }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{1. Achats locaux de biens et services }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{Nom ou raison sociale du } & \multicolumn{5}{l}{Numéro Impôt du fournisseur } & \multicolumn{5}{l}{Facture } & \multicolumn{5}{l}{Montant de la TVA payée }\\
+\multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/005 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-05-31 } & \multicolumn{5}{l}{6'400.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{144'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{2. Importations }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{Déclaration de la mise à la consommation }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{Nº de la déclaration } & \multicolumn{3}{l}{Date } & \multicolumn{15}{l}{Montant de la TVA payée }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{20}{l}{Sceau de l'Entreprise }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Third quarter report}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{20}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{20}{l}{DIRECTION GÉNÉRALE DES IMPÔTS }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{} & \multicolumn{16}{l}{\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{}\\
+\multicolumn{16}{l}{ÉTAT DÉTAILLÉ DES DÉDUCTIONS DE TVA }\\
+\multicolumn{16}{l}{Mois de réalisation des opérations: SEPTEMBRE }\\
+\multicolumn{16}{l}{(à joindre obligatoirement à la déclaration mensuelle à la taxe sur la valeur ajoutée) }\\
+\end{longtable}
+}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{I. IDENTIFICATION DU REDEVABLE }\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{8}{l}{Nom ou raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & 2  & 3  & 4  & D  &    & 4  & 5  &  & \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{2}{l}{Sigle :  } & \multicolumn{3}{l}{Adresse postale :  }\\
+\multicolumn{2}{l}{Adresse physique : Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Nº Téléphone : +243 898752062 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{Fax :  }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{E-mail : ddrkinano1@gmail.com }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{II. DÉDUCTIONS OPÉRÉES }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{1. Achats locaux de biens et services }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{Nom ou raison sociale du } & \multicolumn{5}{l}{Numéro Impôt du fournisseur } & \multicolumn{5}{l}{Facture } & \multicolumn{5}{l}{Montant de la TVA payée }\\
+\multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/009 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{2. Importations }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{Déclaration de la mise à la consommation }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{Nº de la déclaration } & \multicolumn{3}{l}{Date } & \multicolumn{15}{l}{Montant de la TVA payée }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{20}{l}{Sceau de l'Entreprise }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
+\end{longtable}
+\end{reportvalue}
+\begin{reportvalue}{Fourth quarter report}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{RÉPUBLIQUE DÉMOCRATIQUE DU CONGO }\\
+\multicolumn{20}{l}{MINISTÈRE DES FINANCES }\\
+\multicolumn{20}{l}{DIRECTION GÉNÉRALE DES IMPÔTS }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{} & \multicolumn{16}{l}{\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{}\\
+\multicolumn{16}{l}{ÉTAT DÉTAILLÉ DES DÉDUCTIONS DE TVA }\\
+\multicolumn{16}{l}{Mois de réalisation des opérations: DÉCEMBRE }\\
+\multicolumn{16}{l}{(à joindre obligatoirement à la déclaration mensuelle à la taxe sur la valeur ajoutée) }\\
+\end{longtable}
+}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{}\\
+\multicolumn{20}{l}{I. IDENTIFICATION DU REDEVABLE }\\
+\multicolumn{20}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{8}{l}{Nom ou raison sociale: LA COM  RDC SA } & \multicolumn{3}{l}{NUMÉRO IMPÔT } & 2  & 3  & 4  & D  &    & 4  & 5  &  & \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{2}{l}{Sigle :  } & \multicolumn{3}{l}{Adresse postale :  }\\
+\multicolumn{2}{l}{Adresse physique : Avenue Tshibangu n°007, C/ LEMBA } & \multicolumn{3}{l}{Nº Téléphone : +243 898752062 }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{Fax :  }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{E-mail : ddrkinano1@gmail.com }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{II. DÉDUCTIONS OPÉRÉES }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{1. Achats locaux de biens et services }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{Nom ou raison sociale du } & \multicolumn{5}{l}{Numéro Impôt du fournisseur } & \multicolumn{5}{l}{Facture } & \multicolumn{5}{l}{Montant de la TVA payée }\\
+\multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/010 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{2. Importations }\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{}\\
+\multicolumn{5}{l}{Déclaration de la mise à la consommation }\\
+\multicolumn{5}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{2}{l}{Nº de la déclaration } & \multicolumn{3}{l}{Date } & \multicolumn{15}{l}{Montant de la TVA payée }\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
+\multicolumn{20}{l}{}\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{20}{l}{Sceau de l'Entreprise }\\
+\multicolumn{20}{l}{}\\
+\multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
+\end{longtable}
+\end{reportvalue}
+\begin{tablevalue}{Vat codes table}{ l  l  l  l  l  l  l  l  l  l }
+Group & VatCode & Description & Gr & Gr1 & IsDue & AmountType & VatRate & VatRateOnGross & VatAccount\\
+ &  & Explications (Chiffres) &  &  &  &  &  &  & \\
+ &  & V  = Chiffre d'affaires  (Ventes et services)  &  &  &  &  &  &  & \\
+ &  & I = Importations &  &  &  &  &  &  & \\
+ &  & DE = Déductions Importations &  &  &  &  &  &  & \\
+ &  & DL = Déductions local &  &  &  &  &  &  & \\
+ &  & R = Régularisations &  &  &  &  &  &  & \\
+ &  & Le chiffre est le numéro de ligne de la déclaration de TVA. &  &  &  &  &  &  & \\
+ &  & Colonne Gr1 le chiffre de la déclarations TVA &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & Informations codes TVA (ne pas modifier svp) &  &  &  &  &  &  & \\
+ &  & Republique Démocratique du Congo &  &  &  &  &  &  & \\
+ &  & Version depuis 2020 &  &  &  &  &  &  & \\
+ &  & id=vatcodes-cdf-2020.20200501 &  &  &  &  &  &  & \\
+ &  & Dernière mise à jour: 01.05.2020 &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & II - OPERATIONS REALISEES &  &  &  &  &  &  & \\
+ & V1 & Livraisons des biens & V & 1 & 1 & 1 & 16.00 &  & 443100\\
+ & V2 & Préstations de service & V & 2 & 1 & 1 & 16.00 &  & 443200\\
+ & V31 & Livrison de biens  A Soi-Même & V3 & 3 & 1 & 2 & 16.00 &  & 443400\\
+ & V32 &   Production Livrée A Soi-Même/Immo incorp & V3 & 3 & 1 & 2 & 16.00 &  & 443411\\
+ & V33 &   Production Livrée A Soi-Même/Immo corp & V3 & 3 & 1 & 2 & 16.00 &  & 443412\\
+V3 &  & Livraisons de biens à sois-même & V &  &  &  &  &  & \\
+ & V4 & Préstations de service à sois-même & V & 4 & 1 & 2 & 16.00 &  & 443400\\
+ & V5 & Opérations afférentes aux marchés publics à financement extériuer & V & 5 & 1 & 1 & 16.00 &  & 443300\\
+ & V6 & Exportations et opérations assimilées & V & 6 & 1 &  &  &  & \\
+ & V7 & Opérations exonérées & V & 7 & 1 &  &  &  & \\
+ & V8 & Opérations non imposables & V & 8 & 1 &  &  &  & \\
+V &  & TOTAL opérations realisées & T &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & III PRESTATIONS RECUES DES PRESTATAIRES NON ETABLIS EN RDC &  &  &  &  &  &  & \\
+ & I10 & Prestations recues des prestataires non établis en RDC & I & 10 & 1 & 1 & 16.00 &  & \\
+I &  & Total prestations reçus non RDC & T &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & IV - DEDUCTIONS/Taxe déductible &  &  &  &  &  &  & \\
+ & D111 & Immobilisations Incorporelles(déductible) & D11 & 11 &  & 1 & 16.00 &  & 445110\\
+ & D112 & Immobilisations Corporelles(déductible) & D11 & 11 &  & 1 & 16.00 &  & 445120\\
+ & D113 & TVA récupérable sur Immob corp prod pour soi-même & D11 & 11 &  & 2 & 16.00 &  & 445120\\
+ & D114 & TVA récupérable sur immo incorp prod pour soi même  & D11 & 11 &  & 2 & 16.00 &  & 445110\\
+D11 &  & Immobilisations (déductible) & D &  &  &  &  &  & \\
+ & D121 & Marchandises (déductible) & D12 & 12 &  & 1 & 16.00 &  & 445200\\
+ & D122 & Marchandises (déductible) Fact non parvenue & D12 & 12 &  & 1 & 16.00 &  & 445500\\
+D12 &  & Marchandises (déductible) & D &  &  &  &  &  & \\
+ & D131 & Matières premières (déductible) & D13 & 13 &  & 1 & 16.00 &  & 445200\\
+ & D132 & Matières premières (déductible) Fact non parvenue & D13 & 13 &  & 1 & 16.00 &  & 445500\\
+D13 &  & Matières premières (déductible) & D &  &  &  &  &  & \\
+ & D141 & TVA sur Transport (déductible) & D14 & 14 &  & 1 & 16.00 &  & 445300\\
+ & D142 & Autres biens et services (déductible) & D14 & 14 &  & 1 & 16.00 &  & 445400\\
+D14 &  & Autres biens et services (déductible) & D &  &  &  &  &  & \\
+D &  & Total déductions & T &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & V REGULARISATIONS &  &  &  &  &  &  & \\
+ & R181 & REVERSEMENT TVA SUR BATIMENTS & R18 & V-18 & 1 & 2 & 16.00 &  & 443610\\
+ & R182 & REVERSEMENT TVA SUR MATERIELS DE TRANSPORTS & R18 & V-18 & 1 & 2 & 16.00 &  & 443620\\
+ & R183 & REVERSEMENT TVA SUR MATERIELS ET MOBILIERS & R18 & V-18 & 1 & 2 & 16.00 &  & 443630\\
+ & R184 & REVERSEMENT TVA SUR MATIERES PREMIERES & R18 & V-18 & 1 & 2 & 16.00 &  & 443640\\
+R18 &  & Reversement de TVA & R &  &  &  &  &  & \\
+ & R19 & Compément de déductions & R & V-19 &  & 2 & 16.00 &  & 445700\\
+ & R20 & TVA retenue à la source par les entreprises minières & R & V-20 &  &  &  &  & \\
+ & R21 & Récuperation de la TVA déductible sur marchés publics à financement extérieur & R & V-21 &  &  &  &  & \\
+R &  & Total régularisations & T &  &  &  &  &  & \\
+T &  & TOTAL &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  & TVA Extra info &  &  &  &  &  &  & \\
+ & :IMP & Importations &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+ &  &  &  &  &  &  &  &  & \\
+\end{tablevalue}
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}
