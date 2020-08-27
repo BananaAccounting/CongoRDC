@@ -1382,27 +1382,27 @@ function printInvoice(banDoc, repDocObj, texts, userParam, repStyleObj, invoiceO
   }
 
   /* PRINT CUSTOMER ADDRESS */
-  if (typeof(hook_print_customer_address) === typeof(Function)) {
-    hook_print_customer_address(repDocObj, invoiceObj, userParam);
-  } else {
-    print_customer_address(repDocObj, invoiceObj, userParam);
-  }
+  // if (typeof(hook_print_customer_address) === typeof(Function)) {
+  //   hook_print_customer_address(repDocObj, invoiceObj, userParam);
+  // } else {
+  //   print_customer_address(repDocObj, invoiceObj, userParam);
+  // }
 
   /* PRINT SHIPPING ADDRESS */
-  if (userParam.shipping_address) {
-    if (typeof(hook_print_shipping_address) === typeof(Function)) {
-      hook_print_shipping_address(repDocObj, invoiceObj, texts, userParam);
-    } else {
-      print_shipping_address(repDocObj, invoiceObj, texts, userParam);
-    }
-  }
+  // if (userParam.shipping_address) {
+  //   if (typeof(hook_print_shipping_address) === typeof(Function)) {
+  //     hook_print_shipping_address(repDocObj, invoiceObj, texts, userParam);
+  //   } else {
+  //     print_shipping_address(repDocObj, invoiceObj, texts, userParam);
+  //   }
+  // }
 
   /* PRINT BEGIN TEXT (BEFORE INVOICE DETAILS) */
-  if (typeof(hook_print_text_begin) === typeof(Function)) {
-    hook_print_text_begin(repDocObj, invoiceObj, texts, userParam);
-  } else {
-    print_text_begin(repDocObj, invoiceObj, texts, userParam);
-  }
+  // if (typeof(hook_print_text_begin) === typeof(Function)) {
+  //   hook_print_text_begin(repDocObj, invoiceObj, texts, userParam);
+  // } else {
+  //   print_text_begin(repDocObj, invoiceObj, texts, userParam);
+  // }
 
   /* PRINT INVOICE INFO FOR PAGES 2+ */
   if (typeof(hook_print_info) === typeof(Function)) {
@@ -1586,6 +1586,8 @@ function print_info(repDocObj, invoiceObj, texts, userParam, tableStyleRow0) {
   tableRow.addCell("","",1);
   tableRow = infoTable.addRow();
   tableRow.addCell("","",1);
+  tableRow = infoTable.addRow();
+  tableRow.addCell("","",1);
 
   // Invoicing date
   if (userParam.info_date) {
@@ -1601,12 +1603,31 @@ function print_info(repDocObj, invoiceObj, texts, userParam, tableStyleRow0) {
   tableRow.addCell("","",1);
   tableRow = infoTable.addRow();
   tableRow.addCell("","",1);
+  tableRow = infoTable.addRow();
+  
 
   if (userParam.info_invoice_number) {
     tableRow = infoTable.addRow("");
-    tableRow.addCell("FACTURE Nº","right",1).setStyleAttributes("font-weight:bold;font-size:12pt");
+    tableRow.addCell("FACTURE Nº","right",2).setStyleAttributes("font-weight:bold;font-size:12pt");
     tableRow.addCell(invoiceObj.document_info.number,"left",1).setStyleAttributes("font-weight:bold;font-size:12pt");
   }
+
+  tableRow = infoTable.addRow();
+  tableRow.addCell("","",1);
+  tableRow = infoTable.addRow();
+  tableRow.addCell("","",1);
+  tableRow = infoTable.addRow();
+  tableRow.addCell("","",1);
+  tableRow = infoTable.addRow();
+  tableRow.addCell("","",1);
+
+  tableRow = infoTable.addRow();
+  if (invoiceObj.customer_info.number) {
+    tableRow.addCell("Mr, Mme, Mlle " + invoiceObj.customer_info.first_name + " doit pour ce qui suit :", "bold", 1);
+  } else {
+    tableRow.addCell("Mr, Mme, Mlle......................... doit pour ce qui suit :", "bold", 1);
+  }
+
 
   // if (userParam.info_due_date) {
   //   //Payment Terms
@@ -1735,6 +1756,7 @@ function print_text_begin(repDocObj, invoiceObj, texts, userParam) {
   //   titleCell.addParagraph("", "");
   //   titleCell.addParagraph("", "");
   // }
+  
   if (invoiceObj.document_info.text_begin) {
     tableRow = table.addRow();
     var textCell = tableRow.addCell("","begin_text",1);
@@ -1742,8 +1764,6 @@ function print_text_begin(repDocObj, invoiceObj, texts, userParam) {
     textCell.addParagraph(" ", "");
     textCell.addParagraph(" ", "");  
   }
-  tableRow = table.addRow();
-  //tableRow.addCell("Mr, Mme, Mlle....................... Doit pour ce qui suit :", "", 1);
 }
 
 function print_details_net_amounts(banDoc, repDocObj, invoiceObj, texts, userParam, detailsTable, variables) {
@@ -1830,7 +1850,12 @@ function print_details_net_amounts(banDoc, repDocObj, invoiceObj, texts, userPar
       else if (columnsSelected[j] === "Description") {
         var descriptionCell = tableRow.addCell("", "left"/*classNameEvenRow + " " + alignment + " padding-left padding-right " + className*/, 1);
         descriptionCell.setStyleAttributes("border-right:thin solid black");
-        descriptionCell.addParagraph(item.description);
+        if (item.mesure_unit) {
+          descriptionCell.addParagraph(item.description + " (" + item.mesure_unit + ")");
+        } else {
+          descriptionCell.addParagraph(item.description);
+        }
+        
         descriptionCell.addParagraph(item.description2);
       }
       // else if (columnsSelected[j] === "ReferenceUnit" || columnsSelected[j] === "referenceunit" || columnsSelected[j] === "mesure_unit") {
@@ -2790,8 +2815,18 @@ function set_variables(variables, userParam) {
   variables.$margin_left_text_begin = "23mm";
   /* Variables that set font size, margins, padding and borders of the Invoice Details */
   variables.$font_size_total = userParam.font_size*1.2 +"pt";
-  variables.$margin_top_details_first_page = "90mm";
-  variables.$margin_top_details_other_pages = "90mm";
+  if (userParam.info_rccm || userParam.info_id_nat) {
+    variables.$margin_top_details_first_page = "110mm";
+    variables.$margin_top_details_other_pages = "110mm";
+  } else if (userParam.info_rccm && userParam.info_id_nat) {
+    variables.$margin_top_details_first_page = "130mm";
+    variables.$margin_top_details_other_pages = "130mm";
+  } else {
+    variables.$margin_top_details_first_page = "110mm";
+    variables.$margin_top_details_other_pages = "110mm";
+  }
+  // variables.$margin_top_details_first_page = "110mm";
+  // variables.$margin_top_details_other_pages = "100mm";
   variables.$margin_right_details = "10mm";
   variables.$margin_left_details = "23mm";
   variables.$padding = "3px";
