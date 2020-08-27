@@ -1742,6 +1742,8 @@ function print_text_begin(repDocObj, invoiceObj, texts, userParam) {
     textCell.addParagraph(" ", "");
     textCell.addParagraph(" ", "");  
   }
+  tableRow = table.addRow();
+  //tableRow.addCell("Mr, Mme, Mlle....................... Doit pour ce qui suit :", "", 1);
 }
 
 function print_details_net_amounts(banDoc, repDocObj, invoiceObj, texts, userParam, detailsTable, variables) {
@@ -1820,7 +1822,7 @@ function print_details_net_amounts(banDoc, repDocObj, invoiceObj, texts, userPar
           if (variables.decimals_quantity) {
             decimals = variables.decimals_quantity;
           }
-          tableRow.addCell(Banana.Converter.toLocaleNumberFormat(item.quantity,decimals), "right"/*classNameEvenRow + " " + alignment + " padding-left padding-right " + className*/, 1).setStyleAttributes("border:thin solid black;border-right:thin solid black");
+          tableRow.addCell(Banana.Converter.toLocaleNumberFormat(item.quantity,decimals), "right"/*classNameEvenRow + " " + alignment + " padding-left padding-right " + className*/, 1).setStyleAttributes("border-right:thin solid black");
         } else {
           tableRow.addCell("", "right"/*classNameEvenRow + " " + alignment + " padding-left padding-right " + className*/, 1).setStyleAttributes("border-left:thin solid black;border-right:thin solid black");
         }
