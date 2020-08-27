@@ -52,11 +52,11 @@ TestAccountsBalancesMulticurrency.prototype.cleanup = function() {
 TestAccountsBalancesMulticurrency.prototype.testBananaExtensions = function() {
    Test.logger.addText("This test will tests the Banana Extension accountsbalancesmulticurrency.js");
    
-   var currentDocument = Banana.application.openDocument("file:script/../test/testcases/testfile.ac2");
+   var currentDocument = Banana.application.openDocument("file:script/../test/testcases/testfile_2020.ac2");
    Test.assert(currentDocument, "File ac2 not found");
 
-   var currentStartDate = "2020-01-01";
-   var currentEndDate = "2020-12-31";
+   var currentStartDate  = currentDocument.info("AccountingDataBase","OpeningDate");
+   var currentEndDate = currentDocument.info("AccountingDataBase","ClosureDate");
    
    // TEST 1
    var userParam = {};
