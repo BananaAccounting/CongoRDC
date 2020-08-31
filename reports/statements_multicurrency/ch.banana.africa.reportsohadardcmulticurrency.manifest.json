@@ -1,0 +1,15 @@
+{
+    "category": "productivity",
+    "country": "africa",
+    "countryCode": "af",
+    "description": "Accounting Reports Multicurrency (OHADA - RDC) [BETA]",
+    "description.en": "Accounting Reports Multicurrency (OHADA - RDC) [BETA]",
+    "description.fr": "Rapports comptables multi-devise (OHADA - RDC) [BETA]",
+    "id": "ch.banana.africa.reportsohadardcmulticurrency",
+    "language": "fr",
+    "publisher": "Banana.ch",
+    "title": "Accounting Reports Multicurrency (OHADA - RDC) [BETA]",
+    "title.en": "Accounting Reports Multicurrency (OHADA - RDC) [BETA]",
+    "title.fr": "Rapports comptables multi-devise (OHADA - RDC) [BETA]",
+    "version": "1.0"
+}
