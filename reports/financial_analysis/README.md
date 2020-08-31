@@ -3,7 +3,7 @@
 L'App Banana [Analyse Financière (OHADA - RDC)](https://www.banana.ch/apps/fr/node/9406) crée un rapport d'analyse financière.
 
 L'application a été développée en suivant la documentation OHADA:
-* [Documentation sur l'analyse financière]()
+* [Documentation sur l'analyse financière](financial_analysis_documentation.pdf)
 
 Dans la documentation, la syntaxe utilisée pour spécifier les données à utiliser est **{compte/groupe,colonne}**, où:
 * **compte/groupe**: indique le compte ou le groupe du tableau Comptes dans Banana (les groupes commencent avec **Gr=**) ;
