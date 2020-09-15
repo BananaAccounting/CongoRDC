@@ -250,7 +250,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    tableRow = table.addRow();
    if (details[0]) {
       tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(details[0].account, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[0].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[0].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[0].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -529,7 +529,11 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    var invoicesSuppliers = getSuppliers(current, startDate, endDate);
 
    tableRow = table.addRow();
-   tableRow.addCell(invoicesSuppliers[0].tableorigin, "", 20);
+   tableRow.addCell(JSON.stringify(invoicesSuppliers[16].toJSON()), "", 20);
+
+   tableRow = table.addRow();
+   // tableRow.addCell(JSON.stringify(JSON.parse(current.invoicesSuppliers().row(0).toJSON())), "", 20);
+   tableRow.addCell(JSON.stringify(details[0]), "", 20);
    Banana.console.debug("test");
 
    tableRow = table.addRow();
@@ -681,6 +685,9 @@ function VatGetJournal(banDoc, startDate, endDate) {
 			line.doc = tRow.value("Doc");
          line.description = tRow.value("Description");
          line.isvatoperation = tRow.value("JVatIsVatOperation");
+         line.debitaccount = tRow.value("JDebitAmount");
+         line.creditaccount = tRow.value("JCreditAmount");
+         line.segment = tRow.value("JSegment3");
 			
 
 			//We take only the rows with a VAT code and then we convert values from base currency to CHF
@@ -703,11 +710,19 @@ function VatGetJournal(banDoc, startDate, endDate) {
 }
 
 function getTransactionDetails(banDoc, startDate, endDate){
-   var transactions = VatGetJournal(banDoc, startDate, endDate);
+   var transactions = VatGetJournal(banDoc, startDate, endDate); // Get all transactions from the journal
    var rowsDetails = [];
    for (var i = 0; i < transactions.length; i++) {
       var tRowCode = transactions[i].vatcode;
-      var gr1Code = VatGetVatCodesForGr1(banDoc, tRowCode);
+      var gr1Code = VatGetVatCodesForGr1(banDoc, tRowCode); // Get the Gr1 VAT codes
+
+      // Only take transactions with Gr1 deductible VAT codes 
+      /**
+       * 11 : Immobilisations (déductible)
+       * 12 : Marchandises (déductible)
+       * 13 : Matières premières (déductible)
+       * 14 : Autres biens et services (déductible)
+       * */
       if (gr1Code[0] === '11' || gr1Code[0] === '12' || gr1Code[0] === '13' || gr1Code[0] === '14') {
          rowsDetails.push(transactions[i]);
       }
@@ -719,6 +734,7 @@ function getLocalTransactionDetails(banDoc, startDate, endDate) {
    var details = getTransactionDetails(banDoc, startDate, endDate);
    var localDetails = [];
    for (var i = 0; i < details.length; i++) {
+      // If VAT extra info is null, get local transactions
       if(!details[i].vatextrainfo) {
          localDetails.push(details[i]);
       }
@@ -746,35 +762,26 @@ function getSuppliers(banDoc, startDate, endDate) {
       var line = {};
       var row = invoicesSuppliers.row(i);
 
-      if (row.value("Date") >= startDate && row.value("Date") <= endDate) {
-         line.date = row.value("Date");
-         line.description = row.value("Description");
-         line.invoice = row.value("Invoice");
-         line.roworigin = row.value("JRowOrigin");
-         line.objecttype = row.value("ObjectType");
-         line.tableorigin = row.value("JTableOrigin");
+      // if (JSON.parse(invoicesSuppliers.row(i).toJSON()).ObjectType === 'Counterparty')         
+      //       suppliers.push(JSON.parse(JSON.parse(invoicesSuppliers.row(i).toJSON()).ObjectJSonData).Counterparty);
+
+      // if(JSON.parse(invoicesSuppliers.row(i).toJSON()).ObjectType === 'InvoiceDocument')
+      //    suppliers.push(JSON.parse(JSON.parse(invoicesSuppliers.row(i).toJSON()).ObjectJSonData));
+
+      // if (row.value("Date") >= startDate && row.value("Date") <= endDate) {
+      //    line.date = row.value("Date");
+      //    line.description = row.value("Description");
+      //    line.invoice = row.value("Invoice");
+      //    line.roworigin = row.value("JRowOrigin");
+      //    line.objecttype = row.value("ObjectType");
+      //    line.tableorigin = row.value("JTableOrigin");
+      //    line.account = row.value()
 
          // We only take rows from the transactions table
-         if (line.tableorigin === 'Transactions')
-            suppliers.push(line);
-      }
+         suppliers.push(row);
+      // }
    }
-   // var value = {};
-   // if (invoicesSuppliers.length > 0) {
-   //    for (var i = 0; i < invoicesSuppliers.rowCount; i++) {
-   //       var tRow = invoicesSuppliers.row(i);
-   //       var jsonString = tRow.toJSON();
-   //       if (jsonString.length > 0) {
-   //          var jsonRow = JSON.parse(jsonString);
-   //          for (key in jsonRow) {
-   //             if (jsonRow[key]) {
-   //                // value.tor = key + ": " +jsonRow[key].toString();
-   //                // Banana.console.debug(key + ": " + jsonRow[key].toString());
-   //             }                  
-   //          }
-   //       }
-   //    }
-   // }
+   
    return suppliers;
 }
 
