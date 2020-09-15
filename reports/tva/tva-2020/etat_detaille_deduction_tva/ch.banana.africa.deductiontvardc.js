@@ -250,7 +250,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    tableRow = table.addRow();
    if (details[0]) {
       tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell(details[0].account, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[0].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[0].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[0].amount), "center", 5).setStyleAttributes("font-size:8pt");
