@@ -85,7 +85,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    var today = new Date(); // The day the report will be generated
 
    // Extract data from journal
-   var transactions = VatGetJournal(current, currentStartDate, currentEndDate);
+   var journal = VatGetJournal(current, currentStartDate, currentEndDate);
 
    if (!report) {
     var report = Banana.Report.newReport("VAT Deduction Details Report");
@@ -245,12 +245,13 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
 
    table = styleTable(report, "deductTable");
 
-   details = getLocalTransactionDetails(current, startDate, endDate);
+   details = getLocalTransactionDetails(current, currentStartDate, currentEndDate);
    /* Row 1 */
    tableRow = table.addRow();
    if (details[0]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[0].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[0].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[0].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[0].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -265,8 +266,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 2 */
    tableRow = table.addRow();
    if (details[1]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[0].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[1].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[1].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[1].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -281,8 +283,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 3 */
    tableRow = table.addRow();
    if (details[2]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[2].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[2].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[2].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[2].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -297,8 +300,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 4 */
    tableRow = table.addRow();
    if (details[3]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[3].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[3].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[3].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[3].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -313,8 +317,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 5 */
    tableRow = table.addRow();
    if (details[4]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[4].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[4].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[4].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[4].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -329,8 +334,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 6 */
    tableRow = table.addRow();
    if (details[5]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[5].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[5].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[5].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[5].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -345,8 +351,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 7 */
    tableRow = table.addRow();
    if (details[6]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[6].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[6].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[6].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[6].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -361,8 +368,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 8 */
    tableRow = table.addRow();
    if (details[7]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[7].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[7].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[7].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[7].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -377,8 +385,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 9 */
    tableRow = table.addRow();
    if (details[8]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[8].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[8].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[8].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[8].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -393,8 +402,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 10 */
    tableRow = table.addRow();
    if (details[9]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[9].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[9].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[9].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[9].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -409,8 +419,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 11 */
    tableRow = table.addRow();
    if (details[10]) {
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-      tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+      var supplier = getSupplierName(details[10].docinvoice, journal.suppliers);
+      tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+      tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[10].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[10].date, "center", 3).setStyleAttributes("font-size:8pt");
       tableRow.addCell(formatNumber(details[10].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -426,8 +437,9 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
       var index = 11;
       while(index < details.length) {
          tableRow = table.addRow();
-         tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
-         tableRow.addCell("", "center", 5).setStyleAttributes("font-size:8pt");
+         var supplier = getSupplierName(details[index].docinvoice, journal.suppliers);
+         tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
+         tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
          tableRow.addCell(details[index].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
          tableRow.addCell(details[index].date, "center", 3).setStyleAttributes("font-size:8pt");
          tableRow.addCell(formatNumber(details[index].amount), "center", 5).setStyleAttributes("font-size:8pt");
@@ -462,7 +474,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    tableRow.addCell("Date", "center", 3).setStyleAttributes("font-size:9pt");
    tableRow.addCell("Montant de la TVA payée", "center", 15).setStyleAttributes("font-size:9pt");
 
-   var importDetails = getImportTransactionDetails(current, startDate, endDate);
+   var importDetails = getImportTransactionDetails(current, currentStartDate, currentEndDate);
 
    /* Row 1 */
    tableRow = table.addRow();
@@ -526,14 +538,17 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
 
    table = styleTable(report, "tableNoBorder");
 
-   var invoicesSuppliers = getSuppliers(current, startDate, endDate);
+   var invoicesSuppliers = getSuppliers(current, currentStartDate, currentEndDate);
 
    tableRow = table.addRow();
-   tableRow.addCell(JSON.stringify(invoicesSuppliers[16].toJSON()), "", 20);
+   tableRow.addCell(JSON.stringify(JSON.parse(invoicesSuppliers[15].toJSON())), "", 20);
 
    tableRow = table.addRow();
+   journal = current.journalCustomersSuppliers(current.ORIGINTYPE_CURRENT, current.ACCOUNTTYPE_NORMAL);
    // tableRow.addCell(JSON.stringify(JSON.parse(current.invoicesSuppliers().row(0).toJSON())), "", 20);
-   tableRow.addCell(JSON.stringify(details[0]), "", 20);
+   // tableRow.addCell(JSON.stringify(details[0]), "", 20);
+   // tableRow.addCell(supplier.fiscalnumber, "", 20);
+   tableRow.addCell(JSON.stringify(JSON.parse(journal.row(214).toJSON())), "", 20);
    Banana.console.debug("test");
 
    tableRow = table.addRow();
@@ -668,9 +683,12 @@ function getMonthString(month) {
  /* Function that returns the lines from the journal as an array */
 function VatGetJournal(banDoc, startDate, endDate) {
 
-	var journal = banDoc.journal(banDoc.ORIGINTYPE_CURRENT, banDoc.ACCOUNTTYPE_NORMAL); // Get all transactions
-	var len = journal.rowCount;
+	var journal = banDoc.journalCustomersSuppliers(banDoc.ORIGINTYPE_CURRENT, banDoc.ACCOUNTTYPE_NORMAL); // Get all transactions
+   var len = journal.rowCount;
 	var transactions = []; //Array that will contain all the lines of the transactions
+   var suppliers = {}; //List of invoices with suppliers information
+   
+   var tableAccounts = banDoc.table("Accounts");
 
 	for (var i = 0; i < len; i++) {
 
@@ -683,12 +701,37 @@ function VatGetJournal(banDoc, startDate, endDate) {
 			line.account = tRow.value("JAccount");
 			line.vatcode = tRow.value("JVatCodeWithoutSign");
 			line.doc = tRow.value("Doc");
-         line.description = tRow.value("Description");
-         line.isvatoperation = tRow.value("JVatIsVatOperation");
-         line.debitaccount = tRow.value("JDebitAmount");
-         line.creditaccount = tRow.value("JCreditAmount");
-         line.segment = tRow.value("JSegment3");
-			
+			line.docInvoice = tRow.value("DocInvoice");
+            line.description = tRow.value("Description");
+            line.isvatoperation = tRow.value("JVatIsVatOperation");
+            line.debitaccount = tRow.value("JDebitAmount");
+            line.creditaccount = tRow.value("JCreditAmount");
+            line.segment = tRow.value("JSegment3");
+            //in JInvoiceRowCustomerSupplier the following values are available: 1=Customer, 2=Supplier
+            if (tRow.value('JInvoiceRowCustomerSupplier') == "2") {
+                var supplierId = tRow.value("JAccount");
+                var supplierDescription = tRow.value("JAccountDescription");
+                var supplierVatNumber = tRow.value("VatNumber");
+                if (supplierId) {
+                  var tabRow = tableAccounts.findRowByValue("Accounts", supplierId);
+                    if (!suppliers.hasOwnProperty(supplierId)) {
+                        suppliers[supplierId] = {};
+                        suppliers[supplierId].description = supplierDescription;
+                        suppliers[supplierId].invoices = [];
+                        
+                        if (tabRow) {
+                           suppliers[supplierId].vatnumber = tabRow.value("VatNumber");
+                        }
+                        // suppliers[supplierId].vatnumber = supplierVatNumber;
+                        if (line.docInvoice)
+                            suppliers[supplierId].invoices.push(line.docInvoice);
+                    }
+                    else {
+                        if (line.docInvoice)
+                            suppliers[supplierId].invoices.push(line.docInvoice);
+                    }
+                }
+            }
 
 			//We take only the rows with a VAT code and then we convert values from base currency to CHF
 			if (line.isvatoperation) {
@@ -697,23 +740,27 @@ function VatGetJournal(banDoc, startDate, endDate) {
 				line.vatamount = tRow.value("VatAmount");
 				line.vatposted = tRow.value("VatPosted");
 				line.amount = tRow.value("JAmount");
-            line.vatextrainfo = tRow.value("VatExtraInfo");
-            line.docinvoice = tRow.value('DocInvoice'); // Not displaying in .sbaa file
-            line.roworigin = tRow.value("JRowOrigin");
-            //line.customer = tRow.value('AccountCredit');
+                line.vatextrainfo = tRow.value("VatExtraInfo");
+                line.docinvoice = tRow.value('DocInvoice'); // Not displaying in .sbaa file
+                line.roworigin = tRow.value("JRowOrigin");
 
 				transactions.push(line);
-			}
+         }
 		}
-	}
-	return transactions;
+    }
+   
+    var journal = {};
+    journal.transactions = transactions;
+    journal.suppliers = suppliers;
+    return journal;
 }
 
 function getTransactionDetails(banDoc, startDate, endDate){
-   var transactions = VatGetJournal(banDoc, startDate, endDate); // Get all transactions from the journal
+   var journal =  VatGetJournal(banDoc, startDate, endDate); // Get all transactions from the journal
+   
    var rowsDetails = [];
-   for (var i = 0; i < transactions.length; i++) {
-      var tRowCode = transactions[i].vatcode;
+   for (var i = 0; i < journal.transactions.length; i++) {
+      var tRowCode = journal.transactions[i].vatcode;
       var gr1Code = VatGetVatCodesForGr1(banDoc, tRowCode); // Get the Gr1 VAT codes
 
       // Only take transactions with Gr1 deductible VAT codes 
@@ -724,7 +771,7 @@ function getTransactionDetails(banDoc, startDate, endDate){
        * 14 : Autres biens et services (déductible)
        * */
       if (gr1Code[0] === '11' || gr1Code[0] === '12' || gr1Code[0] === '13' || gr1Code[0] === '14') {
-         rowsDetails.push(transactions[i]);
+         rowsDetails.push(journal.transactions[i]);
       }
    }
    return rowsDetails;
@@ -753,6 +800,26 @@ function getImportTransactionDetails(banDoc, startDate, endDate) {
    return importDetails;
 }
 
+function getSupplierName(docInvoice, suppliers) {
+   var supplier = {};
+   supplier.id = "";
+   supplier.name = "";
+   supplier.vatnumber = "";
+   if (docInvoice.length > 0) {
+      for (var obj in suppliers) {
+         var invoices = suppliers[obj].invoices;
+         if (invoices.indexOf(docInvoice.toString()) >= 0) {
+            supplier.id = obj;
+            supplier.name = suppliers[obj].description;
+            supplier.vatnumber = suppliers[obj].vatnumber;
+            break;
+         }
+      }
+      //vat number you can get from table accounts looking for accountId
+   }
+   return supplier;
+}
+
 function getSuppliers(banDoc, startDate, endDate) {
    var invoicesSuppliers = banDoc.invoicesSuppliers();
    var len = invoicesSuppliers.rowCount;
@@ -761,6 +828,16 @@ function getSuppliers(banDoc, startDate, endDate) {
    for (var i = 0; i < len; i++) {
       var line = {};
       var row = invoicesSuppliers.row(i);
+      var idSupplier = row.value("CounterpartyId");
+      var idInvoice = row.value("Invoice");
+      var date = row.value("Date");
+
+      if (idSupplier.length > 0 && idInvoice.length > 0) {
+         if (date >= startDate && date <= endDate) {
+            suppliers.push(row);
+         }
+         
+      }
 
       // if (JSON.parse(invoicesSuppliers.row(i).toJSON()).ObjectType === 'Counterparty')         
       //       suppliers.push(JSON.parse(JSON.parse(invoicesSuppliers.row(i).toJSON()).ObjectJSonData).Counterparty);
@@ -778,7 +855,7 @@ function getSuppliers(banDoc, startDate, endDate) {
       //    line.account = row.value()
 
          // We only take rows from the transactions table
-         suppliers.push(row);
+         // suppliers.push(row);
       // }
    }
    
