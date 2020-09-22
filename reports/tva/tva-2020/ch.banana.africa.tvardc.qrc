@@ -1,6 +1,5 @@
 <!DOCTYPE RCC><RCC version="1.0">
 	<qresource>
-		<file>ch.banana.africa.tvardc.js</file>
 		<file alias="ch.banana.africa.tvareportrdc.js">tvareportrdc/ch.banana.africa.tvareportrdc.js</file>
 		<file alias="ch.banana.africa.deductiontvardc.js">etat_detaille_deduction_tva/ch.banana.africa.deductiontvardc.js</file>		
 		<file>tvareportrdc/images/logo.jpg</file>
