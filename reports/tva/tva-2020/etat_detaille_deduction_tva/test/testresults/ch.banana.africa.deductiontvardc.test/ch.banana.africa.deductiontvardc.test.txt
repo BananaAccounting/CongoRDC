@@ -66,25 +66,25 @@
 \multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/001 } & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{96'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
+\multicolumn{5}{l}{TRANSGAZELLE } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{346 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{960'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
+\multicolumn{5}{l}{Sonas } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{42 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{40'800.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
+\multicolumn{5}{l}{CHINA MOBIL } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-05 } & \multicolumn{5}{l}{-9'600.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{16'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{13'920.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{  } & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{29'920.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
+\multicolumn{5}{l}{VODACOM RDC  } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{05 } & \multicolumn{3}{l}{2020-03-01 } & \multicolumn{5}{l}{640'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{34 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{Rtnc } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{34 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-05-31 } & \multicolumn{5}{l}{6'400.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{144'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{41 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{345 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
+\multicolumn{5}{l}{Kulama,Com } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
+\multicolumn{5}{l}{Kulama,Com } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{41 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
+\multicolumn{5}{l}{CANAL+ } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{345 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l }
 \multicolumn{5}{l}{}\\
@@ -103,8 +103,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{20}{l}{}\\
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 22/09/2020 }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -154,23 +153,23 @@
 \multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/001 } & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{96'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
+\multicolumn{5}{l}{TRANSGAZELLE } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{346 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{960'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
+\multicolumn{5}{l}{Sonas } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{42 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{40'800.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
+\multicolumn{5}{l}{CHINA MOBIL } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-05 } & \multicolumn{5}{l}{-9'600.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{16'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{13'920.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{  } & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{29'920.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
+\multicolumn{5}{l}{VODACOM RDC  } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{05 } & \multicolumn{3}{l}{2020-03-01 } & \multicolumn{5}{l}{640'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{34 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{Rtnc } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{34 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-05-31 } & \multicolumn{5}{l}{6'400.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{144'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
+\multicolumn{5}{l}{Kulama,Com } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l }
 \multicolumn{5}{l}{}\\
@@ -189,8 +188,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{20}{l}{}\\
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 22/09/2020 }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -240,8 +238,8 @@
 \multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/009 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{345 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
+\multicolumn{5}{l}{Kulama,Com } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{41 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
+\multicolumn{5}{l}{CANAL+ } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{345 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
@@ -269,8 +267,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{20}{l}{}\\
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 22/09/2020 }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -320,18 +317,18 @@
 \multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/001 } & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
+\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-01 } & \multicolumn{5}{l}{208'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{96'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
+\multicolumn{5}{l}{TRANSGAZELLE } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{45 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{8'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{346 } & \multicolumn{3}{l}{2020-01-02 } & \multicolumn{5}{l}{960'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
+\multicolumn{5}{l}{Sonas } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{7891 } & \multicolumn{3}{l}{2020-01-03 } & \multicolumn{5}{l}{32'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{42 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{40'800.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
+\multicolumn{5}{l}{CHINA MOBIL } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{485 } & \multicolumn{3}{l}{2020-01-04 } & \multicolumn{5}{l}{448'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-05 } & \multicolumn{5}{l}{-9'600.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{16'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{13'920.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{  } & \multicolumn{3}{l}{2020-01-12 } & \multicolumn{5}{l}{29'920.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
+\multicolumn{5}{l}{VODACOM RDC  } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{183 } & \multicolumn{3}{l}{2020-01-25 } & \multicolumn{5}{l}{27'840'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{05 } & \multicolumn{3}{l}{2020-03-01 } & \multicolumn{5}{l}{640'000.00 }\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -351,8 +348,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{20}{l}{}\\
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 22/09/2020 }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -402,10 +398,10 @@
 \multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/005 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
+\multicolumn{5}{l}{Rtnc } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{34 } & \multicolumn{3}{l}{2020-04-14 } & \multicolumn{5}{l}{16'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-05-31 } & \multicolumn{5}{l}{6'400.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{144'000.00 }\\
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
+\multicolumn{5}{l}{Kulama,Com } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{36 } & \multicolumn{3}{l}{2020-06-30 } & \multicolumn{5}{l}{38'400.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
@@ -431,8 +427,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{20}{l}{}\\
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 22/09/2020 }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -482,7 +477,7 @@
 \multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/009 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
+\multicolumn{5}{l}{Kulama,Com } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{41 } & \multicolumn{3}{l}{2020-07-02 } & \multicolumn{5}{l}{80'000.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
@@ -511,8 +506,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{20}{l}{}\\
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 22/09/2020 }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
@@ -562,7 +556,7 @@
 \multicolumn{5}{l}{fournisseur ou du prestataire } & \multicolumn{5}{l}{ou du prestataire } & \multicolumn{2}{l}{Nº de la facture } & \multicolumn{3}{l}{Date } & \multicolumn{5}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{A/010 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
+\multicolumn{5}{l}{CANAL+ } & \multicolumn{5}{l}{} & \multicolumn{2}{l}{345 } & \multicolumn{3}{l}{2020-11-30 } & \multicolumn{5}{l}{57'600.00 }\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
 \multicolumn{5}{l}{} & \multicolumn{5}{l}{} & \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{5}{l}{}\\
@@ -591,8 +585,7 @@
 \multicolumn{2}{l}{} & \multicolumn{3}{l}{} & \multicolumn{15}{l}{}\\
 \end{longtable}
 \begin{longtable}[l]{ l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l  l }
-\multicolumn{20}{l}{}\\
-\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 21/07/2020 }\\
+\multicolumn{7}{l}{} & \multicolumn{6}{l}{Fait à KINSHASA I } & \multicolumn{5}{l}{, le 22/09/2020 }\\
 \multicolumn{20}{l}{Sceau de l'Entreprise }\\
 \multicolumn{20}{l}{}\\
 \multicolumn{8}{l}{} & \multicolumn{13}{l}{Nom et qualité du signataire }\\
