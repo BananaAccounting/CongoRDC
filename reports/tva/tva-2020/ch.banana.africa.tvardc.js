@@ -24,11 +24,9 @@
 // @outputformat = none
 // @inputdataform = none
 // @timeout = -1
-// @includejs = deductiontvardc.inc
-// @includejs = tvareportrdc.inc
+// @includejs = ch.banana.africa.tvareportrdc.js
+// @includejs = ch.banana.africa.deductiontvardc.js
 
-//etat_detaille_deduction_tva/ch.banana.africa.deductiontvardc.js
-//tvareportrdc/ch.banana.africa.tvareportrdc.js
 
 
 function exec() {

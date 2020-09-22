@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.africa.deductiontvardc
 // @api = 1.0
-// @pubdate = 2019-10-14
+// @pubdate = 2020-07-03
 // @publisher = Banana.ch SA
 // @description = VAT Deduction Details (OHADA - RDC) [BETA]
 // @description.fr = Etat Détaillé des Déductions de TVA (OHADA - RDC) [BETA]
@@ -266,7 +266,7 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
    /* Row 2 */
    tableRow = table.addRow();
    if (details[1]) {
-      var supplier = getSupplierName(details[0].docinvoice, journal.suppliers);
+      var supplier = getSupplierName(details[1].docinvoice, journal.suppliers);
       tableRow.addCell(supplier.name, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(supplier.vatnumber, "center", 5).setStyleAttributes("font-size:8pt");
       tableRow.addCell(details[1].docinvoice, "center", 2).setStyleAttributes("font-size:8pt");
@@ -538,19 +538,6 @@ function createVATDeductionDetailsReport(current, startDate, endDate, report) {
 
    table = styleTable(report, "tableNoBorder");
 
-   var invoicesSuppliers = getSuppliers(current, currentStartDate, currentEndDate);
-
-   tableRow = table.addRow();
-   tableRow.addCell(JSON.stringify(JSON.parse(invoicesSuppliers[15].toJSON())), "", 20);
-
-   tableRow = table.addRow();
-   journal = current.journalCustomersSuppliers(current.ORIGINTYPE_CURRENT, current.ACCOUNTTYPE_NORMAL);
-   // tableRow.addCell(JSON.stringify(JSON.parse(current.invoicesSuppliers().row(0).toJSON())), "", 20);
-   // tableRow.addCell(JSON.stringify(details[0]), "", 20);
-   // tableRow.addCell(supplier.fiscalnumber, "", 20);
-   tableRow.addCell(JSON.stringify(JSON.parse(journal.row(214).toJSON())), "", 20);
-   Banana.console.debug("test");
-
    tableRow = table.addRow();
    tableRow.addCell("", "", 7);
    tableRow.addCell("Fait à " + city, "bold", 6).setStyleAttributes("font-size:11px");
@@ -711,9 +698,8 @@ function VatGetJournal(banDoc, startDate, endDate) {
             if (tRow.value('JInvoiceRowCustomerSupplier') == "2") {
                 var supplierId = tRow.value("JAccount");
                 var supplierDescription = tRow.value("JAccountDescription");
-                var supplierVatNumber = tRow.value("VatNumber");
                 if (supplierId) {
-                  var tabRow = tableAccounts.findRowByValue("Accounts", supplierId);
+                  var tabRow = tableAccounts.findRowByValue("Account", supplierId);
                     if (!suppliers.hasOwnProperty(supplierId)) {
                         suppliers[supplierId] = {};
                         suppliers[supplierId].description = supplierDescription;
@@ -722,7 +708,6 @@ function VatGetJournal(banDoc, startDate, endDate) {
                         if (tabRow) {
                            suppliers[supplierId].vatnumber = tabRow.value("VatNumber");
                         }
-                        // suppliers[supplierId].vatnumber = supplierVatNumber;
                         if (line.docInvoice)
                             suppliers[supplierId].invoices.push(line.docInvoice);
                     }

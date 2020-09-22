@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.congordc.tva
+// @id = ch.banana.africa.tvareportrdc
 // @api = 1.0
-// @pubdate = 2019-10-14
+// @pubdate = 2020-06-27
 // @publisher = Banana.ch SA
 // @description = VAT Declaration (OHADA - RDC) [BETA]
 // @description.fr = Taxe sur la valeur ajoutée TVA (OHADA - RDC) [BETA]
