@@ -5,5 +5,10 @@
 		<file alias="balancesheet.inc">balancesheet/ch.banana.africa.balancesheetrdc.js</file>
 		<file alias="profitlossstatement.inc">profitlossstatement/ch.banana.africa.profitlossstatementrdc.js</file>
 		<file alias="cashflow.inc">cashflow/ch.banana.africa.cashflowrdc.js</file>
+		<file>ch.banana.africa.reportsohadardcmulticurrency.manifest.json</file>
+		<file>ch.banana.africa.reportsohadardcmulticurrency.js</file>
+		<file alias="balancesheetmulticurrency.inc">balancesheet_multicurrency/ch.banana.africa.balancesheetrdcmulticurrency.js</file>
+		<file alias="profitlossmulticurrency.inc">profitloss_multicurrency/ch.banana.africa.profitlossmulticurrency.js</file>
+        <file alias="cashflowmulticurrency.inc">cashflow_multicurrency/ch.banana.africa.cashflowrdcmulticurrency.js</file>
 	</qresource>
 </RCC>

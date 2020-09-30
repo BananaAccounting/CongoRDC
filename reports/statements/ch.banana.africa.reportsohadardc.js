@@ -16,8 +16,8 @@
 // @api = 1.0
 // @pubdate = 2020-07-01
 // @publisher = Banana.ch SA
-// @description = Balance Sheet, Profit/Loss Statement, Cash Flow
-// @description.fr = Bilan, Compte de résultat, Tableau des flux de tresorerie
+// @description = Balance Sheet, Profit/Loss Statement, Cash Flow Mono-currency
+// @description.fr = Bilan, Compte de résultat, Tableau des flux de tresorerie Mono-devise
 // @task = app.command
 // @doctype = *.*
 // @docproperties =
@@ -60,7 +60,7 @@ function exec() {
 	   If the previous year is not defined or it is not found it returns null */
 	var previous = Banana.document.previousYear();
 
-	var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie (OHADA - RDC) [BETA]");
+	var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie Mono-devise (OHADA - RDC) [BETA]");
 	
 	/* 1. Balance Sheet report */
 	createBalanceSheetReport(current, dateForm.selectionStartDate, dateForm.selectionEndDate, report);
