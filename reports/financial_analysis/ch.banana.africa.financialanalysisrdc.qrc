@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+	<qresource>
+		<file>ch.banana.africa.financialanalysisrdc.manifest.json</file>
+		<file alias="ch.banana.africa.financialanalysisrdc.js">mono/ch.banana.africa.financialanalysisrdc.js</file>
+		<file alias="ch.banana.africa.financialanalysisrdcmulticurrency.js">multi/ch.banana.africa.financialanalysisrdcmulticurrency.js</file>		
+	</qresource>
+</RCC>

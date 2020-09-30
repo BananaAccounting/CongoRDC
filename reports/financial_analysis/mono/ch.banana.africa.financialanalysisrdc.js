@@ -16,8 +16,8 @@
 // @api = 1.0
 // @pubdate = 2020-06-24
 // @publisher = Banana.ch SA
-// @description = Financial Analysis Report (OHADA - RDC) [BETA]
-// @description.fr = Analyse Financière (OHADA - RDC) [BETA]
+// @description = Financial Analysis Report Monocurrency (OHADA - RDC) [BETA]
+// @description.fr = Analyse Financière Mono-devise (OHADA - RDC) [BETA]
 // @task = app.command
 // @doctype = *.*
 // @docproperties =
