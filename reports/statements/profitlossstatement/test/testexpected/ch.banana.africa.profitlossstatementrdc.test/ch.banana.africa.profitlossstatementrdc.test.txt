@@ -35,7 +35,7 @@ Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12
   \\
   \\
   \\
-COMPTE DE RESULTAT AU 31 DECEMBRE 2020 \\
+COMPTE DE RÉSULTAT AU 31 DÉCEMBRE 2020 \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l  l }
 REF  & LIBELLES  &  & Note  & EXERCICE AU 31/12/2020 \newline   \newline NET \newline  & EXERCICE AU 31/12/2019 \newline   \newline NET \newline \\
