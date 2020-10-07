@@ -21,3 +21,5 @@
 2019-10-09: Update Cash Flow app; Changed formula (FO)
 
 2019-10-14: Update Cash Flow app; Changed formulas (FA,FB,FG)
+
+2020-10-07: Update reportsohadardc app; Updated profitlossstatement to allow monthly statements
