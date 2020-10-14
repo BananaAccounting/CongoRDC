@@ -98,12 +98,41 @@ function exec() {
     var months = monthDiff(Banana.Converter.toDate(currentEndDate), Banana.Converter.toDate(currentStartDate));
     var fiscalNumber = current.info("AccountingDataBase","FiscalNumber");
     var vatNumber = current.info("AccountingDataBase","VatNumber");
+    var currentStartMonth = Banana.Converter.toDate(currentStartDate).getMonth();
+   var currentEndMonth = Banana.Converter.toDate(currentEndDate).getMonth();
  
     if (previous) {
+      var previousStartDate;
+      var previousEndDate;
+      var previousYear;
        // Accounting period for the previous year file
-       var previousStartDate = previous.info("AccountingDataBase","OpeningDate");
-       var previousEndDate = previous.info("AccountingDataBase","ClosureDate");
-       var previousYear = Banana.Converter.toDate(previousStartDate).getFullYear();
+       if ((currentStartMonth === 0 && currentEndMonth === 11) || 
+            (currentStartMonth === 0 && currentEndMonth === 0) || 
+            (currentStartMonth === 0 && currentEndMonth === 2) ||
+            (currentStartMonth === 0 && currentEndMonth === 5)) {
+         var previousStartDate = previous.info("AccountingDataBase","OpeningDate");
+         var previousEndDate = previous.info("AccountingDataBase","ClosureDate");
+         var previousYear = Banana.Converter.toDate(previousStartDate).getFullYear();
+      } else if (currentStartMonth >= 1) {
+         for (var i = 1; i < 12; i++) {
+            if (currentStartMonth === i && currentEndMonth === i) {
+               previous = current;
+               previousStartDate = new Date(Banana.Converter.toDate(currentStartDate).getFullYear(), currentStartMonth - 1, 1);
+               previousEndDate = new Date(Banana.Converter.toDate(currentStartDate) - 1);
+               break;
+            } else if (currentStartMonth === i && currentEndMonth === i+2) {
+               previous = current;
+               previousStartDate = new Date(Banana.Converter.toDate(currentStartDate).getFullYear(), currentStartMonth - 3, 1);
+               previousEndDate = new Date(Banana.Converter.toDate(currentStartDate) - 1);
+               break;
+            } else if (currentStartMonth === i && currentEndMonth === i+5) {
+               previous = current;
+               previousStartDate = new Date(Banana.Converter.toDate(currentStartDate).getFullYear(), currentStartMonth - 6, 1);
+               previousEndDate = new Date(Banana.Converter.toDate(currentStartDate) - 1);
+               break;
+            }
+         }
+      }
     }
  
     if (!report) {
@@ -142,9 +171,45 @@ function exec() {
     tableRow.addCell("REF","bold",1);
     tableRow.addCell("LIBELLES","bold",1);
     tableRow.addCell("","bold",1);
-    tableRow.addCell("EXERCICE " + currentYear,"bold",1);
+    if ((currentStartMonth === 0 && currentEndMonth === 11) || 
+            (currentStartMonth === 0 && currentEndMonth === 0) || 
+            (currentStartMonth === 0 && currentEndMonth === 2) ||
+            (currentStartMonth === 0 && currentEndMonth === 5)) {
+      tableRow.addCell("EXERCICE " + currentYear,"bold",1);
+    } else if (currentStartMonth >= 1) {
+      for (var i = 1; i < 12; i++) {
+         if (currentStartMonth === i && currentEndMonth === i) {
+            tableRow.addCell("EXERCICE " + getMonthString(currentStartMonth + 1) + " " + currentYear,"bold",1);
+            break;
+         } else if (currentStartMonth === i && currentEndMonth === i+2) {
+            tableRow.addCell("EXERCICE " + getQuarter(currentStartMonth, currentEndMonth) + " " + currentYear,"bold",1);
+            break;
+         } else if (currentStartMonth === i && currentEndMonth === i+5) {
+            tableRow.addCell("EXERCICE " + getSemester(currentStartMonth, currentEndMonth) + " " + currentYear,"bold",1);
+            break;
+         }
+      }      
+   }
     if (previous) {
-       tableRow.addCell("EXERCICE " + previousYear,"bold",1);
+      if ((currentStartMonth === 0 && currentEndMonth === 11) || 
+      (currentStartMonth === 0 && currentEndMonth === 0) || 
+      (currentStartMonth === 0 && currentEndMonth === 2) ||
+      (currentStartMonth === 0 && currentEndMonth === 5)) {
+         tableRow.addCell("EXERCICE " + previousYear,"bold",1);
+      } else if (currentStartMonth >= 1) {
+         for (var i = 1; i < 12; i++) {
+            if (currentStartMonth === i && currentEndMonth === i) {
+               tableRow.addCell("EXERCICE " + getMonthString(currentStartMonth + 1 - 1) + " " + currentYear,"bold",1);
+               break;
+            } else if (currentStartMonth === i && currentEndMonth === i+2) {
+               tableRow.addCell("EXERCICE " + getQuarter(currentStartMonth-3, currentEndMonth-3) + " " + currentYear,"bold",1);
+               break;
+            } else if (currentStartMonth === i && currentEndMonth === i+5) {
+               tableRow.addCell("EXERCICE " + getSemester(currentStartMonth-6, currentEndMonth-6) + " " + currentYear,"bold",1);
+               break;
+            }
+         }
+      }
     } else {
        tableRow.addCell("EXERCICE N-1","bold",1);
     }
@@ -1191,7 +1256,47 @@ function formatValues(value,decimals) {
       return Banana.Converter.toLocaleNumberFormat(value,2,true);
     }
   }
+
+function getMonthString(month) {
+   if (!month) {
+      return;
+   }
+   switch (month) {
+      case 1: return "JANVIER";
+      case 2: return "FÉVRIER";
+      case 3: return "MARS";
+      case 4: return "AVRIL";
+      case 5: return "MAI";
+      case 6: return "JUIN";
+      case 7: return "JUILLET";
+      case 8: return "AOÛT";
+      case 9: return "SEPTEMBRE";
+      case 10: return "OCTOBRE";
+      case 11: return "NOVEMBRE";
+      case 12: return "DÉCEMBRE";
+      default: return;
+   }
+}
  
+function getQuarter(currentStartMonth, currentEndMonth) {
+   if (currentStartMonth === 0 && currentEndMonth === 2) {
+      return "Q1";
+   } else if (currentStartMonth === 3 && currentEndMonth === 5) {
+      return "Q2";
+   } else if (currentStartMonth === 6 && currentEndMonth === 8) {
+      return "Q3";
+   } else if (currentStartMonth === 9 && currentEndMonth === 11) {
+      return "Q4";
+   }
+}
+
+function getSemester(currentStartMonth, currentEndMonth) {
+   if (currentStartMonth === 0 && currentEndMonth === 5) {
+      return "S1";
+   } else if (currentStartMonth === 6 && currentEndMonth === 11) {
+      return "S2";
+   }
+}
  /**************************************************************************************
 * Functions to manage the parameters
 **************************************************************************************/
