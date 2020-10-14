@@ -23,3 +23,5 @@
 2019-10-14: Update Cash Flow app; Changed formulas (FA,FB,FG)
 
 2020-10-07: Update reportsohadardc app; Updated profitlossstatement to allow monthly statements
+
+2020-10-15: Update reportsohadardc app; Updated cashflow multicurrency to allow monthly statements
