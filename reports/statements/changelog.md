@@ -25,3 +25,6 @@
 2020-10-07: Update reportsohadardc app; Updated profitlossstatement to allow monthly statements
 
 2020-10-15: Update reportsohadardc app; Updated cashflow multicurrency to allow monthly statements
+
+2020-10-27: Update reportsohadardc app; Updated profilossmulticurrency to allow monthly statements;
+            Added file type checking for all multicurrency extensions
