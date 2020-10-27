@@ -93,6 +93,15 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   var months = monthDiff(Banana.Converter.toDate(currentEndDate), Banana.Converter.toDate(currentStartDate));
   var fiscalNumber = current.info("AccountingDataBase","FiscalNumber");
   var vatNumber = current.info("AccountingDataBase","VatNumber");
+  var fileNumber = current.info("Base","FileTypeNumber");
+
+  // Check if the file is multicurrency
+  if (Number(fileNumber) === 120 || Number(fileNumber) === 130) {
+       
+  } else {
+    current.addMessage("Cette extension ne fonctionne qu'en mode multi-devise. \nVeuillez vous assurer que votre fichier est multi-devise.");
+    return;
+  }
 
   if (!report) {
      var report = Banana.Report.newReport("Bilan");
