@@ -28,3 +28,5 @@
 
 2020-10-27: Update reportsohadardc app; Updated profilossmulticurrency to allow monthly statements;
             Added file type checking for all multicurrency extensions
+
+2020-10-30: Update tutorial 2, 3 & 4
