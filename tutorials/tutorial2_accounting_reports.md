@@ -127,7 +127,15 @@ Les rapports comptables concernés sont:
 
 Pour obtenir les états financiers selon le modèle OHADA:
 
-- Menu **Extensions** -> **Rapport Comptables (OHADA - RDC) [BETA]** -> **Bilan, Compte de résultat, Tableau des flux de trésorerie**
+- Menu **Extensions** -> **Rapport Comptables (OHADA - RDC) [BETA]** -> **Bilan, Compte de résultat, Tableau des flux de trésorerie Mono-devise**
+
+- Menu **Extensions** -> **Rapport Comptables (OHADA - RDC) [BETA]** -> **Bilan, Compte de résultat, Tableau des flux de trésorerie Multi-devise**
+
+Les rapports comptables peuvent être générés en mono ou multi-devise. 
+
+Pour les rapports en multi-devise, la devise de base par défaut est le Franc Congolais (CDF). Pour changer la devise de base en une autre devise, il suffit de modifier le code de devise ISO dans la section "Devise". 
+
+![multicurrency dialog](images/multi_currency_dialog.jpg)
 
 ##### 1. BILAN
 
