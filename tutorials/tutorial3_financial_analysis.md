@@ -114,9 +114,17 @@ https://www.banana.ch/doc9/fr/node/2630
 
 Pour obtenir le rapport d'analyse financière:
 
-- Menu **Extensions** -> **Analyse Financière OHADA et RDC [BETA]**
+- Menu **Extensions** -> **Analyse Financière (OHADA - RDC) [BETA]** -> **Analyse Financière Mono-devise (OHADA - RDC) [BETA]**
+
+- Menu  **Extensions** -> **Analyse Financière (OHADA - RDC) [BETA]** -> **Analyse Financière Multi-devise (OHADA - RDC) [BETA]**
 
 - Sélection de la période de comptabilité dans la fenêtre de dialogue qui s'affiche.
+
+- Pour le rapport en multi-devise, un dialogue s'affiche avec la devise de base et d'autres détails.
+
+![multi-devise dialog](images/multi_currency_dialog.jpg)
+
+Exemple
 
 ![analyse financière](images/financial_analysis.jpg)
 
