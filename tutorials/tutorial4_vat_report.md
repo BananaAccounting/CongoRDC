@@ -110,15 +110,26 @@ Pour plus de détails sur les différents types d'écritures, les écritures ré
 https://www.banana.ch/doc9/fr/node/2630
 
 
-#### Déclaration TVA
+#### Taxe sur la Valeur Ajoutée
 
 Pour générer automatiquement la déclaration de la TVA et l'état détaillé des déductions de TVA:
 
-- Menu **Extensions** -> **Taxe sur la valeur ajoutée TVA OHADA et Congo RDC [BETA]** -> **Déclaration de la TVA, État détaillé des déductions de la TVA**
+#### Déclaration de la TVA
+
+- Menu **Extensions** -> **Taxe sur la valeur ajoutée TVA OHADA et Congo RDC [BETA]** -> **Taxe sur la valeur ajoutée TVA (OHADA - RDC) [BETA]**
 
 - Sélection du mois pour lequel on veut déclarer la TVA.
 
 ![TVA](images/vat_report.jpg)
+
+#### État détaillé de déduction de TVA
+
+- Menu **Extensions** -> **Taxe sur la valeur ajoutée TVA OHADA et Congo RDC [BETA]** -> **Etat Détaillé des Déductions de TVA (OHADA - RDC) [BETA]**
+
+- Sélection du mois pour lequel on veut extraire les déductions de TVA.
+
+![Déduction TVA](images/vat_deduction_details.jpg)
+
 
 
 
