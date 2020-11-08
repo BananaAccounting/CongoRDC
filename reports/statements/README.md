@@ -1,6 +1,6 @@
 # Rapports comptables pour OHADA-RDC
 
-L'App Banana [Rapports comptables (OHADA - RDC)](https://www.banana.ch/apps/fr/node/9093) crée un rapport avec les trois documents suivants
+L'App Banana [Rapports comptables OHADA et Congo RDC](https://www.banana.ch/apps/fr/node/9093) crée un rapport avec les trois documents suivants en mono et multi-devise:
 * Bilan
 * Compte de Résultat 
 * Flux de Trésorerie
@@ -42,22 +42,55 @@ Il est facultatif : si le fichier de l'année précédente est sélectionné, il
 
 ### Installer le BananaApp:
 * Démarrer Banana Comptabilité.
-* Installer le BananaApp **Rapports Comptables (OHADA - RDC)**. Consulter la documentation [Menu Apps](https://www.banana.ch/doc/fr/node/4702).
+* Installer le BananaApp **Rapports Comptables OHADA et Congo RDC**. Consulter la documentation [Menu Apps](https://www.banana.ch/doc/fr/node/4702).
 
 ### Exécuter le BananaApp:
 * Ouvrez votre fichier de comptabilité avec Banana.
-* Dans Banana, sélectionnez de **menu Apps** le BananaApp **Rapports Comptables (OHADA - RDC)** ensuite **Bilan, Comptede Résultat, Flux de Trésorerie**.
+* Dans Banana, sélectionnez de menu **Extensions** l'extension **Rapports Comptables OHADA et Congo RDC** ensuite choisissez **Bilan, Compte de Résultat, Flux de Trésorerie Mono-devise** ou **Bilan, Compte de Résultat, Flux de Trésorerie Multi-devise** selon le besoin.
 * Contrôler le résultat.
 
-Exemple rapport Bilan Actif :
+- Exemple mono-devise
+
+Rapport Bilan Actif
 ![Active Balance Sheet Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/images/balancesheet_active_report.png)
 
-Exemple rapport Bilan Passif :
+<br>
+
+Rapport Bilan Passif
 ![Passive Balance Sheet Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/balancesheet/images/balancesheet_passive_report.png)
 
-Exemple rapport Compte de Résultat
+<br>
+
+Rapport Compte de Résultat
 ![Profit/Loss Statement Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/profitlossstatement/images/profitlossstatement_report.png)
 
-Exemple rapport Flux de Trésorerie
+<br>
+
+Rapport Flux de Trésorerie 
 ![Cash Flow Report Example](https://raw.githubusercontent.com/BananaAccounting/CongoRDC/master/reports/statements/cashflow/images/banana_report.png)
+
+<br>
+<br>
+
+Exemple multi-devise
+
+Rapport Bilan Actif
+![Active balance sheet report](balancesheet_multicurrency/images/balance_multi.jpg)
+
+<br>
+
+Rapport Bilan Passif
+![Passive balance sheet report](balancesheet_multicurrency/images/balance_passive_multi.jpg)
+
+<br>
+
+Rapport Compte de Résultat
+![Profit loss statement](profitloss_multicurrency/images/profiloss_multi.jpg)
+
+<br>
+
+Rapport Flux de Trésorerie
+![Cash flow report](cashflow_multicurrency/images/cashflow_multi.jpg)
+
+
 
