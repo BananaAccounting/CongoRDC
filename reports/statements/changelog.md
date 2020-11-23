@@ -32,3 +32,5 @@
 2020-10-30: Update tutorial 2, 3 & 4
 
 2020-11-08: Update Reports README.md
+
+2020-11-23: Udpate *.ac2 templates; Integrated OHADA extensions to the templates
