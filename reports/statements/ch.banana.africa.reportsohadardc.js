@@ -56,16 +56,6 @@ function exec() {
     return "@Cancel";
   }
 
-  var fileNumber = current.info("Base","FileTypeNumber");
-
-  // Check if the file is multicurrency
-  if (Number(fileNumber) === 120 || Number(fileNumber) === 130) {
-       
-  } else {
-    current.addMessage("Cette extension ne fonctionne qu'en mode multi-devise. \nVeuillez vous assurer que votre fichier est multi-devise.");
-    return;
-  }
-
 	/* PREVIOUS year file: Return the previous year document.
 	   If the previous year is not defined or it is not found it returns null */
 	var previous = Banana.document.previousYear();
