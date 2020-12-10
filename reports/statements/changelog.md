@@ -34,3 +34,5 @@
 2020-11-08: Update Reports README.md
 
 2020-11-23: Udpate *.ac2 templates; Integrated OHADA extensions to the templates
+
+2020-12-10: Update reportsohadardc app; Updated reportsohadardc by removing multicurrency file check on the mono extension
