@@ -95,6 +95,34 @@ function createReportStructureBalanceSheet() {
     return reportStructure;
 }
 
+function createReportStructureBalanceFromTable() {
+    // ouvrir le fichier
+    var fileName = Banana.IO.getOpenFileName("Ouvrir Fichier", "", "Text file (*.txt);;All files (*)");
+    var fileContent;
+    if (fileName.length) {
+        var file = Banana.IO.getLocalFile(fileName);
+        file.codecName = "latin1";
+        fileContent = file.read();
+        if(!file.errorString) {
+            Banana.IO.openPath(fileContent);
+        } else {
+            Banana.Ui.showInformation("Read error", file.errorString);
+        }
+    } else {
+        Banana.Ui.showInformation("Info", "No file selected");
+    }
+
+    // passer toutes les lignes du tableau bilan
+    let line = {};
+    line.id = r.value('RowId');
+    line.type = r.value('Type');
+    reportStructure.push(line);
+
+    // pour chaque ligne, prendre les valeurs et créer un reportStructure.push
+    
+
+}
+
 
 // Profit & Loss statement
 function createReportStructureProfitLoss() {
