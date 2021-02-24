@@ -96,6 +96,7 @@ function createReportStructureBalanceSheet() {
 }
 
 function createReportStructureBalanceFromTable() {
+    var reportStructure = [];
     // ouvrir le fichier
     var fileName = Banana.IO.getOpenFileName("Ouvrir Fichier", "", "Text file (*.txt);;All files (*)");
     var fileContent;
