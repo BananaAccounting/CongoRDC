@@ -95,33 +95,37 @@ function createReportStructureBalanceSheet() {
     return reportStructure;
 }
 
+// Balance sheet from table
 function createReportStructureBalanceFromTable() {
-    var reportStructure = [];
+    let reportStructure = [];
     // ouvrir le fichier
-    var fileName = Banana.IO.getOpenFileName("Ouvrir Fichier", "", "Text file (*.txt);;All files (*)");
-    var fileContent;
-    if (fileName.length) {
-        var file = Banana.IO.getLocalFile(fileName);
-        file.codecName = "latin1";
-        fileContent = file.read();
-        if(!file.errorString) {
-            Banana.IO.openPath(fileContent);
-        } else {
-            Banana.Ui.showInformation("Read error", file.errorString);
-        }
-    } else {
-        Banana.Ui.showInformation("Info", "No file selected");
+    let file = Banana.application.openDocument("*.ac2");
+    if (!file) {
+        return;
     }
-
-    // passer toutes les lignes du tableau bilan
-    let line = {};
-    line.id = r.value('RowId');
-    line.type = r.value('Type');
-    reportStructure.push(line);
-
-    // pour chaque ligne, prendre les valeurs et créer un reportStructure.push
+    let tableBalance = file.table("Balance");
+    if (!tableBalance) {
+        return "@Cancel";
+    }
     
-
+    for(let i = 0; i < tableBalance.rowCount; i++) {
+        let row = tableBalance.row(i);
+        let line = {};
+        line.id = row.value('RowId');
+        line.type = row.value('Type');
+        line.note = row.value('Notes');
+        line.description = row.value('Description');
+        let debit = row.value('Debit');
+        if (debit === "debit") {
+            line.bclass = "1";
+        } else if (debit === "credit") {
+            line.bclass = "2";
+        }
+        line.sum = row.value("Sum");
+        reportStructure.push(line);
+    }
+    
+    return reportStructure;
 }
 
 
@@ -171,6 +175,40 @@ function createReportStructureProfitLoss() {
     reportStructure.push({"id":"RQ", "type":"group", "note":"30", "bclass":"3", "description":"Participation des travailleurs"});
     reportStructure.push({"id":"RS", "type":"group", "note":"", "bclass":"3", "description":"Impôts sur le résultat"});
     reportStructure.push({"id":"XI", "type":"total", "note":"", "description":"RESULTAT NET (XG+XH+RQ+RS)", "sum":"XG;XH;RQ;RS"});
+    
+    return reportStructure;
+}
+
+
+// Profit & Loss statement from table
+function createReportStructureProfitLossFromTable() {
+    let reportStructure = [];
+
+    let file = Banana.application.openDocument("*.ac2");
+    if (!file) {
+        return;
+    }
+    let tableProfitLoss = file.table("ProfitLoss");
+    if (!tableProfitLoss) {
+        return "@Cancel";
+    }
+    
+    for(let i = 0; i < tableProfitLoss.rowCount; i++) {
+        let row = tableProfitLoss.row(i);
+        let line = {};
+        line.id = row.value('RowId');
+        line.type = row.value('Type');
+        line.note = row.value('Notes');
+        line.description = row.value('Description');
+        let debit = row.value('Debit');
+        if (debit === "debit") {
+            line.bclass = "3";
+        } else if (debit === "credit") {
+            line.bclass = "4";
+        }
+        line.sum = row.value("Sum");
+        reportStructure.push(line);
+    }
     
     return reportStructure;
 }
