@@ -16,7 +16,7 @@
 // @api = 1.0
 // @pubdate = 2020-12-30
 // @publisher = Banana.ch SA
-// @description = 2. Compte de résultat
+// @description = 3. Compte de résultat
 // @task = app.command
 // @doctype = 100.100;110.100;130.100
 // @docproperties = 
