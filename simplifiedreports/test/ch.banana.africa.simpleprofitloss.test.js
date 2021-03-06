@@ -16,7 +16,7 @@
 
 // @id = ch.banana.africa.simpleprofitloss.test
 // @api = 1.0
-// @pubdate = 2020-3-4
+// @pubdate = 2021-3-4
 // @publisher = Banana.ch SA
 // @description = <TEST ch.banana.africa.simpleprofitloss.js>
 // @task = app.command

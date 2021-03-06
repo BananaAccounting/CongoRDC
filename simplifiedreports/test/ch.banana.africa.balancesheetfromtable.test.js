@@ -16,7 +16,7 @@
 
 // @id = ch.banana.africa.balancesheetfromtable.test
 // @api = 1.0
-// @pubdate = 2020-3-6
+// @pubdate = 2021-3-6
 // @publisher = Banana.ch SA
 // @description = <TEST ch.banana.africa.balancesheetfromtable.js>
 // @task = app.command
