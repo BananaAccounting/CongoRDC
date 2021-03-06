@@ -1,0 +1,84 @@
+%%info_test_name{ch.banana.africa.profitlossfromtable.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/simplifiedreports/./test/ch.banana.africa.profitlossfromtable.test.js}
+%
+\begin{testcase}{ReportProfitLossFromTableTest}
+\begin{test}{testBananaExtension}
+\begin{reportvalue}{Test 1: compte de résultat}
+\begin{longtable}[l]{ l  l  l  l  l  l }
+LA COM  RDC SA  & \multicolumn{2}{l}{Exercice clos le 31.12.2020 }\\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA - RD Congo  & \multicolumn{2}{l}{Durée (en mois) 12 }\\
+\multicolumn{3}{l}{  }\\
+\multicolumn{3}{l}{  }\\
+\multicolumn{3}{l}{COMPTE DE RÉSULTAT AU 31 DÉCEMBRE 2020 }\\
+\multicolumn{6}{l}{  }\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l }
+REF  & LIBELLÉS  &  & Note  & EXERCICE AU 31/12/2020  & EXERCICE AU 31/12/2019 \\
+ &  &  &  & NET  & NET \\
+TA  & Ventes De Marchandises  & +  & 21  & 0.00  & 198'000'000.00 \\
+RA  & Achats De Marchandises  & -  & 22  & 0.00  & 17'200'000.00 \\
+RB  & Variation De Stocks Marchandises  & -  & 6  & 0.00  & 0.00 \\
+XA  & Marge Commerciale  &  &  & 0.00  & 215'200'000.00 \\
+TB  & Ventes De Produits Finis Fabriques  & +  & 21  & 0.00  & 0.00 \\
+TC  & Travaux, Services Vendus  & +  & 21  & 0.00  & 215'200'000.00 \\
+TD  & Produits Accessoires Vendus  & +  & 21  & 0.00  & 0.00 \\
+XB  & CHIFFRE D'AFFAIRES (A + B + C + D)  &  &  & 0.00  & 215'200'000.00 \\
+TE  & Variations Des Stocks De Biens Et De Services Produits  & +  & 6  & 0.00  & 0.00 \\
+TF  & Production Immobilisée  &  & 21  & 0.00  & 0.00 \\
+TG  & Subventions D'exploitation  &  & 21  & 0.00  & 0.00 \\
+TH  & Autres Produits D'exploitation  & +  & 21  & 0.00  & 0.00 \\
+TI  & Transfert De Charges D'exploitation  & +  & 12  & 0.00  & 0.00 \\
+RC  & Achats De Matières Premières Et Fournitures Liées  & -  & 22  & 0.00  & 0.00 \\
+RD  & Variations De Stocks MP Et Fournitures Liées  & -  & 6  & 0.00  & 0.00 \\
+RE  & Achats Stocks De Matières Et Fournitures Consommables  & -  & 22  & 0.00  & 0.00 \\
+RF  & Variations Des Stocks D'autres Approvisionnements  & -  & 6  & 0.00  & 0.00 \\
+RG  & Transports  & -  & 23  & 0.00  & 0.00 \\
+RH  & Services Extérieurs  & -  & 24  & 0.00  & 0.00 \\
+RI  & Impôts Et Taxes Directs  & -  & 25  & 0.00  & 0.00 \\
+RJ  & Autres Charges  & -  & 26  & 0.00  & 0.00 \\
+XC  & Valeur Ajoutée  &  &  & 0.00  & 0.00 \\
+RK  & Charges De Personnel  & -  & 27  & 0.00  & 0.00 \\
+XD  & Excèdent Brut D'exploitation  &  & 28  & 0.00  & 0.00 \\
+TJ  & Reprises D'amortissements, Provisions \& Deprec.  & +  & 28  & 0.00  & 0.00 \\
+RL  & Dotations Aux Amortissements \& Provisions  & -  & 3C\&28  & 0.00  & 0.00 \\
+XE  & Résultat D'exploitation  &  &  & 0.00  & 0.00 \\
+TK  & Revenus Financiers Et Produits Assimiles  & +  & 29  & 0.00  & 0.00 \\
+TL  & Reprises De Provisions Et Dépréciations Financières  & +  & 28  & 0.00  & 0.00 \\
+TM  & Transfert De Charges Financières  & +  & 12  & 0.00  & 0.00 \\
+RM  & Frais Financiers Et Charges Assimilées  & -  & 29  & 0.00  & 0.00 \\
+RN  & Dotations Aux Provisions Et Dépréciations Financières  & -  & 3C\&28  & 0.00  & 0.00 \\
+XF  & Résultat Financier  &  &  & 0.00  & 0.00 \\
+XG  & Résultat Activité Ordinaire  &  &  & 0.00  & 0.00 \\
+TN  & Produits Des Cessions D'immobilisations  & +  & 3D  & 0.00  & 0.00 \\
+TO  & Produits Hao, Reprises Hao, Subvention D'équipement  & +  & 30  & 0.00  & 0.00 \\
+RO  & Valeurs Comptables Des Cessions D'immobilisations  & -  & 3D  & 0.00  & 0.00 \\
+RP  & Charges Et Dotations H.A.O.  & -  & 30  & 0.00  & 0.00 \\
+XH  & Résultat Hors Activités Ordinaires  &  &  & 0.00  & 0.00 \\
+RQ  & Participation Des Travailleurs  & -  & 30  & 0.00  & 0.00 \\
+RS  & Impôts Sur Le Résultat  & -  &  & 0.00  & 0.00 \\
+XI  & Résultat De L'exercice  &  &  & 0.00  & 0.00 \\
+\end{longtable}
+\end{reportvalue}
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}

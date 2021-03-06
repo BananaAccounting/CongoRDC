@@ -184,10 +184,13 @@ function createReportStructureProfitLoss() {
 
 
 // Profit & Loss statement from table
-function createReportStructureProfitLossFromTable() {
+function createReportStructureProfitLossFromTable(file) {
     let reportStructure = [];
 
-    let file = Banana.application.openDocument("*.ac2");
+    if (!file) {
+        file = Banana.application.openDocument("*.ac2");
+    }
+    
     if (!file) {
         return;
     }
