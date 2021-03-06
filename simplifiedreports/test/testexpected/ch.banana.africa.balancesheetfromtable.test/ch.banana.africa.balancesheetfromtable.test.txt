@@ -1,0 +1,112 @@
+%%info_test_name{ch.banana.africa.balancesheetfromtable.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{C:/Users/joemb/BananaApps/CongoRDC/simplifiedreports/./test/ch.banana.africa.balancesheetfromtable.test.js}
+%
+\begin{testcase}{ReportBalanceSheetFromTableTest}
+\begin{test}{testBananaExtension}
+\begin{reportvalue}{Test 1: bilan}
+\begin{longtable}[l]{ l  l  l }
+LA COM  RDC SA  & \multicolumn{2}{l}{Exercice clos le 31.12.2020 }\\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA - RD Congo  & \multicolumn{2}{l}{Durée (en mois) 12 }\\
+\multicolumn{3}{l}{  }\\
+\multicolumn{3}{l}{  }\\
+\multicolumn{3}{l}{BILAN ACTIF AU 31 DÉCEMBRE 2020 }\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l  l  l }
+\multicolumn{7}{l}{  }\\
+REF  & ACTIF  & Note  & EXERCICE AU 31/12/2020  & EXERCICE AU 31/12/2019 \\
+ &  &  & NET  & NET \\
+AD  & Immobilisation Incorporelles Net  & 3  & -1'500'000.00  & 0.00 \\
+AE  & Frais De Développement et de Prospection Net  &    & -1'500'000.00  & 0.00 \\
+AF  & Brevets, Licences, Concessions Et Droits Similaires Net  &    & 0.00  & 0.00 \\
+AG  & Fonds Commercial Et Droit Au Bail Net  &    & 0.00  & 0.00 \\
+AH  & Autres Immobilisations Incorporelles Net  &    & 0.00  & 0.00 \\
+AI  & Immobilisation Corporelles Net  & 3  & 0.00  & 0.00 \\
+AJ  & Terrains Net  &    & 0.00  & 0.00 \\
+AK  & Bâtiments Nets  &    & 0.00  & 0.00 \\
+AL  & Aménagements, Agencements Et Installations Net  &    & 0.00  & 0.00 \\
+AM  & Matériel, Mobilier Et Actifs Biologiques Net  &    & 0.00  & 0.00 \\
+AN  & Matériel De Transport Net  &    & 0.00  & 0.00 \\
+AP  & Avances Et Acomptes Verses Sur Immobilisations Net  & 3  & 0.00  & 0.00 \\
+AQ  & Immobilisation Financière  & 4  & 0.00  & 0.00 \\
+AR  & Titres De Participation Net  &    & 0.00  & 0.00 \\
+AS  & Autres Immobilisations Financières Net  &    & 0.00  & 0.00 \\
+AZ  & Total Actif Immobilisée  &    & -1'500'000.00  & 0.00 \\
+BA  & Actif Circulant Hao Net  & 5  & 0.00  & 0.00 \\
+BB  & Stock Et Encours Net  & 6  & 0.00  & 0.00 \\
+BG  & Créances Et Emplois Assimiles  &    & 0.00  & 0.00 \\
+BH  & Fournisseurs Avances Verses Net  & 17  & 0.00  & 0.00 \\
+BI  & Clients Nets  & 7  & 0.00  & 0.00 \\
+BJ  & Autres Créances Net  & 8  & 0.00  & 0.00 \\
+BK  & Total Actif Circulant  &    & 0.00  & 0.00 \\
+BQ  & Titres De Placement Net  & 9  & 0.00  & 0.00 \\
+BR  & Valeur A Encaisser Net  & 10  & 0.00  & 0.00 \\
+BS  & Banques, Chèques, Caisse Net  & 11  & 2'000'000.00  & 0.00 \\
+BT  & Total Trésorerie Active  &    & 2'000'000.00  & 0.00 \\
+BU  & Ecart De Conversion-Actif  & 12  & 0.00  & 0.00 \\
+BZ  & Total General  &    & 500'000.00  & 0.00 \\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l }
+LA COM  RDC SA  & \multicolumn{2}{l}{Exercice clos le 31.12.2020 }\\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA - RD Congo  & \multicolumn{2}{l}{Durée (en mois) 12 }\\
+\multicolumn{3}{l}{  }\\
+\multicolumn{3}{l}{  }\\
+\multicolumn{3}{l}{BILAN PASSIF AU 31 DÉCEMBRE 2020 }\\
+\end{longtable}
+\begin{longtable}[l]{ l  l  l  l  l }
+\multicolumn{5}{l}{  }\\
+REF  & PASSIF  & Note  & EXERCICE AU 31/12/2020  & EXERCICE AU 31/12/2019 \\
+ &  &  & NET2020  & NET2019 \\
+CA  & Capital  & 13  & 2'000'000.00  & 0.00 \\
+CB  & Apporteurs Capital Non Appelé  & 13  & 0.00  & 0.00 \\
+CD  & Primes Liées Au Capital Social  & 14  & 0.00  & 0.00 \\
+CE  & Ecart De Réévaluation  & 3e  & 0.00  & 0.00 \\
+CF  & Réserves Indisponible  & 14  & 0.00  & 0.00 \\
+CG  & Réserves Libres  & 14  & 0.00  & 0.00 \\
+CH  & Report A Nouveau  & 14  & 0.00  & 0.00 \\
+CJ  & Bénéfice Ou Perte Net De L'exercice  &    & 0.00  & 0.00 \\
+CL  & Subventions D'investissement  & 15  & -1'500'000.00  & 0.00 \\
+CM  & Provisions Règlementée  & 15  & 0.00  & 0.00 \\
+CP  & Total Capitaux Propres Et Ressources Assimilées  &    & 500'000.00  & 0.00 \\
+DA  & Emprunts Et Dettes Financières Diverses  & 16  & 0.00  & 0.00 \\
+DB  & Dettes De Location- Acquisition  & 16  & 0.00  & 0.00 \\
+DC  & Provisions Pour Risques Et Charges  & 16  & 0.00  & 0.00 \\
+DD  & Dettes Financières Et Ressources Assimilées  &    & 0.00  & 0.00 \\
+DF  & Ressources Stables  &    & 500'000.00  & 0.00 \\
+DH  & Dettes Circulants Hao  & 5  & 0.00  & 0.00 \\
+DI  & Clients Avances Reçus  & 7  & 0.00  & 0.00 \\
+DJ  & Fournisseurs D'exploitation  & 17  & 0.00  & 0.00 \\
+DK  & Dettes Fiscales Et Sociales  & 18  & 0.00  & 0.00 \\
+DM  & Autres Dettes  & 19  & 0.00  & 0.00 \\
+DN  & Provisions Pour Risques A Court Terme  & 19  & 0.00  & 0.00 \\
+DP  & Total Passif Circulant  &    & 0.00  & 0.00 \\
+DQ  & Banques, crédits d'escompte  & 20  & 0.00  & 0.00 \\
+DR  & Banques, établissements financiers et crédits de trésorerie  & 20  & 0.00  & 0.00 \\
+DT  & Trésorerie- Passif  &    & 0.00  & 0.00 \\
+DV  & Ecart De Conversion-Passif  & 12  & 0.00  & 0.00 \\
+DZ  & Total Passifs  &    & 500'000.00  & 0.00 \\
+\end{longtable}
+-  \#page-nr  - \\
+\end{reportvalue}
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}

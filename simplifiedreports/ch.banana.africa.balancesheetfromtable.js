@@ -67,7 +67,8 @@ function exec(string) {
    /**
     * 1. Loads the report structure
     */
-   var reportStructure = createReportStructureBalanceFromTable();
+   let file;
+   var reportStructure = createReportStructureBalanceFromTable(file);
 
    /**
     * 2. Calls methods to load balances, calculate totals, format amounts

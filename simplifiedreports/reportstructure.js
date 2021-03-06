@@ -96,10 +96,13 @@ function createReportStructureBalanceSheet() {
 }
 
 // Balance sheet from table
-function createReportStructureBalanceFromTable() {
+function createReportStructureBalanceFromTable(file) {
     let reportStructure = [];
     // ouvrir le fichier
-    let file = Banana.application.openDocument("*.ac2");
+    if (!file) {
+        file = Banana.application.openDocument("*.ac2");
+    }
+    
     if (!file) {
         return;
     }
