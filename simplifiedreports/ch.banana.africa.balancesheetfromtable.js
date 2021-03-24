@@ -68,6 +68,7 @@ function exec(string) {
     * 1. Loads the report structure
     */
    let file;
+   file = userParam.file;
    var reportStructure = createReportStructureBalanceFromTable(file);
 
    /**
@@ -514,13 +515,13 @@ function convertParam(userParam) {
    convertedParam.data.push(currentParam);
 
    var currentParam = {};
-   currentParam.name = 'import';
-   currentParam.title = 'Importer les soldes';
+   currentParam.name = 'file';
+   currentParam.title = 'Fichier de groupement';
    currentParam.type = 'string';
-   currentParam.value = userParam.import ? userParam.import : '';
+   currentParam.value = userParam.file ? userParam.file : '';
    currentParam.defaultvalue = '';
    currentParam.readValue = function() {
-      userParam.import = this.value;
+      userParam.file = this.value;
    }
    convertedParam.data.push(currentParam);
 
@@ -537,6 +538,7 @@ function initUserParam() {
    userParam.column = 'Gr1';
    userParam.compactprint = false;
    userParam.stampa = true;
+   userParam.file = '';
    return userParam;
 }
 

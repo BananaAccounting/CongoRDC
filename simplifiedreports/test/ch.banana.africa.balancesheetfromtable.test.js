@@ -78,7 +78,7 @@ ReportBalanceSheetFromTableTest.prototype.testBananaExtension = function() {
 	userParam.column = 'Gr1';
 	userParam.compattastampa = false;
 
-    let file = Banana.application.openDocument("file:script/../test/testcases/groupement_ohada.ac2");
+    let file = "file:script/../test/testcases/groupement_ohada.ac2";
 	var reportStructure = createReportStructureBalanceFromTable(file);
 
 	const bReport = new BReport(banDoc, userParam, reportStructure);

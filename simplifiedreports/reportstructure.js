@@ -98,15 +98,18 @@ function createReportStructureBalanceSheet() {
 // Balance sheet from table
 function createReportStructureBalanceFromTable(file) {
     let reportStructure = [];
+    let localFile;
     // ouvrir le fichier
-    if (!file) {
-        file = Banana.application.openDocument("*.ac2");
+    if (file) {
+        localFile = Banana.application.openDocument(file);
+    } else {
+        return "@Cancel";
     }
     
-    if (!file) {
+    if (!localFile) {
         return;
     }
-    let tableBalance = file.table("Balance");
+    let tableBalance = localFile.table("Balance");
     if (!tableBalance) {
         return "@Cancel";
     }
@@ -186,15 +189,18 @@ function createReportStructureProfitLoss() {
 // Profit & Loss statement from table
 function createReportStructureProfitLossFromTable(file) {
     let reportStructure = [];
+    let localFile;
 
-    if (!file) {
-        file = Banana.application.openDocument("*.ac2");
+    if (file) {
+        localFile = Banana.application.openDocument(file);
+    } else {
+        return "@Cancel";
     }
     
-    if (!file) {
+    if (!localFile) {
         return;
     }
-    let tableProfitLoss = file.table("ProfitLoss");
+    let tableProfitLoss = localFile.table("ProfitLoss");
     if (!tableProfitLoss) {
         return "@Cancel";
     }
