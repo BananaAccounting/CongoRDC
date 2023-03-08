@@ -1,10 +1,10 @@
 Test Banana Apps
 ----------------
 
-Date:        2021-03-06 08:48:12.389
-Duration:    00:00:01.109
+Date:        2021-03-24 11:40:05.640
+Duration:    00:00:01.262
 Application: BananaPlus 10.0.7.210122
-OS:          Windows 10 Version 1909
+OS:          Windows 10 Version 2009
 Qt:          5.15.2
 
 Test summary
