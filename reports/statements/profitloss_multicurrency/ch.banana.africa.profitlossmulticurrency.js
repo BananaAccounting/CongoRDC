@@ -19,7 +19,7 @@
 // @description = Profit/Loss Statement Report Multicurrency (OHADA - RDC) [BETA]
 // @description.fr = Compte de résultat Multi-devise (OHADA - RDC) [BETA]
 // @task = app.command
-// @doctype = *.*
+// @doctype = 100.*
 // @docproperties =
 // @outputformat = none
 // @inputdataform = none

@@ -19,7 +19,7 @@
 // @description = Balance Sheet, Profit/Loss Statement, Cash Flow Mono-currency
 // @description.fr = Bilan, Compte de résultat, Tableau des flux de tresorerie Mono-devise
 // @task = app.command
-// @doctype = *.*
+// @doctype = 100.*
 // @docproperties =
 // @outputformat = none
 // @inputdataform = none
