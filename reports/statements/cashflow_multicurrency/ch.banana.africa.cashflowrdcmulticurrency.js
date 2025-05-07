@@ -19,7 +19,7 @@
 // @description = Cash Flow Report Multicurrency (OHADA - RDC) [BETA]
 // @description.fr = Tableau des flux de tresorerie Multi-devise (OHADA - RDC) [BETA]
 // @task = app.command
-// @doctype = *.*
+// @doctype = 100.*
 // @docproperties =
 // @outputformat = none
 // @inputdataform = none

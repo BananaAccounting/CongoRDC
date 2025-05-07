@@ -1,11 +1,11 @@
 Test Banana Apps
 ----------------
 
-Date:        2024-04-17 18:07:19.762
-Duration:    00:00:01.799
-Application: BananaPlus 10.1.17.24023
+Date:        2024-12-20 14:20:21.862
+Duration:    00:00:01.335
+Application: BananaPlus 10.1.23.24247
 OS:          Windows-11
-Qt:          6.6.1
+Qt:          6.5.6
 
 Test summary
 ------------
