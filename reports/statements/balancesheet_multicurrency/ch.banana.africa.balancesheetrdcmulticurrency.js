@@ -19,7 +19,7 @@
 // @description = Balance sheet Report Multicurrency (OHADA - RDC) [BETA]
 // @description.fr = Bilan Multi-devise (OHADA - RDC) [BETA]
 // @task = app.command
-// @doctype = *.*
+// @doctype = 100.*
 // @docproperties =
 // @outputformat = none
 // @inputdataform = none

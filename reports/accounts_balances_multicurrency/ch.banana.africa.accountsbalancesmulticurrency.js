@@ -19,7 +19,7 @@
 // @description = Balance des comptes Multi-devise [BETA]
 // @description.fr = Balance des comptes Multi-devise [BETA]
 // @task = app.command
-// @doctype = *.*
+// @doctype = 100.*
 // @docproperties =
 // @outputformat = none
 // @inputdataform = none

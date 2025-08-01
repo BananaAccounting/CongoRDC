@@ -19,7 +19,7 @@
 // @description = Financial Analysis Report Monocurrency (OHADA - RDC) [BETA]
 // @description.fr = Analyse Financière Mono-devise (OHADA - RDC) [BETA]
 // @task = app.command
-// @doctype = *.*
+// @doctype = 100.*
 // @docproperties =
 // @outputformat = none
 // @inputdataform = none
