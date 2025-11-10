@@ -69,6 +69,7 @@ TestImportRawbankTrans.prototype.testImport = function () {
       this.testLogger = parentLogger.newLogger(Banana.IO.fileCompleteBaseName(fileName));
 
       var file = Banana.IO.getLocalFile(fileName);
+      file.codecName = "latin1";
       Test.assert(file);
       var fileContent = file.read();
       Test.assert(fileContent);
