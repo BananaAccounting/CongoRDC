@@ -62,8 +62,9 @@ function exec() {
     return "@Cancel";
   }
   // var form = getAccounts(current);
-  var report = createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam);
-   var stylesheet = createStyleSheet();
+  var stylesheet = createStyleSheet();
+  var report = createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam, stylesheet);
+   
    Banana.Report.preview(report, stylesheet);
 
 }
@@ -73,7 +74,7 @@ function exec() {
 * Function that create the report
 *
 **************************************************************************************/
-function createBalanceSheetMulticurrencyReport(current, startDate, endDate, userParam, report) {
+function createBalanceSheetMulticurrencyReport(current, startDate, endDate, userParam, stylesheet, report) {
 
   // Accounting period for the current year file
   var currentStartDate = startDate;
@@ -95,7 +96,7 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   var vatNumber = current.info("AccountingDataBase","VatNumber");
 
   if (!report) {
-     var report = Banana.Report.newReport("Bilan");
+    var report = Banana.Report.newReport("Bilan");
   }
 
   /*******************************************************************************************
@@ -103,6 +104,17 @@ function createBalanceSheetMulticurrencyReport(current, startDate, endDate, user
   *******************************************************************************************/
   // Header of the report
   var table = report.addTable("table");
+  var headerLogoSection = report.addSection("header");
+  var logoFormat = Banana.Report.logoFormat("Logo"); 
+  // var stylesheet = createStyleSheet();
+  if (logoFormat != null) {
+    // Use the format as defined in the dialog File --> Logo Setup   
+    var logoElement = logoFormat.createDocNode(headerLogoSection, stylesheet, "logo"); 
+    report.getHeader().addChild(logoElement); 
+  } else {
+    // If the format 'logo' is not defined, insert an image   
+    report.addImage("documents:logo", "logoStyle"); 
+  } 
   var col1 = table.addColumn("c1");
   var col2 = table.addColumn("c2");
   var tableRow;

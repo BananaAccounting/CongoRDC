@@ -72,9 +72,11 @@ function exec() {
       var previous = Banana.document.previousYear();
   
       var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie Multi-devise (OHADA - RDC) [BETA]");
+
+      var stylesheet = createStyleSheet(userParam);
       
       /* 1. Balance Sheet report */
-      createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam, report);
+      createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam, stylesheet, report);
       report.addPageBreak();
       
       /* 2. Profit/Loss Statement report */
@@ -84,7 +86,6 @@ function exec() {
       /* 3. Cash Flow report */
       createCashFlowReportMulticurrency(current, previous, userParam.selectionStartDate, userParam.selectionEndDate, userParam, report);
   
-      var stylesheet = createStyleSheet(userParam);
       Banana.Report.preview(report, stylesheet);
   
   }
