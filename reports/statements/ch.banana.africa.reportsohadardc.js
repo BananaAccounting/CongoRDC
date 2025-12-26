@@ -59,11 +59,12 @@ function exec() {
 	/* PREVIOUS year file: Return the previous year document.
 	   If the previous year is not defined or it is not found it returns null */
 	var previous = Banana.document.previousYear();
+  var stylesheet = createStyleSheet(userParam);
 
 	var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie Mono-devise (OHADA - RDC) [BETA]");
 	
 	/* 1. Balance Sheet report */
-	createBalanceSheetReport(current, dateForm.selectionStartDate, dateForm.selectionEndDate, report);
+	createBalanceSheetReport(current, dateForm.selectionStartDate, dateForm.selectionEndDate, stylesheet, report);
 	report.addPageBreak();
 	
 	/* 2. Profit/Loss Statement report */
@@ -73,7 +74,7 @@ function exec() {
 	/* 3. Cash Flow report */
 	createCashFlowReport(current, previous, dateForm.selectionStartDate, dateForm.selectionEndDate, report);
 
-	var stylesheet = createStyleSheet(userParam);
+	
 	Banana.Report.preview(report, stylesheet);
 
 }
@@ -109,10 +110,10 @@ function createStyleSheet(userParam) {
    stylesheet.addStyle(".col1", "width:4%");
    stylesheet.addStyle(".col2", "width:31%");
    stylesheet.addStyle(".col3", "width:5%");
-   stylesheet.addStyle(".col4", "width:"+ userParam.amounts_column_width +"%");
-   stylesheet.addStyle(".col5", "width:"+ userParam.amounts_column_width +"%");
-   stylesheet.addStyle(".col6", "width:"+ userParam.amounts_column_width +"%");
-   stylesheet.addStyle(".col7", "width:"+ userParam.amounts_column_width +"%");
+   stylesheet.addStyle(".col4", "width:15%");
+   stylesheet.addStyle(".col5", "width:15%");
+   stylesheet.addStyle(".col6", "width:15%");
+   stylesheet.addStyle(".col7", "width:15%");
    stylesheet.addStyle("table.tableActiveBalanceSheet td", "padding-bottom:2px;padding-top:5px");
 
    var tableStyle = stylesheet.addStyle(".tablePassiveBalanceSheet");
@@ -120,8 +121,8 @@ function createStyleSheet(userParam) {
    stylesheet.addStyle(".pCol1", "width:5%");
    stylesheet.addStyle(".pCol2", "width:60%");
    stylesheet.addStyle(".pCol3", "width:5%");
-   stylesheet.addStyle(".pCol4", "width:"+ userParam.amounts_column_width +"%");
-   stylesheet.addStyle(".pCol5", "width:"+ userParam.amounts_column_width +"%");
+   stylesheet.addStyle(".pCol4", "width:15%");
+   stylesheet.addStyle(".pCol5", "width:15%");
    stylesheet.addStyle("table.tablePassiveBalanceSheet td", "border:thin solid black;padding-bottom:2px;padding-top:5px");
 
    var tableStyle = stylesheet.addStyle(".tableProfitLossStatement");
@@ -130,8 +131,8 @@ function createStyleSheet(userParam) {
    stylesheet.addStyle(".plCol2", "width:53%");
    stylesheet.addStyle(".plCol3", "width:5%");
    stylesheet.addStyle(".plCol4", "width:7%");
-   stylesheet.addStyle(".plCol5", "width:"+ userParam.amounts_column_width +"%");
-   stylesheet.addStyle(".plCol6", "width:"+ userParam.amounts_column_width +"%");
+   stylesheet.addStyle(".plCol5", "width:15%");
+   stylesheet.addStyle(".plCol6", "width:15%");
    stylesheet.addStyle("table.tableProfitLossStatement td", "border:thin solid black;padding-bottom:1px;padding-top:3px");
 
    var tableStyle = stylesheet.addStyle(".tableCashFlow");
@@ -139,8 +140,8 @@ function createStyleSheet(userParam) {
    stylesheet.addStyle(".col1", "width:5%");
    stylesheet.addStyle(".col2", "width:60%");
    stylesheet.addStyle(".col3", "width:5%");
-   stylesheet.addStyle(".col4", "width:"+ userParam.amounts_column_width +"%");
-   stylesheet.addStyle(".col5", "width:"+ userParam.amounts_column_width +"%");
+   stylesheet.addStyle(".col4", "width:15%");
+   stylesheet.addStyle(".col5", "width:15%");
    stylesheet.addStyle("table.tableCashFlow td", "border:thin solid black;padding-bottom:2px;padding-top:5px");
 
    return stylesheet;
