@@ -35,131 +35,193 @@
 
 function exec() {
   
-      /* CURRENT year file: the current opened document in Banana */
-      var current = Banana.document;
-      if (!current) {
-          return "@Cancel";
-      }
-  
-    var userParam = initUserParam();
-    var savedParam = current.getScriptSettings();
-    if (savedParam && savedParam.length > 0) {
-        userParam = JSON.parse(savedParam);
-        userParam = verifyUserParam(userParam);
-      }
-
-      // If needed show the settings dialog to the user
-    if (!options || !options.useLastSettings) {
-        userParam = settingsDialog(); // From properties
-    }
-  
-    if (!userParam) {
-      return "@Cancel";
+    /* CURRENT year file: the current opened document in Banana */
+    var current = Banana.document;
+    if (!current) {
+        return "@Cancel";
     }
 
-    var fileNumber = current.info("Base","FileTypeNumber");
-
-    // Check if the file is multicurrency
-    if (Number(fileNumber) === 120 || Number(fileNumber) === 130) {
-        
-    } else {
-      current.addMessage("Cette extension ne fonctionne qu'en mode multi-devise. \nVeuillez vous assurer que votre fichier est multi-devise.");
-      return;
+  var userParam = initUserParam();
+  var savedParam = current.getScriptSettings();
+  if (savedParam && savedParam.length > 0) {
+      userParam = JSON.parse(savedParam);
+      userParam = verifyUserParam(userParam);
     }
-  
-      /* PREVIOUS year file: Return the previous year document.
-         If the previous year is not defined or it is not found it returns null */
-      var previous = Banana.document.previousYear();
-  
-      var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie Multi-devise (OHADA - RDC) [BETA]");
 
-      var stylesheet = createStyleSheet(userParam);
-      
-      /* 1. Balance Sheet report */
-      createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam, stylesheet, report);
-      report.addPageBreak();
-      
-      /* 2. Profit/Loss Statement report */
-      createProfitLossStatementReportMulticurrency(current, previous, userParam.selectionStartDate, userParam.selectionEndDate, userParam, report);
-      report.addPageBreak();
-  
-      /* 3. Cash Flow report */
-      createCashFlowReportMulticurrency(current, previous, userParam.selectionStartDate, userParam.selectionEndDate, userParam, report);
-  
-      Banana.Report.preview(report, stylesheet);
-  
+    // If needed show the settings dialog to the user
+  if (!options || !options.useLastSettings) {
+      userParam = settingsDialog(); // From properties
   }
+
+  if (!userParam) {
+    return "@Cancel";
+  }
+
+  var fileNumber = current.info("Base","FileTypeNumber");
+
+  // Check if the file is multicurrency
+  if (Number(fileNumber) === 120 || Number(fileNumber) === 130) {
+      
+  } else {
+    current.addMessage("Cette extension ne fonctionne qu'en mode multi-devise. \nVeuillez vous assurer que votre fichier est multi-devise.");
+    return;
+  }
+
+  /* PREVIOUS year file: Return the previous year document.
+      If the previous year is not defined or it is not found it returns null */
+  var previous = Banana.document.previousYear();
+
+  var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie Multi-devise (OHADA - RDC) [BETA]");
+
+  var stylesheet = createStyleSheet(userParam);
+
+  // Print logo if enabled
+  if (userParam.print_logo) {
+    printLogo(report, stylesheet, userParam);
+  }
+  
+  /* 1. Balance Sheet report */
+  createBalanceSheetMulticurrencyReport(current, userParam.selectionStartDate, userParam.selectionEndDate, userParam, stylesheet, report);
+  report.addPageBreak();
+  
+  /* 2. Profit/Loss Statement report */
+  createProfitLossStatementReportMulticurrency(current, previous, userParam.selectionStartDate, userParam.selectionEndDate, userParam, report);
+  report.addPageBreak();
+
+  /* 3. Cash Flow report */
+  createCashFlowReportMulticurrency(current, previous, userParam.selectionStartDate, userParam.selectionEndDate, userParam, report);
+
+  Banana.Report.preview(report, stylesheet);
+
+}
+
+/**
+ * Prints the logo on the report header
+ */
+function printLogo(report, stylesheet, userParam) {
+  var headerLogoSection = report.addSection("headerLogo");
+  var logoFormat = Banana.Report.logoFormat(userParam.logo_name);
+  
+  if (logoFormat) {
+      // Use the format as defined in the dialog File --> Logo Setup
+      var logoElement = logoFormat.createDocNode(headerLogoSection, stylesheet, "logo");
+      report.getHeader().addChild(logoElement);
+  } else {
+      // If the format 'logo' is not defined, try to insert an image from documents
+      report.addImage("documents:logo", "logoStyle");
+  }
+}
   
   /**************************************************************************************
 * Functions to manage the parameters
 **************************************************************************************/
 function convertParam(userParam) {
 
-    var convertedParam = {};
-    convertedParam.version = '1.0';
-    convertedParam.data = [];
-  
-    var currentParam = {};
-    currentParam.name = 'title';
-    currentParam.title = 'Titre';
-    currentParam.type = 'string';
-    currentParam.value = userParam.title ? userParam.title : '';
-    currentParam.defaultvalue = 'Rapports comptables multi-devise';
-    currentParam.readValue = function() {
-        userParam.title = this.value;
-    }
-    convertedParam.data.push(currentParam);
-  
-    var currentParam = {};
-    currentParam.name = 'currency';
-    currentParam.title = 'Devise';
-    currentParam.type = 'string';
-    currentParam.value = userParam.currency ? userParam.currency : 'CDF';
-    currentParam.defaultvalue = 'CDF';
-    currentParam.readValue = function() {
-        userParam.currency = this.value;
-    }
-    convertedParam.data.push(currentParam);
-  
-    var currentParam = {};
-    currentParam.name = 'exchangerate';
-    currentParam.title = 'Change';
-    currentParam.type = 'string';
-    currentParam.value = userParam.exchangerate ? userParam.exchangerate : '';
-    currentParam.defaultvalue = '';
-    currentParam.readValue = function() {
-        userParam.exchangerate = this.value;
-    }
-    convertedParam.data.push(currentParam);
-  
-    var currentParam = {};
-    currentParam.name = 'decimals';
-    currentParam.title = 'Enlever les décimales';
-    currentParam.type = 'bool';
-    currentParam.value = userParam.decimals ? userParam.decimals : false;
-    currentParam.defaultvalue = false;
-    currentParam.readValue = function() {
-        userParam.decimals = this.value;
-    }
-    convertedParam.data.push(currentParam);
+  var convertedParam = {};
+  convertedParam.version = '1.0';
+  convertedParam.data = [];
 
-    var currentParam = {};
-    currentParam.name = 'amounts_column_width';
-    currentParam.title = 'Largeur des colonnes montants (valeur par défaut 15)';
-    currentParam.type = 'string';
-    currentParam.value = userParam.amounts_column_width ? userParam.amounts_column_width : '15';
-    currentParam.defaultvalue = '15';
-    currentParam.tooltip = "Ajuster la largeur des colonnes contenant des montants";
-    currentParam.readValue = function() {
-        userParam.amounts_column_width = this.value;
-    }
-    convertedParam.data.push(currentParam);
-  
-    return convertedParam;
+    // Logo section
+  var currentParam = {};
+  currentParam.name = 'logo';
+  currentParam.title = 'Logo';
+  currentParam.type = 'string';
+  currentParam.value = '';
+  currentParam.editable = false;
+  currentParam.readValue = function() {
+      userParam.logo = this.value;
   }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'print_logo';
+  currentParam.parentObject = 'logo';
+  currentParam.title = 'Imprimer le logo';
+  currentParam.type = 'bool';
+  currentParam.value = userParam.print_logo ? true : false;
+  currentParam.defaultvalue = true;
+  currentParam.tooltip = 'Cochez pour inclure le logo dans le rapport';
+  currentParam.readValue = function() {
+      userParam.print_logo = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'logo_name';
+  currentParam.parentObject = 'logo';
+  currentParam.title = 'Nom du logo (défini dans Fichier -> Configuration logo)';
+  currentParam.type = 'string';
+  currentParam.value = userParam.logo_name ? userParam.logo_name : 'Logo';
+  currentParam.defaultvalue = 'Logo';
+  currentParam.tooltip = 'Entrez le nom du logo tel que défini dans la Configuration logo';
+  currentParam.readValue = function() {
+      userParam.logo_name = this.value;
+  }
+  convertedParam.data.push(currentParam);
+  
+  var currentParam = {};
+  currentParam.name = 'title';
+  currentParam.title = 'Titre';
+  currentParam.type = 'string';
+  currentParam.value = userParam.title ? userParam.title : '';
+  currentParam.defaultvalue = 'Rapports comptables multi-devise';
+  currentParam.readValue = function() {
+      userParam.title = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'currency';
+  currentParam.title = 'Devise';
+  currentParam.type = 'string';
+  currentParam.value = userParam.currency ? userParam.currency : 'CDF';
+  currentParam.defaultvalue = 'CDF';
+  currentParam.readValue = function() {
+      userParam.currency = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'exchangerate';
+  currentParam.title = 'Change';
+  currentParam.type = 'string';
+  currentParam.value = userParam.exchangerate ? userParam.exchangerate : '';
+  currentParam.defaultvalue = '';
+  currentParam.readValue = function() {
+      userParam.exchangerate = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'decimals';
+  currentParam.title = 'Enlever les décimales';
+  currentParam.type = 'bool';
+  currentParam.value = userParam.decimals ? userParam.decimals : false;
+  currentParam.defaultvalue = false;
+  currentParam.readValue = function() {
+      userParam.decimals = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'amounts_column_width';
+  currentParam.title = 'Largeur des colonnes montants (valeur par défaut 15)';
+  currentParam.type = 'string';
+  currentParam.value = userParam.amounts_column_width ? userParam.amounts_column_width : '15';
+  currentParam.defaultvalue = '15';
+  currentParam.tooltip = "Ajuster la largeur des colonnes contenant des montants";
+  currentParam.readValue = function() {
+      userParam.amounts_column_width = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  return convertedParam;
+}
   
   function initUserParam() {
     var userParam = {};
+    userParam.print_logo = true;
+    userParam.logo_name = 'Logo';
     userParam.title = "Rapports comptables multi-devise";
     userParam.currency = 'CDF';
     userParam.exchangerate = "";
@@ -169,6 +231,12 @@ function convertParam(userParam) {
   }
 
   function verifyUserParam(userParam) {
+    if (userParam.print_logo === undefined || userParam.print_logo === null) {
+      userParam.print_logo = true;
+    }
+    if (!userParam.logo_name) {
+        userParam.logo_name = 'Logo';
+    }
     if (!userParam.title) {
       userParam.title = '';
     }
@@ -247,6 +315,10 @@ function convertParam(userParam) {
     stylesheet.addStyle(".bold", "font-weight:bold;");
     stylesheet.addStyle(".right", "text-align:right;");
     stylesheet.addStyle(".center", "text-align:center");
+
+    // Logo styles
+    stylesheet.addStyle(".headerLogo", "margin-bottom:10px;");
+    stylesheet.addStyle(".logoStyle", "max-height:60px;");
  
     style = stylesheet.addStyle(".blackCell");
     style.setAttribute("background-color", "black");
