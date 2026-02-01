@@ -93,14 +93,14 @@ function createBalanceSheetReport(current, startDate, endDate, stylesheet, repor
    var headerLogoSection = report.addSection("header");
    var logoFormat = Banana.Report.logoFormat("Logo"); 
    // var stylesheet = createStyleSheet();
-   if (logoFormat != null) {
-      // Use the format as defined in the dialog File --> Logo Setup   
-      var logoElement = logoFormat.createDocNode(headerLogoSection, stylesheet, "logo"); 
-      report.getHeader().addChild(logoElement); } 
-   else {
-      // If the format 'logo' is not defined, insert an image   
-      report.addImage("documents:logo", "logoStyle"); 
-   } 
+   // if (logoFormat != null) {
+   //    // Use the format as defined in the dialog File --> Logo Setup   
+   //    var logoElement = logoFormat.createDocNode(headerLogoSection, stylesheet, "logo"); 
+   //    report.getHeader().addChild(logoElement); } 
+   // else {
+   //    // If the format 'logo' is not defined, insert an image   
+   //    report.addImage("documents:logo", "logoStyle"); 
+   // } 
    var col1 = table.addColumn("c1");
    var col2 = table.addColumn("c2");
    var tableRow;

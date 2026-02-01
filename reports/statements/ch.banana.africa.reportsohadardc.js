@@ -48,8 +48,14 @@ function exec() {
 
   var userParam = initUserParam();
   var savedParam = current.getScriptSettings();
-  if (savedParam.length > 0) {
-    userParam = JSON.parse(savedParam);
+  if (savedParam && savedParam.length > 0) {
+        userParam = JSON.parse(savedParam);
+        userParam = verifyUserParam(userParam);
+      }
+
+  // If needed show the settings dialog to the user
+  if (!options || !options.useLastSettings) {
+      userParam = settingsDialog(); // From properties
   }
 
   if (!userParam) {
@@ -62,6 +68,11 @@ function exec() {
   var stylesheet = createStyleSheet(userParam);
 
 	var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie Mono-devise (OHADA - RDC) [BETA]");
+
+  // Print logo if enabled
+  if (userParam.print_logo) {
+    printLogo(report, stylesheet, userParam);
+  }
 	
 	/* 1. Balance Sheet report */
 	createBalanceSheetReport(current, dateForm.selectionStartDate, dateForm.selectionEndDate, stylesheet, report);
@@ -79,6 +90,23 @@ function exec() {
 
 }
 
+/**
+ * Prints the logo on the report header
+ */
+function printLogo(report, stylesheet, userParam) {
+  var headerLogoSection = report.addSection("headerLogo");
+  var logoFormat = Banana.Report.logoFormat(userParam.logo_name);
+  
+  if (logoFormat) {
+      // Use the format as defined in the dialog File --> Logo Setup
+      var logoElement = logoFormat.createDocNode(headerLogoSection, stylesheet, "logo");
+      report.getHeader().addChild(logoElement);
+  } else {
+      // If the format 'logo' is not defined, try to insert an image from documents
+      report.addImage("documents:logo", "logoStyle");
+  }
+}
+
 function createStyleSheet(userParam) {
    var stylesheet = Banana.Report.newStyleSheet();
 
@@ -87,6 +115,10 @@ function createStyleSheet(userParam) {
    stylesheet.addStyle(".bold", "font-weight:bold;");
    stylesheet.addStyle(".right", "text-align:right;");
    stylesheet.addStyle(".center", "text-align:center");
+
+   // Logo styles
+   stylesheet.addStyle(".headerLogo", "margin-bottom:10px;");
+   stylesheet.addStyle(".logoStyle", "max-height:60px;");
 
    style = stylesheet.addStyle(".blackCell");
    style.setAttribute("background-color", "black");
@@ -149,29 +181,117 @@ function createStyleSheet(userParam) {
 
 function convertParam(userParam) {
 
-    var convertedParam = {};
-    convertedParam.version = '1.0';
-    convertedParam.data = [];
+  var convertedParam = {};
+  convertedParam.version = '1.0';
+  convertedParam.data = [];
 
-    var currentParam = {};
-    currentParam.name = 'amounts_column_width';
-    currentParam.title = 'Largeur des colonnes montants (valeur par défaut 15)';
-    currentParam.type = 'string';
-    currentParam.value = userParam.amounts_column_width ? userParam.amounts_column_width : '15';
-    currentParam.defaultvalue = '15';
-    currentParam.tooltip = "Ajuster la largeur des colonnes contenant des montants";
-    currentParam.readValue = function() {
-        userParam.amounts_column_width = this.value;
-    }
-    convertedParam.data.push(currentParam);
+  // Logo section
+  var currentParam = {};
+  currentParam.name = 'logo';
+  currentParam.title = 'Logo';
+  currentParam.type = 'string';
+  currentParam.value = '';
+  currentParam.editable = false;
+  currentParam.readValue = function() {
+      userParam.logo = this.value;
+  }
+  convertedParam.data.push(currentParam);
 
-    return convertedParam;
+  var currentParam = {};
+  currentParam.name = 'print_logo';
+  currentParam.parentObject = 'logo';
+  currentParam.title = 'Imprimer le logo';
+  currentParam.type = 'bool';
+  currentParam.value = userParam.print_logo ? true : false;
+  currentParam.defaultvalue = true;
+  currentParam.tooltip = 'Cochez pour inclure le logo dans le rapport';
+  currentParam.readValue = function() {
+      userParam.print_logo = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'logo_name';
+  currentParam.parentObject = 'logo';
+  currentParam.title = 'Nom du logo (défini dans Fichier -> Configuration logo)';
+  currentParam.type = 'string';
+  currentParam.value = userParam.logo_name ? userParam.logo_name : 'Logo';
+  currentParam.defaultvalue = 'Logo';
+  currentParam.tooltip = 'Entrez le nom du logo tel que défini dans la Configuration logo';
+  currentParam.readValue = function() {
+      userParam.logo_name = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  // Options section
+  var currentParam = {};
+  currentParam.name = 'options';
+  currentParam.title = 'Options';
+  currentParam.type = 'string';
+  currentParam.value = '';
+  currentParam.editable = false;
+  currentParam.readValue = function() {
+      userParam.options = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  var currentParam = {};
+  currentParam.name = 'amounts_column_width';
+  currentParam.parentObject = 'options';
+  currentParam.title = 'Largeur des colonnes montants (valeur par défaut 15)';
+  currentParam.type = 'string';
+  currentParam.value = userParam.amounts_column_width ? userParam.amounts_column_width : '15';
+  currentParam.defaultvalue = '15';
+  currentParam.tooltip = "Ajuster la largeur des colonnes contenant des montants";
+  currentParam.readValue = function() {
+      userParam.amounts_column_width = this.value;
+  }
+  convertedParam.data.push(currentParam);
+
+  return convertedParam;
 }
 
 function initUserParam() {
-    var userParam = {};
-    userParam.amounts_column_width = '15';
-    return userParam;
+  var userParam = {};
+  userParam.print_logo = true;
+  userParam.logo_name = 'Logo';
+  userParam.amounts_column_width = '15';
+  return userParam;
+}
+
+function verifyUserParam(userParam) {
+  if (userParam.print_logo === undefined || userParam.print_logo === null) {
+      userParam.print_logo = true;
+  }
+  if (!userParam.logo_name) {
+      userParam.logo_name = 'Logo';
+  }
+  if (!userParam.amounts_column_width) {
+      userParam.amounts_column_width = '15';
+  }
+  return userParam;
+}
+
+function parametersDialog(userParam) {
+  userParam = verifyUserParam(userParam);
+  if (typeof(Banana.Ui.openPropertyEditor) !== 'undefined') {
+    var dialogTitle = "Paramètres";
+    var convertedParam = convertParam(userParam);
+    var pageAnchor = 'dlgSettings';
+    if (!Banana.Ui.openPropertyEditor(dialogTitle, convertedParam, pageAnchor)) {
+        return null;
+    }
+    
+    for (var i = 0; i < convertedParam.data.length; i++) {
+        // Read values to userParam (through the readValue function)
+        convertedParam.data[i].readValue();
+    }
+    
+    //  Reset reset default values
+    userParam.useDefaultTexts = false;
+  }
+
+  return userParam;
 }
 
 function settingsDialog() {
@@ -198,7 +318,9 @@ function settingsDialog() {
       // userParam.useDefaultTexts = false;
   }
   var paramToString = JSON.stringify(userParam);
-  var value = Banana.document.setScriptSettings(paramToString);
+  Banana.document.setScriptSettings(paramToString);
+
+  return userParam;
 }
 
 /***************************************************************************************************************** 
