@@ -1,0 +1,213 @@
+%%info_test_name{ch.banana.africa.reportsohadardcmulticurrency.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{C:/Users/joemb/Banana/CongoRDC/reports/statements/test/ch.banana.africa.reportsohadardcmulticurrency.test.js}
+%
+\begin{testcase}{TestMultiReportsOhadaRDC}
+\begin{test}{testBananaApps}
+\textvalue{This test will tests the BananaApp reportsohadardcmulticurrency.js}\\
+\begin{reportvalue}{Report Balance Sheet, Profit/Loss Statement, Cash Flow Multi-currency}
+\begin{longtable}[l]{ l  l }
+NACKY NGOMA SARL  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+BILAN ACTIF AU 31 DECEMBRE 2020 \\
+Devise: CDF \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l  l  l }
+REF  & ACTIF  & Note  & \multicolumn{3}{l}{EXERCICE AU 31/12/2020 } & EXERCICE AU 31/12/2019 \\
+ &  &  & BRUT 2020  & AMORT et DEPREC.  & NET  & NET \\
+AD  & IMMOBILISATIONS INCORPORELLES  & 3  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AE  & Frais de développement et de prospection  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AF  & Brevets, licences, logiciels, et  droits similaires  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AG  & Fonds commercial et droit au bail  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AH  & Autres immobilisations incorporelles  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AI  & IMMOBILISATIONS CORPORELLES  & 3  & 54'250'000.04  & 2'625'000.00  & 51'625'000.04  & 51'625'000.04 \\
+AJ  & Terrains (1) dont Placement en  Net......./.......  &  & 17'500'000.01  & 0.00  & 17'500'000.01  & 17'500'000.01 \\
+AK  & Bâtiments (1) dont Placement en  Net......./.......  &  & 26'250'000.02  & 525'000.00  & 25'725'000.02  & 25'725'000.02 \\
+AL  & Aménagements, agencements et installations  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AM  & Matériel, mobilier et actifs biologiques  &  & 10'500'000.01  & 2'100'000.00  & 8'400'000.01  & 8'400'000.01 \\
+AN  & Matériel de transport  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AP  & Avances et acomptes versés sur immobilisations  & 3  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AQ  & IMMOBILISATIONS FINANCIERES  & 4  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AR  & Titres de participation  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AS  & Autres immobilisations financières  &  & 0.00  & 0.00  & 0.00  & 0.00 \\
+AZ  & TOTAL ACTIF IMMOBILISE  &  & 54'250'000.04  & 2'625'000.00  & 51'625'000.04  & 51'625'000.04 \\
+BA  & ACTIF CIRCULANT HAO  & 5  & 0.00  & 0.00  & 0.00  & 0.00 \\
+BB  & STOCKS ET ENCOURS  & 6  & 43'929'007.53  & 0.00  & 43'929'007.53  & 25'910'552.52 \\
+BG  & CREANCES ET EMPLOIS ASSIMILES   &  &  &  &  & \\
+BH  & Fournisseurs avances versées   & 17  & 0.00  & 0.00  & 0.00  & 0.00 \\
+BI  & Clients   & 7  & 77'858'550.06  & 0.00  & 77'858'550.06  & 39'757'130.03 \\
+BJ  & Autres créances  & 8  & 9'655'187.51  & 0.00  & 9'655'187.51  & 3'620'697.50 \\
+BK  & TOTAL ACTIF CIRCULANT  &  & 131'442'745.10  & 0.00  & 131'442'745.10  & 69'288'380.05 \\
+BQ  & Titres de placement  & 9  & 0.00  & 0.00  & 0.00  & 0.00 \\
+BR  & Valeurs à encaisser  & 10  & 0.00  & 0.00  & 0.00  & 0.00 \\
+BS  & Banques, chèques postaux, caisse et assimilés  & 11  & 6'549'095.00  & 0.00  & 6'549'095.00  & 8'299'095.01 \\
+BT  & TOTAL TRESORERIE-ACTIF  &  & 6'549'095.00  & 0.00  & 6'549'095.00  & 8'299'095.01 \\
+BU  & Ecart de conversion-Actif  & 12  & 0.00  &  & 0.00  & 0.00 \\
+BZ  & TOTAL GENERAL  &  & 192'241'840.14  & 2'625'000.00  & 189'616'840.14  & 129'212'475.10 \\
+\end{longtable}
+\begin{longtable}[l]{ l  l }
+NACKY NGOMA SARL  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+BILAN PASSIF AU 31 DECEMBRE 2020 \\
+Devise: CDF \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l }
+REF  & PASSIF  & Note  & EXERCICE AU 31/12/2020 \newline   \newline NET \newline  & EXERCICE AU 31/12/2019 \newline   \newline NET \newline \\
+CA  & Capital  & 13  & 47'250'000.04  & 47'250'000.04 \\
+CB  & Apporteurs capital non appelé (-)  & 13  & 0.00  & 0.00 \\
+CD  & Primes liées au capital social  & 14  & 0.00  & 0.00 \\
+CE  & Ecarts de réévaluation  & 3e  & 0.00  & 0.00 \\
+CF  & Réserves indisponibles  & 14  & 0.00  & 0.00 \\
+CG  & Réserves libres  & 14  & 0.00  & 0.00 \\
+CH  & Report à nouveau (+ ou -)  & 14  & 0.00  & 0.00 \\
+CJ  & Résultat net de l'exercice (bénéfice + ou perte -)  &  & 50'508'062.54  & 34'353'707.53 \\
+CL  & Subventions d'investissement  & 15  & 0.00  & 0.00 \\
+CM  & Provisions réglementées  & 15  & 0.00  & 0.00 \\
+CP  & TOTAL CAPITAUX PROPRES ET RESSOURCES ASSIMILEES  &  & 97'758'062.57  & 81'603'707.56 \\
+DA  & Emprunts et dettes financières diverses  & 16  & 14'000'000.01  & 14'000'000.01 \\
+DB  & Dettes de location acquisition  & 16  & 0.00  & 0.00 \\
+DC  & Provisions pour risques et charges  & 16  & 0.00  & 0.00 \\
+DD  & TOTAL DETTES FINANCIERES ET RESSOURCES ASSIMILEES  &  & 14'000'000.01  & 14'000'000.01 \\
+DF  & TOTAL RESSOURCES STABLES  &  & 111'758'062.58  & 95'603'707.57 \\
+DH  & Dettes circulantes HAO  & 5  & 0.00  & 0.00 \\
+DI  & Clients, avances reçues  & 7  & 0.00  & 0.00 \\
+DJ  & Fournisseurs d'exploitation  & 17  & 77'858'777.56  & 33'608'767.53 \\
+DK  & Dettes fiscales et sociales  & 18  & 0.00  & 0.00 \\
+DM  & Autres dettes  & 19  & 0.00  & 0.00 \\
+DN  & Provisions pour risques à court terme  & 19  & 0.00  & 0.00 \\
+DP  & TOTAL PASSIF CIRCULANT  &  & 77'858'777.56  & 33'608'767.53 \\
+DQ  & Banques, crédits d'escompte  & 20  & 0.00  & 0.00 \\
+DR  & Banques, établissements financiers et crédits de trésorerie  & 20  & 0.00  & 0.00 \\
+DT  & TOTAL TRESORERIE-PASSIF  &  & 0.00  & 0.00 \\
+DV  & Ecart de conversion-Passif  & 12  & 0.00  & 0.00 \\
+DZ  & TOTAL GENERAL  &  & 189'616'840.14  & 129'212'475.10 \\
+\end{longtable}
+\begin{longtable}[l]{ l  l }
+NACKY NGOMA SARL  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+COMPTE DE RÉSULTAT AU 31 DÉCEMBRE 2020 \\
+Devise: CDF \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l  l }
+REF  & LIBELLES  &  & Note  & EXERCICE AU 31/12/2020 \newline NET \newline  & EXERCICE AU 31/12/2019 \newline NET \newline \\
+TA  & Ventes de marchandises  & +  & 21  & 37'073'890.03  & 37'015'947.53 \\
+RA  & Achats de marchandises  & -  & 22  & 912'889'355.68  & 22'774'167.52 \\
+RB  & Variation de stocks de marchandises  & -  & 6  & -18'018'455.01  & -18'910'535.01 \\
+XA  & MARGE COMMERCIALE (Somme TA à RB)  &  &  & -857'797'010.64  & 33'152'315.02 \\
+TB  & Ventes de produits fabriqués  & +  & 21  & 0.00  & 0.00 \\
+TC  & Travaux, services vendus  & +  & 21  & 0.00  & 0.00 \\
+TD  & Produits accessoires  & +  & 21  & 0.00  & 0.00 \\
+XB  & CHIFFRE D'AFFAIRES (A + B + C + D)  &  &  & 37'073'890.03  & 37'015'947.53 \\
+TE  & Production stockée (ou déstockage)  & +  & 6  & 0.00  & 0.00 \\
+TF  & Production immobilisée  &  & 21  & 0.00  & 0.00 \\
+TG  & Subventions d’exploitation  &  & 21  & 0.00  & 0.00 \\
+TH  & Autres produits  & +  & 21  & 0.00  & 0.00 \\
+TI  & Transferts de charges d'exploitation  & +  & 12  & 0.00  & 0.00 \\
+RC  & Achats de matières premières et fournitures liées  & -  & 22  & 0.00  & 0.00 \\
+RD  & Variation de stocks de matières premières et fournitures liées  & -  & 6  & 0.00  & 0.00 \\
+RE  & Autres achats  & -  & 22  & 0.00  & 0.00 \\
+RF  & Variation de stocks d’autres approvisionnements  & -  & 6  & 0.00  & 0.00 \\
+RG  & Transports  & -  & 23  & 0.00  & 0.00 \\
+RH  & Services extérieurs  & -  & 24  & 0.00  & 0.00 \\
+RI  & Impôts et taxes  & -  & 25  & 0.00  & 0.00 \\
+RJ  & Autres charges  & -  & 26  & 0.00  & 0.00 \\
+XC  & VALEUR AJOUTEE (XB+RA+RB) + (somme TE à RJ)  &  &  & -857'797'010.64  & 33'152'315.02 \\
+RK  & Charges de personnel  & -  & 27  & 1'750'000.00  & 0.00 \\
+XD  & EXCEDENT BRUT D'EXPLOITATION (XC+RK)  &  & 28  & -859'547'010.64  & 33'152'315.02 \\
+TJ  & Reprises d’amortissements, provisions et dépréciations  & +  & 28  & 0.00  & 0.00 \\
+RL  & Dotations aux amortissements, aux provisions et dépréciations  & -  & 3C\&28   & 0.00  & 0.00 \\
+XE  & RESULTAT D'EXPLOITATION (XD+TJ+RL)  &  &  & -859'547'010.64  & 33'152'315.02 \\
+TK  & Revenus financiers et assimilés  & +  & 29  & 875'705'863.16  & 1'205'890.00 \\
+TL  & Reprises de provisions  et dépréciations financières  & +  & 28  & 0.00  & 0.00 \\
+TM  & Transferts de charges financières  & +  & 12  & 0.00  & 0.00 \\
+RM  & Frais financiers et charges assimilées  & -  & 29  & 4'497.50  & 4'497.50 \\
+RN  & Dotations aux provisions et aux dépréciations financières  & -  & 3C\&28  & 0.00  & 0.00 \\
+XF  & RESULTAT FINANCIER (somme TK à RN)  &  &  & 875'701'365.66  & 1'201'392.50 \\
+XG  & RESULTAT DES ACTIVITES ORDINAIRES (XE+XF)  &  &  & 16'154'355.01  & 34'353'707.53 \\
+TN  & Produits des cessions d'immobilisations  & +  & 3D  & 0.00  & 0.00 \\
+TO  & Autres Produits HAO  & +  & 30  & 0.00  & 0.00 \\
+RO  & Valeurs comptables des cessions d'immobilisations  & -  & 3D  & 0.00  & 0.00 \\
+RP  & Autres Charges HAO  & -  & 30  & 0.00  & 0.00 \\
+XH  & RESULTAT HORS ACTIVITES ORDINAIRES (somme TN à RP)  &  &  & 0.00  & 0.00 \\
+RQ  & Participation des travailleurs  & -  & 30  & 0.00  & 0.00 \\
+RS  & Impôts sur le résultat  & -  &  & 0.00  & 0.00 \\
+XI  & RESULTAT NET (XG+XH+RQ+RS)  &  &  & 16'154'355.01  & 34'353'707.53 \\
+\end{longtable}
+\begin{longtable}[l]{ l  l }
+NACKY NGOMA SARL  & Exercice clos le 31.12.2020 \\
+Avenue Tshibangu n°007, C/ LEMBA - KINSHASA I - RD Congo  & Durée (en mois) 12 \\
+\end{longtable}
+  \\
+  \\
+  \\
+TABLEAU DES FLUX DE TRESORERIE \\
+Devise: CDF \\
+  \\
+\begin{longtable}[l]{ l  l  l  l  l }
+REF  & LIBELLES  &  & EXERCICE 2020  & EXERCICE 2019 \\
+ZA  & Trésorerie nette au 1er janvier (Trésorerie actif N-1 - trésorerie passif N-1)  & A  & 8'299'095.01  & 8'270'115.01 \\
+ & Flux de trésorerie provenant des activités opérationnelles  &  &  & \\
+FA  & Capacité d'Autofinancement Globale (CAFG)  &  & 16'154'355.01  & 34'353'707.53 \\
+FB  & (-) Variation actif circulant HAO  &  & 0.00  & 0.00 \\
+FC  & (-) Variation des stocks  &  & 18'018'455.01  & 18'910'552.51 \\
+FD  & (-) Variation des créances  &  & 44'135'910.03  & 41'664'175.03 \\
+FE  & (+) Variation du passif circulant  &  & 44'250'010.03  & 26'250'000.02 \\
+ & Variation du BF lié aux activités opérationnelles (FB+FC+FD+FE)  &  & 106'404'375.08  & 86'824'727.57 \\
+ZB  & Flux de trésorerie provenant des activités opérationnelles (somme FA à FE)  & B  & -1'750'000.00  & 28'980.00 \\
+ & Flux de trésorerie provenant des activités d'investissements   &  &  & \\
+FF  & (-) Décaissements liés aux acquisitions d'immobilisations incorporelles  &  & 0.00  & 0.00 \\
+FG  & (-) Décaissements liés aux acquisitions d'immobilisations corporelles  &  & 0.00  & 0.00 \\
+FH  & (-) Décaissements liés aux acquisitions d'immobilisations financières  &  & 0.00  & 0.00 \\
+FI  & (+) Encaissements liés aux cessions d'immobilisations incorporelles et corporelles  &  & 0.00  & 0.00 \\
+FJ  & (+) Encaissements liés aux cessions d'immobilisations financières  &  & 0.00  & 0.00 \\
+ZC  & Flux de trésorerie provenant des activités d'investissement (somme FF à FJ)  & C  & 0.00  & 0.00 \\
+ & Flux de trésorerie provenant du financement par les capitaux propres  &  &  & \\
+FK  & (+) Augmentations de capital par apports nouveaux  &  & 0.00  & 0.00 \\
+FL  & (+) Subventions d'investissement reçues  &  & 0.00  & 0.00 \\
+FM  & (-) Prélèvements sur le capital  &  & 0.00  & 0.00 \\
+FN  & (-) Dividendes verses  &  & 0.00  & 0.00 \\
+ZD  & Flux de trésorerie provenant des capitaux propres (somme FK à FN)  & D  & 0.00  & 0.00 \\
+ & Trésorerie provenant du financement par les capitaux étrangers  &  &  & \\
+FO  & (+) Emprunts  &  & 0.00  & 0.00 \\
+FP  & (+) Autres dettes financières  &  & 0.00  & 0.00 \\
+FQ  & (-) Remboursements des emprunts et autres dettes financières  &  & 0.00  & 0.00 \\
+ZE  & Flux de trésorerie provenant des capitaux étrangers (somme FO à FQ)  & E  & 0.00  & 0.00 \\
+ZF  & Flux de trésorerie provenant des activités de financement (D+E)  & F  & 0.00  & 0.00 \\
+ZG  & VARIATION DE LA TRESORERIE NETTE DE LA PERIODE (B+C+F)  & G  & -1'750'000.00  & 28'980.00 \\
+ZH  & Trésorerie nette au 31 Décembre (G+A) Contrôle : Trésorerie actif 2020 - trésorerie passif 2020 =  & H  & 6'549'095.00  & 8'299'095.01 \\
+\end{longtable}
+\end{reportvalue}
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}

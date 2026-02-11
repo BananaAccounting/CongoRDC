@@ -23,7 +23,9 @@
 // @outputformat = none
 // @inputdataform = none
 // @timeout = -1
-// @includejs = ../ch.banana.africa.reportsohadardc.js
+// @includejs = ../balancesheet/ch.banana.africa.balancesheetrdc.js
+// @includejs = ../profitlossstatement/ch.banana.africa.profitlossstatementrdc.js
+// @includejs = ../cashflow/ch.banana.africa.cashflowrdc.js
 
 
 // Register this test case to be executed
@@ -54,14 +56,34 @@ TestMonoReportsOhadaRDC.prototype.cleanup = function () {
 
 }
 
-TestMonoReportsOhadaRDC.prototype.testImport = function () {
+TestMonoReportsOhadaRDC.prototype.testBananaApps = function () {
     Test.logger.addText("This test will tests the BananaApp balancesheet_rdc.js");
 
-    var banDoc = Banana.application.openDocument("file:script/../test/testcases/ohada_tva_cdf_2020.ac2");
-    var startDate = banDoc.info("AccountingDataBase","OpeningDate");
-    var endDate = banDoc.info("AccountingDataBase","ClosureDate");
+    var currentDocument = Banana.application.openDocument("file:script/../test/testcases/ohada_tva_cdf_2020.ac2");
+    Test.assert(currentDocument, "Current year file ac2 not found");
 
-    Test.assert(banDoc, "File ac2 not found");
+    var previousDocument = Banana.application.openDocument("file:script/../test/testcases/ohada_tva_cdf_2019.ac2");
+    Test.assert(previousDocument, "Previous year file ac2 not found");
+
+    var startDate = currentDocument.info("AccountingDataBase", "OpeningDate");
+    var endDate = currentDocument.info("AccountingDataBase", "ClosureDate");
+
+    var stylesheet = createStyleSheet();
+
+    var report = Banana.Report.newReport("Bilan, Compte de résultat, Tableau des flux de tresorerie Mono-devise (OHADA - RDC) [BETA]");
+
+    /* 1. Balance Sheet report */
+    createBalanceSheetReport(currentDocument, startDate, endDate, stylesheet, report);
+    report.addPageBreak();
+
+    /* 2. Profit/Loss Statement report */
+    createProfitLossStatementReport(currentDocument, previousDocument, startDate, endDate, report);
+    report.addPageBreak();
+
+    /* 3. Cash Flow report */
+    createCashFlowReport(currentDocument, previousDocument, startDate, endDate, report);
+
+    Test.logger.addReport("Report Balance Sheet, Profit/Loss Statement, Cash Flow Mono-currency", report);
 
     
 }
